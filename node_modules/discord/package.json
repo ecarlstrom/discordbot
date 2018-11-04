@@ -1,0 +1,23 @@
+{
+	"name":"discord",
+	"description":"A LP/Discworld inspired MUD server running on Node.JS and MooTools.",
+	"version":"0.8.2",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/yuffster/discord-engine"
+	},
+	"dependencies": {
+		"mootools":">=1.4.4",
+		"describe":">=0.8.0",
+		"string-color":">=0.8.0",
+		"glob":">3.0.1"
+	},
+	"author": {
+		"name": "Michelle Steigerwalt",
+		"homepage": "http://msteigerwalt.com"
+	},
+	"scripts":{
+		"test": "node ./tests/run_tests.js"
+	},
+	"main": "server.js"
+}
