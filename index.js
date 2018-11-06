@@ -15,6 +15,10 @@ const prefix = process.env.prefix;
 
 client.on('message', (message) => {
 
+  if(message.author.id === process.env.ownerID) {
+    message.channel.send('Owner!');
+  }
+  
   if(!message.content.startsWith(prefix) || message.author.bot) return;
 
   if(message.content === (prefix + 'test')) {
