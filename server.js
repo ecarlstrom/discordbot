@@ -1,7 +1,6 @@
-const express = require('express');
-const server = express();
+var http = require('http');
 
-server.use(express.json());
-
-const port = 8000;
-server.listen(port, () => console.log(`Server online on port ${port}.`));
+var server = http.createServer(function (req, res) {
+  res.write('Bot connected!');
+  res.end();
+}).listen(8000);
