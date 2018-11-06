@@ -9,16 +9,22 @@ client.on('ready', () => {
   console.log(`${client.user.username} ready for use.`);
 });
 
-client.on('message', msg => {
-  if (msg.author.id !== client.user.id) {
-    msg.channel.send(msg.content);
-  }
-});
+// some general message rules
 
-client.on('message', msg => {
-  if (msg.content.includes('test') && msg.author.id !== client.user.id) {
-    msg.channel.send('it works');
+const prefix = process.env.prefix;
+
+client.on('message', (message) => {
+
+  if(!message.content.startsWith(prefix) || message.author.bot) return;
+
+  if(message.content === (prefix + 'test')) {
+    message.channel.send('Hello!');
   }
+
+  if(message.content === (prefix + 'azur')) {
+    message.channel.send('Azur Lane: https://azurlane.yo-star.com/#/');
+  }
+
 });
 
 client.login(token);
