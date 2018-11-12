@@ -18,7 +18,7 @@ client.on('message', (message) => {
   if(message.author.id === process.env.ownerID) {
     message.channel.send('Owner!');
   }
-  
+
   if(!message.content.startsWith(prefix) || message.author.bot) return;
 
   if(message.content === (prefix + 'test')) {
@@ -26,7 +26,22 @@ client.on('message', (message) => {
   }
 
   if(message.content === (prefix + 'azur')) {
-    message.channel.send('Azur Lane: https://azurlane.yo-star.com/#/');
+    const embed = new Discord.RichEmbed()
+      .setTitle('This is a test embed.')
+      .setAuthor('Evan Carlstrom', 'https://imgur.com/se0joaV.png')
+      .setColor(0x00AE86)
+      .setDescription('Hello, this is a BallsBot embed test.')
+      .setImage('https://imgur.com/se0joaV.png')
+      .setThumbnail('https://imgur.com/se0joaV.png')
+      .setTimestamp()
+      // .setURL('www.google.com')
+      .addField('Test field', 'text', true)
+      .addBlankField(true) // for space
+      .addField('Another field', 'text again', true)
+      .addBlankField(true)
+      .addField('A final field', 'more text', true);
+
+    message.channel.send({embed});
   }
 
 });
