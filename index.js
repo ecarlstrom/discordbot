@@ -28,13 +28,14 @@ client.on('message', (message) => {
   if(message.content === (prefix + 'azur')) {
     const embed = new Discord.RichEmbed()
       .setTitle('This is a test embed.')
-      .setAuthor('Evan Carlstrom', 'https://imgur.com/se0joaV.png')
-      .setColor(0x00AE86)
+      .setAuthor('AUTHOR NAME', 'https://imgur.com/se0joaV.png')
+      .setColor('00AE86')
       .setDescription('Hello, this is a BallsBot embed test.')
       .setImage('https://imgur.com/se0joaV.png')
+      .setFooter('Here is some footer text', 'https://imgur.com/se0joaV.png' )
       .setThumbnail('https://imgur.com/se0joaV.png')
       .setTimestamp()
-      // .setURL('www.google.com')
+       .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
       .addField('Test field', 'text', true)
       .addBlankField(true) // for space
       .addField('Another field', 'text again', true)
