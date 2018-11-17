@@ -47,10 +47,10 @@ client.on('message', (message) => {
 
   // testing emoji replies and reactions
 
-  if(message.content === (prefix + 'coptest')) {
-    const cop = client.emojis.find(emoji => emoji.name === 'cop');
-    message.reply(`${cop}`);
-    message.react('27ea5cf73c2aabb6e8bf523e117ff5dc');
+  if(message.content.includes('tama')) {
+    // const cop = client.emojis.find(emoji => emoji.name === 'cop');
+    // message.channel.send(`👮`);
+    message.react('👮');
   }
 
   if(message.content === (prefix + 'DrSEG')) {
