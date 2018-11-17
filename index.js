@@ -16,7 +16,7 @@ const prefix = process.env.prefix;
 client.on('message', (message) => {
 
   if(message.author.id === process.env.ownerID) {
-    message.channel.send('Owner!');
+    console.log('Owner!');
   }
 
   if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -43,6 +43,21 @@ client.on('message', (message) => {
       .addField('A final field', 'more text', true);
 
     message.channel.send({embed});
+  }
+
+  // testing emoji replies and reactions
+
+  if(message.content === (prefix + 'coptest')) {
+    const cop = client.emojis.find(emoji => emoji.name === 'cop');
+    message.reply(`${cop}`);
+    message.react('27ea5cf73c2aabb6e8bf523e117ff5dc');
+  }
+
+  // return a list of th eserver's custom emojis
+
+  if(message.content === (prefix + 'list')) {
+    const emojiList = message.guild.emojis.map(e => e.toString()).join('   ');
+    message.channel.send(emojiList);
   }
 
 });
