@@ -53,6 +53,12 @@ client.on('message', (message) => {
     message.react('27ea5cf73c2aabb6e8bf523e117ff5dc');
   }
 
+  if(message.content === (prefix + 'DrSEG')) {
+    const DrSEG = client.emojis.find(emoji => emoji.name === 'DrSEG');
+    message.reply(`${DrSEG}`);
+    message.react('232562601433890839');
+  }
+
   // return a list of th eserver's custom emojis
 
   if(message.content === (prefix + 'list')) {
