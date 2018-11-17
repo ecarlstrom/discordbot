@@ -50,13 +50,14 @@ client.on('message', (message) => {
   if(message.content.includes('tama')) {
     // const cop = client.emojis.find(emoji => emoji.name === 'cop');
     // message.channel.send(`👮`);
+    // message.reply(`👮`);
     message.react('👮');
   }
 
   if(message.content === (prefix + 'DrSEG')) {
     const DrSEG = client.emojis.find(emoji => emoji.name === 'DrSEG');
     message.reply(`${DrSEG}`);
-    message.react('232562601433890839');
+    message.react(DrSEG);
   }
 
   // return a list of th eserver's custom emojis
