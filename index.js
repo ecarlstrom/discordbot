@@ -60,7 +60,7 @@ client.on('message', (message) => {
     message.react(DrSEG);
   }
 
-  // return a list of th eserver's custom emojis
+  // return a list of the server's custom emojis
 
   if(message.content === (prefix + 'list')) {
     const emojiList = message.guild.emojis.map(e => e.toString()).join('   ');
