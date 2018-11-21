@@ -67,6 +67,13 @@ client.on('message', (message) => {
     message.channel.send(emojiList);
   }
 
+  // return a list of custom emojis with emoji ID included
+
+  if(message.content === (prefix + 'listnames')) {
+    const emojiList = message.guild.emojis.map((e, x) => (x + ' = ' + e) + ' | ' + e.name).join('\n');
+    message.channel.send(emojiList);
+  }
+
 });
 
 client.login(token);
