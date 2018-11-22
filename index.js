@@ -89,12 +89,31 @@ client.on('message', (message) => {
 //
 // const url_info =
 // const url_champion =
-// const url_items
-// const url_itempicture
-// const url_summonerID
-// const url_live
-// const url_getchamp
-// const url_getchampmastery
-// const url_getrank
+// const url_items =
+// const url_itempicture =
+// const url_summonerID =
+// const url_live =
+// const url_getchamp =
+// const url_getchampmastery =
+// const url_getrank =
 
 // will see how new runes work as opposed to getrunes/get masteries endpoints for the old setup
+
+let queues = {
+  '0': 'Custom',
+  '2': 'Normal 5v5 Blind Pick',
+  '14': 'Normal 5v5 Draft Pick',
+  '4': 'Ranked Solo 5v5',
+  '6': 'Ranked Premade 5v5', // does this ID still work with flex queues?
+  '65': 'ARAM'
+
+  // basic setup for now, there may be some overlap with new/old i.e. 'Ranked Solo 5v5' vs. 'Ranked Solo'
+};
+
+let maps = {
+  '1': `Summoner's Rift`,
+  '4': 'Twisted Treeline',
+  '12': 'Howling Abyss'
+
+  // there is also another SR map at ID 11 and TT at 10, not sure what any differences are
+};
