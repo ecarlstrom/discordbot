@@ -4,6 +4,8 @@ const client = new Discord.Client();
 const token = process.env.DISCORD_BOT_SECRET;
 const server = require('./server.js');
 
+client.login(token);
+
 client.on('ready', () => {
   console.log('Bot connected!');
   console.log(`${client.user.username} ready for use.`);
@@ -19,7 +21,15 @@ client.on('message', (message) => {
     console.log('Owner!');
   }
 
+  if(message.content.includes('tama') && !message.content.startsWith(prefix)) {
+    // const cop = client.emojis.find(emoji => emoji.name === 'cop');
+    // message.channel.send(`👮`);
+    // message.reply(`👮`);
+    message.react('👮');
+  }
+
   if(!message.content.startsWith(prefix) || message.author.bot) return;
+
 
   if(message.content === (prefix + 'test')) {
     message.channel.send('Hello!');
@@ -47,13 +57,6 @@ client.on('message', (message) => {
 
   // testing emoji replies and reactions
 
-  if(message.content.includes('tama')) {
-    // const cop = client.emojis.find(emoji => emoji.name === 'cop');
-    // message.channel.send(`👮`);
-    // message.reply(`👮`);
-    message.react('👮');
-  }
-
   if(message.content === (prefix + 'DrSEG')) {
     const DrSEG = client.emojis.find(emoji => emoji.name === 'DrSEG');
     message.reply(`${DrSEG}`);
@@ -78,4 +81,20 @@ client.on('message', (message) => {
 
 });
 
-client.login(token);
+/////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
+
+// League API and associated endpoints
+
+// const lol_api = process.env.LOL_API_KEY;
+//
+// const url_info =
+// const url_champion =
+// const url_items
+// const url_itempicture
+// const url_summonerID
+// const url_live
+// const url_getchamp
+// const url_getchampmastery
+// const url_getrank
+
+// will see how new runes work as opposed to getrunes/get masteries endpoints for the old setup
