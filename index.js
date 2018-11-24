@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 require('dotenv').config();
 const client = new Discord.Client();
 const token = process.env.DISCORD_BOT_SECRET;
+const lol_api = process.env.LOL_API_KEY;
 const server = require('./server.js');
 
 client.login(token);
@@ -87,7 +88,6 @@ client.on('message', (message) => {
 
 // League API and associated endpoints
 
-// const lol_api = process.env.LOL_API_KEY;
 //
 // const url_info =
 // const url_champion =
