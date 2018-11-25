@@ -86,7 +86,9 @@ client.on('message', (message) => {
 
 // includes features like greeting new users, kicking, banning, permission handling, etc.
 
-// handles greeting of new users and removal of users
+// handles greeting of new users and removes users from the newUsers list if they leave while on it so the greeting
+// is not addressed to an invalid user. This won't be necessary for small servers while the message triggers on
+// each join, but for larger batches (i.e. newUsers[guild.id].size > 10) it will be useful.
 
 const newUsers = [];
 
@@ -95,8 +97,8 @@ client.on('guildMemberAdd', (member) => {
   if(!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
   newUsers[guild.id].set(member.id, member.user);
 
-  if(newUsers[guild.id].size > 10) {
-    const userlist = newUsers[guild.id].map(u => u.toString()).join(' ');
+  if(newUsers[guild.id].size = 1) {
+    const userlist = newUsers[guild.id].map(u => u.toString()).join(' '); // not necessary for 1, useful for larger servers
     guild.channels.find(channel => channel.name === 'general').send(`Welcome, ${userlist}!`);
     newUsers[guild.id].clear();
   }
@@ -105,7 +107,7 @@ client.on('guildMemberAdd', (member) => {
 client.on('guildMemberRemove', (member) => {
   const guild = member.guild;
   if(newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
-});
+}); // prevents greeting of invalid users if they leave while in the newUsers greeting queue
 
 /////////////////////////////// ***** MUSIC BOT ***** ///////////////////////////////
 
