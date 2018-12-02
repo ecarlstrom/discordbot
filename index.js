@@ -38,18 +38,18 @@ client.on('message', (message) => {
 
   if(message.content === (prefix + 'azur')) {
     const embed = new Discord.RichEmbed()
-      .setTitle('This is a test embed.')
-      .setAuthor('AUTHOR NAME', 'https://imgur.com/se0joaV.png')
+      .setTitle('Azur Lane')
+      .setAuthor('**final bot name here**', 'https://imgur.com/se0joaV.png')
       .setColor('00AE86')
-      .setDescription('Hello, this is a BallsBot embed test.')
+      .setDescription('Azur Lane - Official Website')
       .setImage('https://imgur.com/se0joaV.png')
       .setFooter('Here is some footer text', 'https://imgur.com/se0joaV.png' )
       .setThumbnail('https://imgur.com/se0joaV.png')
       .setTimestamp()
-       .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-      .addField('Test field', 'text', true)
+       .setURL("https://azurlane.yo-star.com/")
+      .addField('Twitter', 'https://twitter.com/AzurLane_EN', true)
       .addBlankField(true) // for space
-      .addField('Another field', 'text again', true)
+      .addField('Reddit', 'https://www.reddit.com/r/AzureLane/', true)
       .addBlankField(true)
       .addField('A final field', 'more text', true);
 
@@ -111,30 +111,30 @@ client.on('guildMemberRemove', (member) => {
 
 // kicks user from a voice channel (in kind of an inefficient way for now, will edit later)
 
-client.on('message', async (message) => {
-  if(!message.guild.me.hasPermission(['MANAGE_CHANNELS', 'MOVE_MEMBERS']))
-    return message.reply('Missing required channel management and/or member moving permission(s).');
-
-  const user = message.mentions.users.first();
-  const member = message.mentions.members.first();
-  // above line stores the @mentioned user, following lines check to make sure
-  // there is a mention and that the user is in a voice channel.
-  if(!member) return message.reply('Please @mention a specific user.');
-  if(!member.voiceChannel) return message.reply('Specified user is not in a voice channel.');
-
-  const temp_voice = await message.guild.createChannel(user.id, 'voice', [
-    { id: guild.id,
-      deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'], },
-    { id: member.id,
-      deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'] }
-  ]);
-  await member.setVoiceChannel(temp_voice);
-
-  await temp_voice.delete(); // creates temporary voice channel that awaits the
-  // mention and then moves the user in before deleting the channel
-
-  msg.react('👍');
-});
+// client.on('message', async (message) => {
+//   if(!message.guild.me.hasPermission(['MANAGE_CHANNELS', 'MOVE_MEMBERS']))
+//     return message.reply('Missing required channel management and/or member moving permission(s).');
+//
+//   const user = message.mentions.users.first();
+//   const member = message.mentions.members.first();
+//   // above line stores the @mentioned user, following lines check to make sure
+//   // there is a mention and that the user is in a voice channel.
+//   if(!member) return message.reply('Please @mention a specific user.');
+//   if(!member.voiceChannel) return message.reply('Specified user is not in a voice channel.');
+//
+//   const temp_voice = await message.guild.createChannel(user.id, 'voice', [
+//     { id: guild.id,
+//       deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'], },
+//     { id: member.id,
+//       deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'] }
+//   ]);
+//   await member.setVoiceChannel(temp_voice);
+//
+//   await temp_voice.delete(); // creates temporary voice channel that awaits the
+//   // mention and then moves the user in before deleting the channel
+//
+//   msg.react('👍');
+// });
 
 /////////////////////////////// ***** MUSIC BOT ***** ///////////////////////////////
 
