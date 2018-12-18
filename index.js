@@ -97,19 +97,19 @@ client.on('guildMemberAdd', (member) => {
   if(!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
   newUsers[guild.id].set(member.id, member.user);
 
-  if(newUsers[guild.id].size = 1) {
-    const userlist = newUsers[guild.id].map(u => u.toString()).join(' '); // not necessary for 1, useful for larger servers
-    guild.channels.find(channel => channel.name === 'general').send(`Welcome, ${userlist}!`);
-    newUsers[guild.id].clear();
-  }
-});
+//   if(newUsers[guild.id].size = 1) {
+//     const userlist = newUsers[guild.id].map(u => u.toString()).join(' '); // not necessary for 1, useful for larger servers
+//     guild.channels.find(channel => channel.name === 'general').send(`Welcome, ${userlist}!`);
+//     newUsers[guild.id].clear();
+//   }
+// });
 
 client.on('guildMemberRemove', (member) => {
   const guild = member.guild;
   if(newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
 }); // prevents greeting of invalid users if they leave while in the newUsers greeting queue
 
-kicks user from a voice channel (in kind of an inefficient way for now, will edit later)
+// kicks user from a voice channel (in kind of an inefficient way for now, will edit later)
 
 // client.on('message', async (message) => {
 //   if(!message.guild.me.hasPermission(['MANAGE_CHANNELS', 'MOVE_MEMBERS']))
