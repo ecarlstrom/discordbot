@@ -136,7 +136,7 @@ client.on('message', (message) => {
 //   msg.react('👍'); // check with a reaction
 // });
 
-// testing out some guild-related features to familiarize myself with the issues the voice channel permissions code might be having
+////////// testing out some guild-related features to familiarize myself with the issues the voice channel permissions code might be having //////////
 
 // create a guild (limited to bots with < 10 guilds for now)
 
