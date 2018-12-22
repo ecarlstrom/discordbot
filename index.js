@@ -111,55 +111,55 @@ client.on('guildMemberRemove', (member) => {
 
 // kicks user from a voice channel (in kind of an inefficient way for now, will edit later)
 
-client.on('message', async (message) => {
-  if(!message.guild.me.hasPermission(['MANAGE_CHANNELS', 'MOVE_MEMBERS']))
-    return message.reply('Missing required channel management and/or member moving permission(s).');
+// client.on('message', async (message) => {
+//   if(!message.guild.me.hasPermission(['MANAGE_CHANNELS', 'MOVE_MEMBERS']))
+//     return message.reply('Missing required channel management and/or member moving permission(s).');
 
-  const user = message.mentions.users.first();
-  // const member = message.mentions.members.first();
-  // above line stores the @mentioned user, following lines check to make sure
-  // there is a mention and that the user is in a voice channel.
-  if(!member) return message.reply('Please @mention a specific user.');
-  if(!member.voiceChannel) return message.reply('Specified user is not in a voice channel.');
+//   const user = message.mentions.users.first();
+//   // const member = message.mentions.members.first();
+//   // above line stores the @mentioned user, following lines check to make sure
+//   // there is a mention and that the user is in a voice channel.
+//   if(!member) return message.reply('Please @mention a specific user.');
+//   if(!member.voiceChannel) return message.reply('Specified user is not in a voice channel.');
 
-  const temp_voice = await message.guild.createChannel(user.id, 'voice', [
-    { id: guild.id,
-      deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'], },
-    { id: member.id,
-      deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'] }
-  ]);
-  await member.setVoiceChannel(temp_voice);
+//   const temp_voice = await message.guild.createChannel(user.id, 'voice', [
+//     { id: guild.id,
+//       deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'], },
+//     { id: member.id,
+//       deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'] }
+//   ]);
+//   await member.setVoiceChannel(temp_voice);
 
-  await temp_voice.delete(); // creates temporary voice channel that awaits the
-  // mention and then moves the user in before deleting the channel
+//   await temp_voice.delete(); // creates temporary voice channel that awaits the
+//   // mention and then moves the user in before deleting the channel
 
-  msg.react('👍'); // check with a reaction
-});
+//   msg.react('👍'); // check with a reaction
+// });
 
 ////////// testing out some guild-related features to familiarize myself with the issues the voice channel permissions code might be having //////////
 
 // create a guild (limited to bots with < 10 guilds for now)
 
-client.on('message', (message) => {
+// client.on('message', (message) => {
 
-  if(message.content === (prefix + 'guildtest')) {
-    async function createGuild(client, message) {
-      try {
-        const guild = await client.user.createGuild('Test Guild', 'hello');
-        const defaultChannel = guild.channels.find(channel => channel.permissionsFor(guild.me).has("SEND_MESSAGES"));
-        const invite = await defaultChannel.createInvite();
-        await message.author.send(invite.url);
-        const role = await guild.createRole({ name: 'Test Role', permissions: ['ADMINISTRATOR'] });
-        await message.author.send(role.id);
-      } catch(err) {
-        console.error(err);
-      }
-    }
+//   if(message.content === (prefix + 'guildtest')) {
+//     async function createGuild(client, message) {
+//       try {
+//         const guild = await client.user.createGuild('Test Guild', 'hello');
+//         const defaultChannel = guild.channels.find(channel => channel.permissionsFor(guild.me).has("SEND_MESSAGES"));
+//         const invite = await defaultChannel.createInvite();
+//         await message.author.send(invite.url);
+//         const role = await guild.createRole({ name: 'Test Role', permissions: ['ADMINISTRATOR'] });
+//         await message.author.send(role.id);
+//       } catch(err) {
+//         console.error(err);
+//       }
+//     }
 
-    createGuild(client, message);
-    message.member.addRole('<ROLE>');
-  }
-})
+//     createGuild(client, message);
+//     message.member.addRole('<ROLE>');
+//   }
+// })
 
 /////////////////////////////// ***** MUSIC BOT ***** ///////////////////////////////
 
