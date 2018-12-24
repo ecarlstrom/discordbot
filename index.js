@@ -122,13 +122,13 @@ client.on('guildMemberRemove', (member) => {
 //   if(!member) return message.reply('Please @mention a specific user.');
 //   if(!member.voiceChannel) return message.reply('Specified user is not in a voice channel.');
 
-//   const temp_voice = await message.guild.createChannel(user.id, 'voice', [
-//     { id: guild.id,
-//       deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'], },
-//     { id: member.id,
-//       deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'] }
-//   ]);
-//   await member.setVoiceChannel(temp_voice);
+  const temp_voice = await message.guild.createChannel(user.id, 'voice', [
+    { id: guild.id,
+      deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'], },
+    { id: member.id,
+      deny: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK'] }
+  ]);
+  await member.setVoiceChannel(temp_voice);
 
 //   await temp_voice.delete(); // creates temporary voice channel that awaits the
 //   // mention and then moves the user in before deleting the channel
