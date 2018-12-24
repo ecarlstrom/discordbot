@@ -133,7 +133,7 @@ client.on('guildMemberRemove', (member) => {
   await temp_voice.delete(); // creates temporary voice channel that awaits the
 //   // mention and then moves the user in before deleting the channel
 
-//   msg.react('👍'); // check with a reaction
+  msg.react('👍'); // check with a reaction
 // });
 
 ////////// testing out some guild-related features to familiarize myself with the issues the voice channel permissions code might be having //////////
