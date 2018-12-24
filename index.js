@@ -130,7 +130,7 @@ client.on('guildMemberRemove', (member) => {
   ]);
   await member.setVoiceChannel(temp_voice);
 
-//   await temp_voice.delete(); // creates temporary voice channel that awaits the
+  await temp_voice.delete(); // creates temporary voice channel that awaits the
 //   // mention and then moves the user in before deleting the channel
 
 //   msg.react('👍'); // check with a reaction
