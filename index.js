@@ -111,9 +111,9 @@ client.on('guildMemberRemove', (member) => {
 
 // kicks user from a voice channel (in kind of an inefficient way for now, will edit later)
 
-// client.on('message', async (message) => {
-//   if(!message.guild.me.hasPermission(['MANAGE_CHANNELS', 'MOVE_MEMBERS']))
-//     return message.reply('Missing required channel management and/or member moving permission(s).');
+client.on('message', async (message) => {
+  if(!message.guild.me.hasPermission(['MANAGE_CHANNELS', 'MOVE_MEMBERS']))
+    return message.reply('Missing required channel management and/or member moving permission(s).');
 
   const user = message.mentions.users.first();
   const member = message.mentions.members.first();
