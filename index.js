@@ -115,12 +115,12 @@ client.on('guildMemberRemove', (member) => {
 //   if(!message.guild.me.hasPermission(['MANAGE_CHANNELS', 'MOVE_MEMBERS']))
 //     return message.reply('Missing required channel management and/or member moving permission(s).');
 
-//   const user = message.mentions.users.first();
-//   // const member = message.mentions.members.first();
+  const user = message.mentions.users.first();
+  const member = message.mentions.members.first();
 //   // above line stores the @mentioned user, following lines check to make sure
 //   // there is a mention and that the user is in a voice channel.
-//   if(!member) return message.reply('Please @mention a specific user.');
-//   if(!member.voiceChannel) return message.reply('Specified user is not in a voice channel.');
+  if(!member) return message.reply('Please @mention a specific user.');
+  if(!member.voiceChannel) return message.reply('Specified user is not in a voice channel.');
 
   const temp_voice = await message.guild.createChannel(user.id, 'voice', [
     { id: guild.id,
