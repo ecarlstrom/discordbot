@@ -134,7 +134,7 @@ client.on('message', async (message) => {
 //   // mention and then moves the user in before deleting the channel
 
   msg.react('👍'); // check with a reaction
-// });
+});
 
 ////////// testing out some guild-related features to familiarize myself with the issues the voice channel permissions code might be having //////////
 
