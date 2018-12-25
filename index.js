@@ -1,3 +1,5 @@
+////////// GENERAL DEPENDENCIES //////////
+
 const Discord = require('discord.js');
 require('dotenv').config();
 const client = new Discord.Client();
@@ -5,6 +7,14 @@ const token = process.env.DISCORD_BOT_SECRET;
 const lol_api = process.env.LOL_API_KEY;
 const server = require('./server.js');
 
+////////// LEAGUE DEPENDENCIES //////////
+
+const fs = require('fs');
+const gm = require('gm');
+const request = require('request');
+
+// more to come as this is set up
+/////////////////////////////////////////
 client.login(token);
 
 client.on('ready', () => {

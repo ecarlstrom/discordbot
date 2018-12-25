@@ -4,8 +4,11 @@
     "discord.js": "^11.4.2",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "fs": "^0.0.1-security",
+    "gm": "^1.23.1",
     "http": "^0.0.0",
-    "nodemon": "^1.18.5"
+    "nodemon": "^1.18.5",
+    "request": "^2.88.0"
   },
   "scripts": {
     "start": "nodemon server.js",
