@@ -216,8 +216,27 @@ const playerID = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-nam
 ///// League API functions
 
 function getPlayerID(player, cb) {
-  request(player)
+  request(playerID + urlencode(summoner) + "?api_key=" + lol_api, function(error, response,body) {
+    if(err) {
+      cb(err); // error handling
+    } else {
+      // parse the returned data and create a summoner object to contain it
+      let dataJSON = JSON.parse(request.body);
+      let summonerid = dataJSON.id;
+      let accountLevel = dataJSON.summonerLevel;
+      let profileID = dataJSON.profileIconId;
+      let summonername = dataJSON.name;
+      let summonerObject = {
+        "summonerid": summonerid,
+        "accountlvl": accountlvl,
+        "profileid": profileID,
+        "name": summonername
+      }
+      cb(false, summonerObject);
+    }
+  });
 }
-function getMatch(playerData), cb) {
-  request(liveMatch + playerData)
-}
+
+// function getMatch(playerData), cb) {
+//   request(liveMatch + playerData)
+// }
