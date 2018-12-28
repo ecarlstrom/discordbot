@@ -12,6 +12,7 @@ const server = require('./server.js');
 const fs = require('fs');
 const gm = require('gm');
 const request = require('request');
+const urlencode = ('urlencode');
 
 // more to come as this is set up
 /////////////////////////////////////////
