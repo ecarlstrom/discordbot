@@ -212,6 +212,7 @@ let maps = {
 
 const liveMatch = "https://na1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/"; // constant path to retrieve live match data
 const playerID = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"; // constant path to retrieve summoner names (player names)
+const championID = "https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=false&api_key=" + lol_api;
 
 ///// League API functions
 
@@ -271,4 +272,8 @@ function getMatch(summonerObject, cb) {
       });
     }
   });
+}
+
+function getChampionID(championName, cb) {
+  request
 }
