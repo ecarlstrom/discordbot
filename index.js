@@ -209,5 +209,14 @@ let maps = {
   // there is also another SR map at ID 11 and TT at 10, not sure what any differences are
 };
 
-const livematch = "https://na1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner"; // constant path to retrieve live match data
+const liveMatch = "https://na1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/"; // constant path to retrieve live match data
+const playerID = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"; // constant path to retrieve summoner names (player names)
 
+///// League API functions
+
+function getPlayerID(player, cb) {
+  request(player)
+}
+function getMatch(playerData), cb) {
+  request(liveMatch + playerData)
+}
