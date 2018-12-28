@@ -275,5 +275,17 @@ function getMatch(summonerObject, cb) {
 }
 
 function getChampionID(championName, cb) {
-  request
+  request(championID, response.statusCode, function9err) {
+    if(err) {
+      cb(err); // basic error handling
+    } else {
+      let dataJSON = JSON.parse(response.body);
+      // normalizing champion name input (capitalization, spacing, etc.) to minimize edge cases
+      // the next two lanes make every name lowercase and then capitalize the first letter
+      // this will hopefully cut down the number of elifs required to manage other cases
+
+      championname = championname.toLowerCase();
+      championname = championname.charAt(0).toUpperCase() + championname.slice(1);
+    }
+  }
 }
