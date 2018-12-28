@@ -221,7 +221,7 @@ function getPlayerID(player, cb) {
       cb(err); // error handling
     } else {
       // parse the returned data and create a summoner object to contain it
-      let dataJSON = JSON.parse(request.body);
+      let dataJSON = JSON.parse(response.body);
       let summonerid = dataJSON.id;
       let accountLevel = dataJSON.summonerLevel;
       let profileID = dataJSON.profileIconId;
@@ -237,6 +237,8 @@ function getPlayerID(player, cb) {
   });
 }
 
-// function getMatch(playerData), cb) {
-//   request(liveMatch + playerData)
-// }
+function getMatch(summonerObject, cb) {
+  request(liveMatch + summonerObject.summonerid + "?api_key=" + lol_api, function(err, response, body) {
+
+  })
+}
