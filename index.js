@@ -209,5 +209,5 @@ let maps = {
   // there is also another SR map at ID 11 and TT at 10, not sure what any differences are
 };
 
-// I took Christmas off but here's a commit to keep my Github graph green, sue me
-// Back to work tomorrow!
+const livematch = "https://na1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner"; // constant path to retrieve live match data
+
