@@ -275,7 +275,8 @@ function getMatch(summonerObject, cb) {
 }
 
 function getChampionID(championName, cb) {
-  request(championID, response.statusCode, function9err) {
+  request(championID, function(error, response, body) {
+    requesterror(championID, response.statusCode, function(err) {
     if(err) {
       cb(err); // basic error handling
     } else {
@@ -290,5 +291,6 @@ function getChampionID(championName, cb) {
       // add cases for potential exceptions: MF, Kai'sa, Kog, ASol, J4, Lee, Xin, Yi, Mundo, TF, Rek'sai
       // more: Wukong? (MonkeyKing in JSON, will investigate), Cho, Vel, Nunu? (will check with new name)
     }
-  }
+  });
+ });
 }
