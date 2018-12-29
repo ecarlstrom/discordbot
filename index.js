@@ -286,6 +286,8 @@ function getChampionID(championName, cb) {
 
       championname = championname.toLowerCase();
       championname = championname.charAt(0).toUpperCase() + championname.slice(1);
+
+      // add cases for potential exceptions: MF, Kai'sa, Kog, ASol, J4, Lee, Xin, Yi, Mundo, TF, Rek'sai
     }
   }
 }
