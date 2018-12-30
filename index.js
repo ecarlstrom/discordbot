@@ -290,6 +290,7 @@ function getChampionID(championName, cb) {
 
       // add cases for potential exceptions: MF, Kai'sa, Kog, ASol, J4, Lee, Xin, Yi, Mundo, TF, Rek'sai
       // more: Wukong? (MonkeyKing in JSON, will investigate), Cho, Vel, Nunu? (will check with new name)
+      // can do an includes() for nicknames as well: Cass, Kass, Malph, etc.
     }
   });
  });
