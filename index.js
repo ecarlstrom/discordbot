@@ -412,5 +412,5 @@ function matchInfo(matchObject, summonerObject, cb) {
     'redplayers': redplayers,
     'team': team
   }
-
+  // will add another function to get champions in the match and then call here, placeholder
 }
