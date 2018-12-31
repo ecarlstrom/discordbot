@@ -367,4 +367,10 @@ function matchInfo(matchObject, summonerObject, cb) {
     time = `Game live for ${hour} hours, ${minute} minutes, ${second} seconds.`;
     // may add another case here for anything below two minutes returning "one minute" instead of `${minute} minutes`, but this is a nitpicky detail.
   }
+
+  // player-related variables and functions
+  let players = matchObject.participants;
+  let bluePlayers = [];
+  let redPlayers = [];
+  let team; // players will be moved from the empty objects based on their team
 }
