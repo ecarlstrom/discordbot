@@ -373,4 +373,20 @@ function matchInfo(matchObject, summonerObject, cb) {
   let bluePlayers = [];
   let redPlayers = [];
   let team; // players will be moved from the empty objects based on their team
+
+  for(let i = 0; i < players.length; i++) {
+    let playerObject = [];
+    if(players[i].teamId === 100) {
+      playerObject.summonername = players[i].summonerName;
+      playerObject.championId = players[i].championId;
+      playerObject.summonerid = players[i].summonerId;
+      playerObject.runes = players[i].runes;
+      playerObject.masteries = players[i].masteries; // not sure how runes/masteries work with the new combined system, will see what's returned
+      playerObject.team = "BLUE";
+    }
+    bluePlayers.push(playerObject);
+    if(summonerObject.summonerid == players[i].summonerId) {
+      team = 'BLUE';
+    }
+  }
 }
