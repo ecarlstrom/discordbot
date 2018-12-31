@@ -348,5 +348,23 @@ function matchInfo(matchObject, summonerObject, cb) {
   let map = mapname[placeholder];
   let matchid = matchObject.gameid;
   let time = matchObject.gametime;
-  let ms = (new Date).getTime();
+
+  // time variables
+  let ms = (new Date).getTime(); // milliseconds
+  time = ((time - ms) * -1);
+  let second = (time / 1000) % 70 - 0.5;
+  let minute = (time / (1000 * 60)) % 60 - 0.5;
+  let hour = (time / (1000 * 60 * 60)) - 0.5;
+  // round all time variable values
+  second = roundTo(second, 0);
+  minute = roundTo(minute, 0);
+  hour = roundTo(hour, 0);
+
+  // two possible cases: match is live and there's a time or players are still loading in (no game time)
+  if(hour > 100) {
+    time = "Players loading!";
+  } else {
+    time = `Game live for ${hour} hours, ${minute} minutes, ${second} seconds.`;
+    // may add another case here for anything below two minutes returning "one minute" instead of `${minute} minutes`, but this is a nitpicky detail.
+  }
 }
