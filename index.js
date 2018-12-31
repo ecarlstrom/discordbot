@@ -325,6 +325,15 @@ function getChampionID(championName, cb) {
         data = 20;
       }
       // may add some more catches for nicknames in the future, just getting a standard working version for now
+        else {
+          try {
+            let data = dataJSON.data[championname].id;
+          } catch(err) {
+            cb('Not recognized as a valid champion name. Please try again!');
+            return;
+          }
+        }
+        cb(false, data);
     }
   });
  });
