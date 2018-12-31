@@ -291,6 +291,30 @@ function getChampionID(championName, cb) {
       // add cases for potential exceptions: MF, Kai'sa, Kog, ASol, J4, Lee, Xin, Yi, Mundo, TF, Rek'sai
       // more: Wukong? (MonkeyKing in JSON, will investigate), Cho, Vel, Nunu? (will check with new name)
       // can do an includes() for nicknames as well: Cass, Kass, Malph, etc.
+
+      if(championname.includes("Miss") || championname.includes("Fortune")) {
+        data = 21;
+      } else if(championname.includes("Kai'")) {
+        // this is not in the Riot data I'm looking at, will add in
+      } else if(championname.includes("Kog")) {
+        data = 96;
+      } else if(championname.includes("Aurelion") || championname === "ASol") {
+        data = 136;
+      } else if(championname.includes("Jarvan" || championname === "J4")) {
+        data = 59;
+      } else if(championname === "Leesin" || championname === "Lee sin") { // using exact matches here because "Lee" will cause errors with Nidalee
+        data = 64;
+      } else if(championname.includes("Xin")) {
+        data = 5;
+      } else if(championname.includes("Master") || championname === "Yi") {
+        data = 11;
+      } else if(championname.includes("Mundo")) {
+        data = 36;
+      } else if(championname.includes("Twisted") || championname.includes("Fate") || championname === "TF") {
+        data = 4;
+      } else if(championname.includes("Rek")) {
+        data = 421;
+      }
     }
   });
  });
