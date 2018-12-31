@@ -324,6 +324,7 @@ function getChampionID(championName, cb) {
       } else if(championname.includes("Nunu") || championname.includes("Willump")) { // probably not required but covering an extra base here since he's now named "Nunu & Willump"
         data = 20;
       }
+      // may add some more catches for nicknames in the future, just getting a standard working version for now
     }
   });
  });
