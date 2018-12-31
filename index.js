@@ -315,6 +315,14 @@ function getChampionID(championName, cb) {
         data = 4;
       } else if(championname.includes("Rek")) {
         data = 421;
+      } else if(championname.includes("Wu")) {
+        data = 62; // not spaced or a name with an apostrophe, but Wukong is internally known in Riot's database as "MonkeyKing" so this requires more specificity
+      } else if(championname.includes("Cho")) {
+        data = 31;
+      } else if(championname === "Velkoz" || championname === "Vel" || championname === "velkoz") { // using exact matches again because "vel" also appears in Evelynn's name
+        data = 161;
+      } else if(championname.includes("Nunu") || championname.includes("Willump")) { // probably not required but covering an extra base here since he's now named "Nunu & Willump"
+        data = 20;
       }
     }
   });
