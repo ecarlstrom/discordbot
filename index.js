@@ -13,6 +13,7 @@ const fs = require('fs');
 const gm = require('gm');
 const request = require('request');
 const urlencode = ('urlencode');
+const roundTo = require('round-to');
 
 // more to come as this is set up
 /////////////////////////////////////////
@@ -337,4 +338,15 @@ function getChampionID(championName, cb) {
     }
   });
  });
+}
+
+function matchInfo(matchObject, summonerObject, cb) {
+  let placeholder = matchObject.queue;
+  let gametype = queues[placeholder];
+  // placeholder then gets the type of map that has been queued for:
+  placeholder = matchObject.mapid;
+  let map = mapname[placeholder];
+  let matchid = matchObject.gameid;
+  let time = matchObject.gametime;
+  let ms = (new Date).getTime();
 }
