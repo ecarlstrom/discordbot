@@ -403,5 +403,14 @@ function matchInfo(matchObject, summonerObject, cb) {
     }
   }
 
-  
+  // general match information
+  matchObject = {
+    'gametype': gametype,
+    'map': map,
+    'time': time,
+    'blueplayers': blueplayers,
+    'redplayers': redplayers,
+    'team': team
+  }
+
 }
