@@ -414,3 +414,7 @@ function matchInfo(matchObject, summonerObject, cb) {
   }
   // will add another function to get champions in the match and then call here, placeholder
 }
+
+function liveMatchChampion() {
+  
+}
