@@ -413,7 +413,13 @@ function matchInfo(matchObject, summonerObject, cb) {
     'redplayers': redplayers,
     'team': team
   }
-  // will add another function to get champions in the match and then call here, placeholder
+  liveMatchChampion(matchObject, function(err, newMatch) {
+    if(err) {
+      cb(err);
+    } else {
+      cb(false, newMatch, summonerObject);
+    }
+  });
 } // end matchInfo()
 
 function liveMatchChampion() {
