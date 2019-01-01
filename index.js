@@ -377,7 +377,7 @@ function matchInfo(matchObject, summonerObject, cb) {
 
   // gathers player information and sorts them onto the appropriate teams
   for(let i = 0; i < players.length; i++) {
-    let playerObject = [];
+    let playerObject = {};
     if(players[i].teamId === 100) {
       playerObject.summonername = players[i].summonerName;
       playerObject.championId = players[i].championId;
