@@ -458,6 +458,9 @@ function liveMatchChampion() {
           }
         }
       }
+
+      // leaving a placeholder here for future features.
+      // can handle runes, masteries, champion mastery, etc. in this function
     });
   });
 }
