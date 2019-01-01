@@ -469,4 +469,4 @@ function liveMatchChampion() {
       // can handle runes, masteries, champion mastery, etc. in this function
     });
   });
-}
+} // end liveMatchChampion()
