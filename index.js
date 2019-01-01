@@ -237,7 +237,7 @@ function getPlayerID(player, cb) {
       cb(false, summonerObject);
     }
   });
-}
+} // end getPlayerID()
 
 function getMatch(summonerObject, cb) {
   request(liveMatch + summonerObject.summonerid + "?api_key=" + lol_api, function(err, response, body) {
@@ -273,7 +273,7 @@ function getMatch(summonerObject, cb) {
       });
     }
   });
-}
+} // end getMatch()
 
 function getChampionID(championName, cb) {
   request(championID, function(error, response, body) {
@@ -338,7 +338,7 @@ function getChampionID(championName, cb) {
     }
   });
  });
-}
+} // end getChampionID()
 
 function matchInfo(matchObject, summonerObject, cb) {
   let placeholder = matchObject.queue;
@@ -413,8 +413,8 @@ function matchInfo(matchObject, summonerObject, cb) {
     'team': team
   }
   // will add another function to get champions in the match and then call here, placeholder
-}
+} // end matchInfo()
 
 function liveMatchChampion() {
-  
+
 }
