@@ -179,16 +179,7 @@ client.on('guildMemberRemove', (member) => {
 
 // League API and associated endpoints
 
-//
-// const url_info =
-// const url_champion =
-// const url_items =
-// const url_itempicture =
-// const url_summonerID =
-// const url_live =
-// const url_getchamp =
-// const url_getchampmastery =
-// const url_getrank =
+
 
 // will see how new runes work as opposed to getrunes/get masteries endpoints for the old setup
 
