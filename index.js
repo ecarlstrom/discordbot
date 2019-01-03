@@ -177,7 +177,7 @@ client.on('guildMemberRemove', (member) => {
 
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
-// League API and associated endpoints
+// League commands here, using the functions in the section below
 
 
 
