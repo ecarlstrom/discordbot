@@ -183,6 +183,9 @@ client.on('guildMemberRemove', (member) => {
 !build
 !game
 !player
+!runes?
+!masteries?
+!championinfo (tips, matchups, etc.)?
 */
 
 // placeholder - getPlayerID(), getMatch(), getChampionID(), etc.
