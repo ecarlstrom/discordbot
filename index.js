@@ -179,6 +179,12 @@ client.on('guildMemberRemove', (member) => {
 
 // League commands here, using the functions in the section below
 
+/* possible commands:
+!build
+!game
+!player
+*/
+
 // placeholder - getPlayerID(), getMatch(), getChampionID(), etc.
 
 // will see how new runes work as opposed to getrunes/get masteries endpoints for the old setup
