@@ -188,7 +188,7 @@ client.on('guildMemberRemove', (member) => {
 !championinfo (tips, matchups, etc.)?
 */
 
-// placeholder - getPlayerID(), getMatch(), getChampionID(), etc.
+// placeholder - getPlayerID(), getMatch(), getChampionID(), etc. - add in builds?
 
 // will see how new runes work as opposed to getrunes/get masteries endpoints for the old setup
 
