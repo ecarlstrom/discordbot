@@ -492,5 +492,33 @@ function championBuild(champID, argsTwo, cb) {
   } else if(role == 'MID' || role == 'MIDLANE') {
     role = 'MIDDLE';
   }
-  request(url) 
+  request(routeInfo, function(err, response, body) {
+    requesterror(routeInfo, response.statusCode, function(err) {
+      if(err) {
+        cb(err); // basic error handler
+      } else {
+        let dataJSON = JSON.parse(response.body);
+        let champObject = {};
+        let notfound = true;
+
+        if(role == "") {
+          for(var key in dataJSON) {
+            if(dataJSON[key].championId == champid) {
+              champObject = dataJSON[key];
+              notfound = false;
+              break;
+            }
+          }
+        } else {
+          for(var key in dataJSON) {
+            if(dataJSON[key].championId == champid && dataJSON.role == role) {
+              champObject = dataJSON[key];
+              notfound = false;
+              break;
+            }
+          }
+        }
+      }
+    })
+  }
 }
