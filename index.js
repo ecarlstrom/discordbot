@@ -222,7 +222,7 @@ const liveMatch = "https://na1.api.riotgames.com/lol/spectator/v3/active-games/b
 const playerID = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"; // constant path to retrieve summoner names (player names)
 const championID = "https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=false&api_key=" + lol_api;
 const getChampion = "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json";
-
+const routeInfo = 'http://api.champion.gg/v2/champions?limit=200&champData=hashes,firstitems,summoners,skills,finalitemshashfixed,masterieshash&api_key=' + champggToken;
 ///// League API functions
 
 function getPlayerID(player, cb) {
@@ -491,5 +491,6 @@ function championBuild(champID, argsTwo, cb) {
     role = 'DUO_SUPPORT';
   } else if(role == 'MID' || role == 'MIDLANE') {
     role = 'MIDDLE';
-  } 
+  }
+  request(url) 
 }
