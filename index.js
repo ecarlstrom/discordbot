@@ -477,3 +477,19 @@ function liveMatchChampion() {
     });
   });
 } // end liveMatchChampion()
+
+// get build information for a specific champion
+function championBuild(champID, argsTwo, cb) {
+  console.log('Parsing build data.');
+  // handling Riot naming conventions here, the following line is required because their internal role data is uppercase
+  let role = argsTwo.slice(1).join('_').toUpperCase
+  // these lines handle the three roles that are called different things internally and externally
+  // jungle/top are the same but in uppercase
+  if(role == 'ADC' || role == 'AD' || role == 'DUOCARRY') {
+    role = 'DUO_CARRY';
+  } else if(role = 'SUPPORT' || role == 'SUPP' || role == 'DUO_SUPPORT') {
+    role = 'DUO_SUPPORT';
+  } else if(role == 'MID' || role == 'MIDLANE') {
+    role = 'MIDDLE';
+  } 
+}
