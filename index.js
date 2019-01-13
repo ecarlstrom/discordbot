@@ -521,4 +521,4 @@ function championBuild(champID, argsTwo, cb) {
       }
     })
   }
-}
+} // end championBuild()
