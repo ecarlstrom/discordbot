@@ -224,7 +224,7 @@ const championID = "https://na1.api.riotgames.com/lol/static-data/v3/champions?l
 const getChampion = "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json";
 const routeInfo = 'http://api.champion.gg/v2/champions?limit=200&champData=hashes,firstitems,summoners,skills,finalitemshashfixed,masterieshash&api_key=' + champggToken;
 ///// League API functions
-
+// placeholder 
 function getPlayerID(player, cb) {
   request(playerID + urlencode(summoner) + "?api_key=" + lol_api, function(error, response,body) {
     if(err) {
