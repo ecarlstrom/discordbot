@@ -525,4 +525,4 @@ function championBuild(champID, argsTwo, cb) {
 } // end championBuild()
 
 // computer fixed, testing with commit (now correct)
-// will work on bot this weekend, busy with CS stuff the next few days
+// can start doing some actual work on this tomorrow night
