@@ -526,3 +526,4 @@ function championBuild(champID, argsTwo, cb) {
 
 // computer fixed, testing with commit (now correct)
 // can start doing some actual work on this tomorrow night
+// still finishing Lambda work, bot work hopefully tomorrow
