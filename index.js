@@ -524,5 +524,4 @@ function championBuild(champID, argsTwo, cb) {
   }
 } // end championBuild()
 
-// computer fixed, testing with commit (now correct)
 // can start doing some actual work on this Saturday night, project week almost over
