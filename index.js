@@ -526,4 +526,4 @@ function championBuild(champID, argsTwo, cb) {
 
 // can start doing some actual work on this Saturday night, project week almost over
 // Riot API has now been changed
-// 3/9/19 -- still trying to figure out how to access and interact with new API
+// 6/19/2019 -- finally back in the 20th century with Internet and house both fixed, we can finally start working on this (and anything else) again!
