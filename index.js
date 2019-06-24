@@ -528,3 +528,4 @@ function championBuild(champID, argsTwo, cb) {
 // Riot API has now been changed
 // 6/19/2019 -- finally back in the 20th century with Internet and house both fixed, we can finally start working on this (and anything else) again!
 // 6/22/2019 -- re-familiarizing myself with codebase and Riot API changes which have seemingly continued for a little while
+// 6/23/2019 -- music bot work starting
