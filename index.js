@@ -150,28 +150,28 @@ client.on('message', async (message) => {
 
 //////// testing out some guild-related features to familiarize myself with the issues the voice channel permissions code might be having //////////
 
-create a guild (limited to bots with < 10 guilds for now)
+// create a guild (limited to bots with < 10 guilds for now)
 
-client.on('message', (message) => {
+// client.on('message', (message) => {
 
-  if(message.content === (prefix + 'guildtest')) {
-    async function createGuild(client, message) {
-      try {
-        const guild = await client.user.createGuild('Test Guild', 'hello');
-        const defaultChannel = guild.channels.find(channel => channel.permissionsFor(guild.me).has("SEND_MESSAGES"));
-        const invite = await defaultChannel.createInvite();
-        await message.author.send(invite.url);
-        const role = await guild.createRole({ name: 'Test Role', permissions: ['ADMINISTRATOR'] });
-        await message.author.send(role.id);
-      } catch(err) {
-        console.error(err);
-      }
-    }
+//   if(message.content === (prefix + 'guildtest')) {
+//     async function createGuild(client, message) {
+//       try {
+//         const guild = await client.user.createGuild('Test Guild', 'hello');
+//         const defaultChannel = guild.channels.find(channel => channel.permissionsFor(guild.me).has("SEND_MESSAGES"));
+//         const invite = await defaultChannel.createInvite();
+//         await message.author.send(invite.url);
+//         const role = await guild.createRole({ name: 'Test Role', permissions: ['ADMINISTRATOR'] });
+//         await message.author.send(role.id);
+//       } catch(err) {
+//         console.error(err);
+//       }
+//     }
 
-    createGuild(client, message);
-    message.member.addRole('<ROLE>');
-  }
-})
+//     createGuild(client, message);
+//     message.member.addRole('<ROLE>');
+//   }
+// });
 
 /////////////////////////////// ***** MUSIC BOT ***** ///////////////////////////////
 
