@@ -177,7 +177,7 @@ client.on('message', (message) => {
 
 // 6/29/2019 - work beginning
 
-
+// set up file structure for music bot features
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
 // League commands here, using the functions in the section below
