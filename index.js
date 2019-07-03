@@ -223,6 +223,28 @@ client.reload = command => {
   });
 };
 
+// elevation command to control elevated bot permissions for users 
+
+client.elevation = message => {
+  let permLevel = 0;
+  if(message.author.id === config.owner) return permLevel = 10; // for bot owner (hi)/global admin
+  if(!message.guild) return permLevel;
+
+  if(message.guild) {
+    // standard mod permissions
+    let moderator = message.guild.roles.find('name', config.modRole); // modRole to be defined in corresponding file
+    if(moderator && message.member.roles.has(moderator.id)) permLevel = 2;
+    // supermod permissions
+    let superModerator = message.guild.roles.find('name', config.superModRole);
+    if(superModerator && message.member.roles.has(superModerator.id)) permLevel = 3;
+    // general (non-global for now?) admin permissions
+    let adminGeneral = message.guild.roles.find('name', config.adminRole);
+    if(adminGeneral && message.member.roles.has(adminGeneral.id)) permLevel = 4;
+    // permissions for guild owners (might undo this, adding for right now)
+    if(message.author.id === message.guild.owner.id) permLevel = 5;
+  }
+  return permLevel;
+}
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
 // League commands here, using the functions in the section below
