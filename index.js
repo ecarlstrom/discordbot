@@ -202,8 +202,26 @@ fs.readdir('./commands/', (err, files) => {
   });
 }); // will be updated accordingly when comamnds directory is implemented, but this is the basic working version
 
+client.reload = command => {
+  return new Promise((res, rej) => {
+    try {
+      delete require.cache[require.res(`./commands/${command}`)];
+      let cmd = require(`./commands/${command}`);
+      client.commands.delete(command);
+      client.aliases.forEach((cmd, alias) => {
+        if(cmd === command) client.aliases.delete(alias);
+      });
 
-
+      client.commands.set(command, cmd);
+      cmd.conf.aliases.forEach(alias => {
+        client.aliases.set(alias, cmd.help.name);
+      });
+      res();
+    } catch(e) {
+      rej(e);
+    }
+  });
+};
 
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
