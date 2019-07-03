@@ -178,9 +178,33 @@ client.on('message', (message) => {
 
 /////////////////////////////// ***** MUSIC BOT ***** ///////////////////////////////
 
-// 6/29/2019 - work beginning
+// basic collections for commands and other bot features
+const log = mesage => {
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
+};
 
-// finalized file structure for music bot features
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
+client.queues = new Discord.Collection();
+
+fs.readdir('./commands/', (err, files) => {
+  if(err) {
+    console.error(err);
+  }
+  log(`Loading current queue of ${files.length} commands.`);
+  files.forEach(file => {
+    let props = require(`./commands/${file}`);
+    log(`Loading requested command: ${props.help.name}. `);
+    client.commands.set(props.help.name, props);
+    props.conf.aliases.forEach(alias => {
+      client.aliases.set(alias, props.help.name);
+    });
+  });
+}); // will be updated accordingly when comamnds directory is implemented, but this is the basic working version
+
+
+
+
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
 // League commands here, using the functions in the section below
