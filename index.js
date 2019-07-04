@@ -292,7 +292,26 @@ exports.run = async(client, message, args) => {
     return message.channel.sendMessage(`\`Error: ${e}\``);
   }
 
-  
+  // can change this bit later, setting initial max time to 15 minutes (900s)
+  if(message.author.permLevel < 2 && parseInt(info.durationSeconds) > 900) {
+    return message.reply('Sorry, song requests cannot exceed 15 minutes! 🤠').catch(console.error);
+  }
+
+  let time = parseInt(info.durationSeconds, 10);
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  if(seconds < 10) seconds = '0' + seconds; //formatting
+
+  client.queues(get.message.guild.id).queue.push({
+    url: `https://www.youtube.com/watch?v=${info.id}`,
+    id: info.id,
+    channName: info.channel.title,
+    songTitle: info.title,
+    playTime: `${minutes}:${seconds}`,
+    playTimeSeconds: info.durationSeconds,
+    requester: message.guild.member(message.author).displayName,
+    requesterIcon: message.author.avatarURL
+  });
 }
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
