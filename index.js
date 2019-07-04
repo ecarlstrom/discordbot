@@ -251,6 +251,23 @@ exports.run = async(client, message, args) => {
   if(!song.length) {
     return message.reply('Please specify a Youtube URL or a search term! 🤠');
   }
+
+  const voiceChannel = message.member.voiceChannel ? message.member.voiceChannel : (message.guild.voiceConnection ? message.guild.voiceConnection.channel : null);
+
+  if(!voice || (!message.member.voiceChannel && message.author.permLevel < 2)) {
+    return message.reply('Please enter a voice channel! 🤠');
+  }
+
+  if(!client.queues.has(message.guild.id)) {
+    let first = true;
+    client.queues.set(message.guild.id, {
+      dispatcher: null,
+      queue: [],
+      connection: null,
+      position: -1
+    });
+    await voiceChannel.join();
+  }
 }
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
