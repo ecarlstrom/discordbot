@@ -245,6 +245,13 @@ client.elevation = message => {
   }
   return permLevel;
 }
+
+exports.run = async(client, message, args) => {
+  let song = args.join(' ');
+  if(!song.length) {
+    return message.reply('Please specify a Youtube URL or a search term! 🤠');
+  }
+}
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
 // League commands here, using the functions in the section below
