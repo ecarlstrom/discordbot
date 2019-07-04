@@ -279,7 +279,11 @@ exports.run = async(client, message, args) => {
     }
   })();
 
-  
+  if(!id) {
+    // looks for the proper video in the event of no specific ID and assigns it
+    let results = await youtube.searchVideos(song, 4);
+    id = results[0].id;
+  }
 }
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
