@@ -103,3 +103,9 @@ exports.run = async(client, message, args) => {
       aliases: [],
       permLevel: 0
   };
+
+  exports.help = {
+      name: 'play',
+      description: 'Plays the selected song from Youtube.',
+      usage: 'play (Youtube URL or search term)'
+  };
