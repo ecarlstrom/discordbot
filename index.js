@@ -312,6 +312,19 @@ exports.run = async(client, message, args) => {
     requester: message.guild.member(message.author).displayName,
     requesterIcon: message.author.avatarURL
   });
+
+  if(firstSong) {
+    playNext(message);
+  } else {
+    embed
+      .setTitle(`**${info.title}** (${minutes}:${seconds}) added to queue.`)
+      .setColor(#5142f5) // testing color
+      .setFooter(`Requested by ${message.guild.member(message.author).displayName}`, message.author.avatarURL)
+      .setImage(`https://i.ytimg.com/vi/${info.id}/mqdefault.jpg`)
+      .setTimestamp()
+      .setURL(`https://www.youtube.com/watch?v=${info.id}`);
+
+  }
 }
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
