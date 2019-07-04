@@ -80,6 +80,7 @@ exports.run = async(client, message, args) => {
       embed
         .setTitle(`**${info.title}** (${minutes}:${seconds}) added to queue.`)
         .setColor(OxDD2825) // testing color
+        // self-note: colorbook.io
         .setFooter(`Requested by ${message.guild.member(message.author).displayName}`, message.author.avatarURL)
         .setImage(`https://i.ytimg.com/vi/${info.id}/mqdefault.jpg`)
         .setTimestamp()
@@ -95,3 +96,10 @@ exports.run = async(client, message, args) => {
   };
   
   // file exports
+
+  exports.conf = {
+      enabled: true,
+      guildOnly: false,
+      aliases: [],
+      permLevel: 0
+  };
