@@ -274,12 +274,12 @@ exports.run = async(client, message, args) => {
 
     if (/^(www\.)?youtube\.com/.test(parsed.hostname)) {
       return parsed.query.v;
-    // } else if (/^(www\.)?youtu\.be/.test(parsed.hostname)) {
-    //   return parsed.pathname.slice(1);
-    // }
+    } else if (/^(www\.)?youtu\.be/.test(parsed.hostname)) {
+      return parsed.pathname.slice(1);
+    }
   })();
 
-
+  
 }
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
