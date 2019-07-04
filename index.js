@@ -323,9 +323,17 @@ exports.run = async(client, message, args) => {
       .setImage(`https://i.ytimg.com/vi/${info.id}/mqdefault.jpg`)
       .setTimestamp()
       .setURL(`https://www.youtube.com/watch?v=${info.id}`);
-
+    if(embedCheck(message)) {
+      message.channel.sendEmbed(embed, '', {
+        disableEveryone: true
+      }).catch(console.error);
+    } else {
+      message.channel.sendMessage(`**${info.title}** (${minutes}:${seconds}) added to queue.`);
+    }
   }
-}
+};
+
+
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
 // League commands here, using the functions in the section below
