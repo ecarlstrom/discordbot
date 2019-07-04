@@ -284,6 +284,15 @@ exports.run = async(client, message, args) => {
     let results = await youtube.searchVideos(song, 4);
     id = results[0].id;
   }
+
+  let info;
+  try {
+    info = await youtube.getVideo(id);
+  } catch (e) {
+    return message.channel.sendMessage(`\`Error: ${e}\``);
+  }
+
+  
 }
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
