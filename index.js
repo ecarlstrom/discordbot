@@ -333,6 +333,14 @@ exports.run = async(client, message, args) => {
   }
 };
 
+// file exports
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
 
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
