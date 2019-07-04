@@ -268,6 +268,18 @@ exports.run = async(client, message, args) => {
     });
     await voiceChannel.join();
   }
+
+  let id = (() => {
+    const parsed = parse(song, true);
+
+    if (/^(www\.)?youtube\.com/.test(parsed.hostname)) {
+      return parsed.query.v;
+    } else if (/^(www\.)?youtu\.be/.test(parsed.hostname)) {
+      return parsed.pathname.slice(1);
+    }
+  })();
+
+  
 }
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
