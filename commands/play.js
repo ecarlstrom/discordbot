@@ -15,7 +15,7 @@ exports.run = async(client, message, args) => {
   
     const voiceChannel = message.member.voiceChannel ? message.member.voiceChannel : (message.guild.voiceConnection ? message.guild.voiceConnection.channel : null);
   
-    if(!voice || (!message.member.voiceChannel && message.author.permLevel < 2)) {
+    if(!voiceChannel || (!message.member.voiceChannel && message.author.permLevel < 2)) {
       return message.reply('Please enter a voice channel! 🤠');
     }
   
