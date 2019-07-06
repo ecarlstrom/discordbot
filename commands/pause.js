@@ -12,3 +12,16 @@ exports.run = async (client, message) => {
     await message.channel.sendMessage('Pausing!');
     client.queues.get(message.guild.id).dispatcher.pause();
 };
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['p'],
+    permlevel: 0
+};
+
+exports.help = {
+    name: 'pause',
+    description: 'Pauses playback.',
+    usage: 'Pause/p'
+};
