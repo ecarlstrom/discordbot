@@ -12,7 +12,8 @@
     "round-to": "^3.0.0",
     "simple-youtube-api": "^5.2.1",
     "url": "^0.11.0",
-    "urlencode": "^1.1.0"
+    "urlencode": "^1.1.0",
+    "ytdl-core": "^0.29.2"
   },
   "scripts": {
     "start": "nodemon server.js",

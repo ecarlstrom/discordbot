@@ -1,1 +1,3 @@
-// placeholder for playNext.js so new folders can be committed
+const Discord = require('discord.js');
+const embedCheck = require('./emberPerms.js');
+const yt = require('ytdl-core');
