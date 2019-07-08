@@ -13,3 +13,15 @@ exports.run = async (client, message) => {
     client.queues.get(message.guild.id).dispatcher.resume();
 };
 
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['r'],
+    permLevel: 0
+};
+
+exports.help = {
+    name: 'resume',
+    description: 'Resumes playback after it has been paused.',
+    usage: 'resume/r'
+};
