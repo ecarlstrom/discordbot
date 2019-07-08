@@ -18,3 +18,16 @@ exports.run = async (client, message, args) => {
     message.guild.voiceConnection.volume = (vol / 100);
     client.queues.get(message.guild.id).dispatcher.setVolume(vol / 100);
 };
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['vol', 'v'],
+    permLevel: 2
+};
+
+exports.help = {
+    name: 'volume',
+    description: 'Sets volume of playback.',
+    usage: 'volume/v/vol (value)'
+}
