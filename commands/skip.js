@@ -30,3 +30,15 @@ exports.run = async (client, message) => {
     });
 };
 
+exports.conf = {
+    enable: true,
+    guildOnly: false,
+    aliases: ['next'],
+    permLevel: 0
+};
+
+exports.help = {
+    name: 'skip',
+    description: 'Vote to skip current song.',
+    usage: 'skip'
+};
