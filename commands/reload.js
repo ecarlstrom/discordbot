@@ -22,3 +22,16 @@ exports.run = async (client, msg, params) => {
     }
     return x.edit(`Successfully reloaded ${command} command.`);
 };
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['rl'],
+    permLevel: 3 // this might change depending on server needs
+};
+
+exports.help = {
+    name: 'reload',
+    description: 'Reloads a given command file in the event of an error or update.',
+    usage: 'reload (commandname)'
+};
