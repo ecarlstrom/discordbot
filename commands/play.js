@@ -63,16 +63,16 @@ exports.run = async(client, message, args) => {
     let seconds = time % 60;
     if(seconds < 10) seconds = '0' + seconds; //formatting
   
-    client.queues(get.message.guild.id).queue.push({
-      url: `https://www.youtube.com/watch?v=${info.id}`,
-      id: info.id,
-      channName: info.channel.title,
-      songTitle: info.title,
-      playTime: `${minutes}:${seconds}`,
-      playTimeSeconds: info.durationSeconds,
-      requester: message.guild.member(message.author).displayName,
-      requesterIcon: message.author.avatarURL
-    });
+    // client.queues(get.message.guild.id).queue.push({
+    //   url: `https://www.youtube.com/watch?v=${info.id}`,
+    //   id: info.id,
+    //   channName: info.channel.title,
+    //   songTitle: info.title,
+    //   playTime: `${minutes}:${seconds}`,
+    //   playTimeSeconds: info.durationSeconds,
+    //   requester: message.guild.member(message.author).displayName,
+    //   requesterIcon: message.author.avatarURL
+    // });
   
     if(firstSong) {
       playNext(message);
