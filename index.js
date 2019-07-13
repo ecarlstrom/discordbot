@@ -99,11 +99,11 @@ client.on('message', (message) => {
 
 /////////////////////////////// ***** USER HANDLING ***** ///////////////////////////////
 
-includes features like greeting new users, kicking, banning, permission handling, etc.
+// includes features like greeting new users, kicking, banning, permission handling, etc.
 
-handles greeting of new users and removes users from the newUsers list if they leave while on it so the greeting
-is not addressed to an invalid user. This won't be necessary for small servers while the message triggers on
-each join, but for larger batches (i.e. newUsers[guild.id].size > 10) it will be useful.
+// handles greeting of new users and removes users from the newUsers list if they leave while on it so the greeting
+// is not addressed to an invalid user. This won't be necessary for small servers while the message triggers on
+// each join, but for larger batches (i.e. newUsers[guild.id].size > 10) it will be useful.
 
 const newUsers = [];
 // maybe test some sort of message trigger here?
