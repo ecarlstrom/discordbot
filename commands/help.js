@@ -15,3 +15,16 @@ exports.run = (client, message, args) => {
         }
     }
 };
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['h'],
+    permLevel: 0
+};
+
+exports.help = {
+    name: 'help',
+    description: 'Displays a list of commands.',
+    usage: 'help (command)'
+};
