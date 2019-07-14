@@ -16,4 +16,17 @@ exports.run = async (client, message) => {
 
         return message.channel.sendMessage(`Only \`${valid.join('`, `')}\` are valid, please use these!`).catch(console.error);
     });
-}
+
+    collector.on('end', async (collected, reason) => {
+        if(reason === 'kill') {
+            await client.destroy();
+            process.exit();
+        } else if(reason === 'time') {
+            return message.channel.sendMessage('Reboot timed out!');
+        } else if(reason === 'abort') {
+            return message.channel.sendMessage('Aborting reboot.');
+        }
+
+        console.error('Invalid reason for reboot!');
+    });
+};
