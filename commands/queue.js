@@ -33,3 +33,16 @@ exports.run = (client, message) => {
         message.channel.sendMessage(`Currently playing *${currentItem.songTitle}* (${currentItem.playTime}) requested by **${currentItem.requester}**\n\n`); // maybe add current queue information here?
     }
 };
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['playlist'], // see if 'q' is already taken
+    permLevel: 0
+};
+
+exports.help = {
+    name: 'queue',
+    description: 'Displays current queue of songs.', // update if "currently playing" is not changed
+    usage: 'queue'
+};
