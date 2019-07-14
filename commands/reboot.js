@@ -30,3 +30,16 @@ exports.run = async (client, message) => {
         console.error('Invalid reason for reboot!');
     });
 };
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['rb'],
+    permLevel: 10
+};
+
+exports.help = {
+    name: 'reboot',
+    description: 'Reboots the bot.',
+    usage: 'reboot'
+};
