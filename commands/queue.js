@@ -21,5 +21,15 @@ exports.run = (client, message) => {
         .setThumbnail(`https://i.tyimg.com/vi/${current.id}/mqdefault.jpg`)
         .setTimestamp()
         .setURL(currentItem.url);
-
-}
+    
+    if(embedCheck(message)) {
+        for(let i = 0; i < queue.length && i < 5; i++) {
+            embed.addField(`🎧 ${queue[i].songTitle.substring(0, 50)} (${queue[i].playTime})`, `🤠 Requested by **${queue[i].requester}**`);
+        }
+        message.channel.sendEmbed(embed, '', {
+            disableEveryone: true
+        }).catch(console.error);
+    } else {
+        message.channel.sendMessage(`Currently playing *${currentItem.songTitle}* (${currentItem.playTime}) requested by **${currentItem.requester}**\n\n`); // maybe add current queue information here?
+    }
+};
