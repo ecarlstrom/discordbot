@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "child_process": "^1.0.2",
     "discord": "^0.8.2",
     "discord.js": "^11.4.2",
     "dotenv": "^6.1.0",
@@ -8,6 +9,7 @@
     "gm": "^1.23.1",
     "http": "^0.0.0",
     "nodemon": "^1.18.5",
+    "path": "^0.12.7",
     "request": "^2.88.0",
     "round-to": "^3.0.0",
     "simple-youtube-api": "^5.2.1",
