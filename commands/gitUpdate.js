@@ -30,3 +30,16 @@ exports.run = async(client, message, args) => {
         return reboot(client, message, args);
     });
 };
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: [],
+    permLevel: 10
+};
+
+exports.help = {
+    name: 'git',
+    description: 'Updates the bot based on Git repo changes.',
+    usage: 'git'
+};
