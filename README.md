@@ -9,3 +9,5 @@ Discord Bot (name TBD)
 * Future plans
 * Use
 * Feedback
+
+* 7/28/2019 -- working on behind the scenes (non-committed) config stuff
