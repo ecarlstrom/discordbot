@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const embedCheck = require('./emberPerms.js');
+const embedCheck = require('./embedPerms.js');
 const yt = require('ytdl-core');
 
 const playNext = (message) => {
