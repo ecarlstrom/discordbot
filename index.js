@@ -179,7 +179,7 @@ client.on('message', (message) => {
 /////////////////////////////// ***** MUSIC BOT ***** ///////////////////////////////
 
 // basic collections for commands and other bot features
-const log = mesage => {
+const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
 
