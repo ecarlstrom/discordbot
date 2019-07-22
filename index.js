@@ -19,6 +19,8 @@ const urlencode = ('urlencode');
 const roundTo = require('round-to');
 
 // more to come as this is set up
+
+require('./util/eventLoader')(client);
 /////////////////////////////////////////
 client.login(token);
 

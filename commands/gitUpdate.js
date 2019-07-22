@@ -8,7 +8,7 @@ const {
 
 const {
     run: reboot
-} = require('reboot');
+} = require('./reboot');
 const config = require('../config.json');
 
 exports.run = async(client, message, args) => {
