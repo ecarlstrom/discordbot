@@ -606,3 +606,4 @@ client.elevation = message => {
 
 // 7/22/2019 -- power has been out for the last 10 hours, not much done today
 // 7/22/2019 -- merge complete
+// 7/23/2019 - still no power
