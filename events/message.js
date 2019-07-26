@@ -25,3 +25,5 @@ module.exports = async message => {
         cmd.run(client, message, params, perms);
     }
 };
+
+// working out an issue in this file 7/25
