@@ -34,7 +34,7 @@ const playNext = (message) => {
         if(currentQueue.position + 1 < currentQueue.queue.length) {
             playNext(message);
         } else {
-            message.channel.sendMessage('No morer songs in queue, add some! 🤠');
+            message.channel.sendMessage('No more songs in queue, add some! 🤠');
             message.guild.voiceConnection.disconnect();
             message.client.queues.delete(message.guild.id);
         }
