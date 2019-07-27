@@ -7,8 +7,8 @@ const YT_API = require('simple-youtube-api');
 const { parse } = require('url');
 const youtube = new YT_API(config.youtubeAPIKey);
 
-exports.run = async(client, message, args) => {
-    let song = args.join(' ');
+exports.run = async (client, message, args) => {
+    const song = args.join(' ');
     if(!song.length) {
       return message.reply('Please specify a Youtube URL or a search term! 🤠');
     }
@@ -20,7 +20,7 @@ exports.run = async(client, message, args) => {
     }
   
     if(!client.queues.has(message.guild.id)) {
-      let first = true;
+      var first = true;
       client.queues.set(message.guild.id, {
         dispatcher: null,
         queue: [],

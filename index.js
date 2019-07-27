@@ -250,9 +250,9 @@ client.elevation = message => {
   return permLevel;
 };
 
-process.on('unhandledRejection', err => {
-  console.error('Uncaught Promise: \n' + err);
-});
+// process.on('unhandledRejection', err => {
+//   console.error('Uncaught Promise: \n' + err);
+// });
 
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
