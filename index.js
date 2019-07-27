@@ -246,7 +246,11 @@ client.elevation = message => {
     if(message.author.id === message.guild.owner.id) permLevel = 5;
   }
   return permLevel;
-}
+};
+
+process.on('unhandledRejection', err => {
+  console.error('Uncaught Promise: \n' + err);
+});
 
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
