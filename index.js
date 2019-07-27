@@ -23,6 +23,7 @@ const roundTo = require('round-to');
 require('./util/eventLoader')(client);
 /////////////////////////////////////////
 client.login(token);
+client.login(config.token).catch(console.error);
 
 client.on('ready', () => {
   console.log('Bot connected!');
@@ -181,6 +182,7 @@ client.on('message', (message) => {
 /////////////////////////////// ***** MUSIC BOT ***** ///////////////////////////////
 
 // basic collections for commands and other bot features
+
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
@@ -234,13 +236,13 @@ client.elevation = message => {
 
   if(message.guild) {
     // standard mod permissions
-    let moderator = message.guild.roles.find('name', config.modRole); // modRole to be defined in corresponding file
+    let moderator = message.guild.roles.find(role => role.name === config.modRole); // modRole to be defined in corresponding file
     if(moderator && message.member.roles.has(moderator.id)) permLevel = 2;
     // supermod permissions
-    let superModerator = message.guild.roles.find('name', config.superModRole);
+    let superModerator = message.guild.roles.find(role => role.name === config.superModRole);
     if(superModerator && message.member.roles.has(superModerator.id)) permLevel = 3;
     // general (non-global for now?) admin permissions
-    let adminGeneral = message.guild.roles.find('name', config.adminRole);
+    let adminGeneral = message.guild.roles.find(role => role === config.adminRole);
     if(adminGeneral && message.member.roles.has(adminGeneral.id)) permLevel = 4;
     // permissions for guild owners (might undo this, adding for right now)
     if(message.author.id === message.guild.owner.id) permLevel = 5;
