@@ -74,7 +74,7 @@ exports.run = async(client, message, args) => {
       requesterIcon: message.author.avatarURL
     });
   
-    if(firstSong) {
+    if(first) {
       playNext(message);
     } else {
       embed
