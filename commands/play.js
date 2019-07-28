@@ -8,7 +8,7 @@ const { parse } = require('url');
 const youtube = new YT_API(config.youtubeAPIKey);
 
 exports.run = async (client, message, args) => {
-    const song = args.join(' ');
+    let song = args.join(' ');
     if(!song.length) {
       return message.reply('Please specify a Youtube URL or a search term! 🤠');
     }
@@ -34,8 +34,10 @@ exports.run = async (client, message, args) => {
       const parsed = parse(song, true);
   
       if (/^(www\.)?youtube\.com/.test(parsed.hostname)) {
+        console.log("ID case 1");
         return parsed.query.v;
       } else if (/^(www\.)?youtu\.be/.test(parsed.hostname)) {
+        console.log("ID case 2");
         return parsed.pathname.slice(1);
       }
     })();
@@ -48,8 +50,11 @@ exports.run = async (client, message, args) => {
   
     let info;
     try {
+      console.log("Trying to retrieve video information.");
       info = await youtube.getVideo(id);
+      console.log("Successfully retrieved!");
     } catch (e) {
+      console.log("Could not retrieve video information.");
       return message.channel.sendMessage(`\`Error: ${e}\``);
     }
   
