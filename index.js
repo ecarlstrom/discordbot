@@ -22,6 +22,10 @@ const roundTo = require('round-to');
 
 require('./util/eventLoader')(client);
 /////////////////////////////////////////
+
+////////// WEATHER DEPENDENCIES //////////
+
+
 client.login(token);
 client.login(config.token).catch(console.error);
 
