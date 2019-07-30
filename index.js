@@ -25,6 +25,7 @@ require('./util/eventLoader')(client);
 
 ////////// WEATHER DEPENDENCIES //////////
 
+const weather = require('weather-js');
 
 client.login(token);
 client.login(config.token).catch(console.error);
