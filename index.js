@@ -38,6 +38,7 @@ client.on('ready', () => {
 // some general message rules
 
 const prefix = process.env.prefix;
+const weatherPrefix = config.weatherPrefix;
 
 client.on('message', (message) => {
 
@@ -258,6 +259,32 @@ client.elevation = message => {
 // process.on('unhandledRejection', err => {
 //   console.error('Uncaught Promise: \n' + err);
 // });
+
+/////////////////////////////// ***** WEATHER ***** ///////////////////////////////
+
+client.on('message', (message) => {
+
+  let weatherMessageCaps = message.content.toUpperCase();
+  let sender = message.author;
+  let contents = message.content.slice(prefix.length).split(' ');
+  let args = contents.slice(1);
+
+  if(message.content.startsWith(weatherPrefix)) {
+    // can offer different degree types if desired
+    weather.find({search: args.join(' '), degreeType: 'F'}, function(err, result) {
+      if(err) {
+        message.channel.send(err);
+      }
+
+      // basic version for now
+      message.channel.send(JSON.stringify(result[0].current, null, 2));
+    });
+  }
+
+});
+
+
+
 
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
