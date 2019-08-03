@@ -284,7 +284,7 @@ client.on('message', (message) => {
       let weatherOutput = JSON.parse(JSON.stringify(result[0].current, null, 2));
       let weatherArray = [];
       weatherArray.push({
-        temperature: result[0].temperature,
+        temperature: result.temperature,
       //   skycode: .skycode,
       //   skytext: result.skytext,
       //   date: result.date,
@@ -302,7 +302,8 @@ client.on('message', (message) => {
       message.channel.send(weatherOutput.temperature);
       if(weatherOutput) {
         const embed = new Discord.RichEmbed()
-          .setTitle(`Temperature: ${weatherOutput.temperature}`)
+          .setTitle(`Current weather conditions in ${args}: `)
+          // .setTitle(`Temperature: ${weatherOutput.temperature}`)
         
         message.channel.send({embed});
       }
