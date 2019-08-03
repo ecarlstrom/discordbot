@@ -30,6 +30,8 @@ const weather = require('weather-js');
 client.login(token);
 client.login(config.token).catch(console.error);
 
+//////////////////////////////////////////
+
 client.on('ready', () => {
   console.log('Bot connected!');
   console.log(`${client.user.username} ready for use.`);
@@ -262,6 +264,8 @@ client.elevation = message => {
 
 /////////////////////////////// ***** WEATHER ***** ///////////////////////////////
 
+const weatherData = new Discord.Collection();
+
 client.on('message', (message) => {
 
   let weatherMessageCaps = message.content.toUpperCase();
@@ -277,6 +281,22 @@ client.on('message', (message) => {
       }
 
       // basic version for now
+      client.weatherData.get(message.content).push({
+        temperature: result.temperature,
+        skycode: result.skycode,
+        skytext: result.skytext,
+        date: result.date,
+        observationtime: result.observationtime,
+        observationpoint: result.observationpoint,
+        feelslike: result.feelslike,
+        humidity: result.humidity,
+        winddisplay: result.winddisplay,
+        day: result.day,
+        shortday: result.shortday,
+        windspeed: result.windspeed,
+        imageUrl: result.imageUrl
+      });
+      
       message.channel.send(JSON.stringify(result[0].current, null, 2));
     });
   }
