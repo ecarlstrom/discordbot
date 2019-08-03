@@ -276,7 +276,7 @@ client.on('message', (message) => {
   if(message.content.startsWith(weatherPrefix)) {
     // can offer different degree types if desired
     client.weatherData.set(message.content, {
-      weatherQueue: []
+      weatherInfo: []
     });
 
     weather.find({search: args.join(' '), degreeType: 'F'}, function(err, result) {
@@ -285,7 +285,7 @@ client.on('message', (message) => {
       }
 
       // basic version for now
-      client.weatherData.get(message.content).weatherQueue.push({
+      client.weatherData.get(message.content).weatherInfo.push({
         temperature: result.temperature,
         skycode: result.skycode,
         skytext: result.skytext,
@@ -301,7 +301,8 @@ client.on('message', (message) => {
         imageUrl: result.imageUrl
       });
       
-      message.channel.send(JSON.stringify(result[0].current, null, 2));
+      let weatherOutput = JSON.stringify(result[0].current, null, 2);
+      // if(!weatherOutput)
     });
   }
 
