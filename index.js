@@ -298,7 +298,7 @@ client.on('message', (message) => {
       //   windspeed: result.windspeed,
       //   imageUrl: result.imageUrl
       });
-      console.log(typeof(weatherOutput));
+      // console.log(typeof(weatherOutput));
       message.channel.send(weatherOutput.temperature);
       if(weatherOutput) {
         const embed = new Discord.RichEmbed()
