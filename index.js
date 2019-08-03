@@ -264,7 +264,7 @@ client.elevation = message => {
 
 /////////////////////////////// ***** WEATHER ***** ///////////////////////////////
 
-const weatherData = new Discord.Collection();
+client.weatherData = new Discord.Collection();
 
 client.on('message', (message) => {
 
@@ -281,7 +281,7 @@ client.on('message', (message) => {
       }
 
       // basic version for now
-      client.weatherData.get(message.content).push({
+      client.weatherData.get(message.content).queue.push({
         temperature: result.temperature,
         skycode: result.skycode,
         skytext: result.skytext,
