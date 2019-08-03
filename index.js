@@ -275,34 +275,37 @@ client.on('message', (message) => {
 
   if(message.content.startsWith(weatherPrefix)) {
     // can offer different degree types if desired
-    client.weatherData.set(message.content, {
-      weatherInfo: []
-    });
 
     weather.find({search: args.join(' '), degreeType: 'F'}, function(err, result) {
       if(err) {
         message.channel.send(err);
       }
-
-      // basic version for now
-      client.weatherData.get(message.content).weatherInfo.push({
-        temperature: result.temperature,
-        skycode: result.skycode,
-        skytext: result.skytext,
-        date: result.date,
-        observationtime: result.observationtime,
-        observationpoint: result.observationpoint,
-        feelslike: result.feelslike,
-        humidity: result.humidity,
-        winddisplay: result.winddisplay,
-        day: result.day,
-        shortday: result.shortday,
-        windspeed: result.windspeed,
-        imageUrl: result.imageUrl
+  
+      let weatherOutput = JSON.parse(JSON.stringify(result[0].current, null, 2));
+      let weatherArray = [];
+      weatherArray.push({
+        temperature: result[0].temperature,
+      //   skycode: .skycode,
+      //   skytext: result.skytext,
+      //   date: result.date,
+      //   observationtime: result.observationtime,
+      //   observationpoint: result.observationpoint,
+      //   feelslike: result.feelslike,
+      //   humidity: result.humidity,
+      //   winddisplay: result.winddisplay,
+      //   day: result.day,
+      //   shortday: result.shortday,
+      //   windspeed: result.windspeed,
+      //   imageUrl: result.imageUrl
       });
-      
-      let weatherOutput = JSON.stringify(result[0].current, null, 2);
-      // if(!weatherOutput)
+      console.log(typeof(weatherOutput));
+      message.channel.send(weatherOutput.temperature);
+      if(weatherOutput) {
+        const embed = new Discord.RichEmbed()
+          .setTitle(`Temperature: ${weatherOutput.temperature}`)
+        
+        message.channel.send({embed});
+      }
     });
   }
 
