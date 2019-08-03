@@ -275,13 +275,17 @@ client.on('message', (message) => {
 
   if(message.content.startsWith(weatherPrefix)) {
     // can offer different degree types if desired
+    client.weatherData.set(message.content, {
+      weatherQueue: []
+    });
+
     weather.find({search: args.join(' '), degreeType: 'F'}, function(err, result) {
       if(err) {
         message.channel.send(err);
       }
 
       // basic version for now
-      client.weatherData.get(message.content).queue.push({
+      client.weatherData.get(message.content).weatherQueue.push({
         temperature: result.temperature,
         skycode: result.skycode,
         skytext: result.skytext,
