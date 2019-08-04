@@ -324,14 +324,17 @@ client.on('message', (message) => {
         precip:
       } */
 
-      
-      message.channel.send(weatherOutput.temperature);
       if(weatherOutput) {
         const embed = new Discord.RichEmbed()
           .setTitle(`Current weather conditions for ${location.name}: `)
+          .setDescription(`Temperature of ${weatherOutput.temperature} degrees ${location.degreetype}.`)
+          .addBlankField(true)
+          .addField(`Sky conditions: ${weatherOutput.skytext}`,
+            `Wind at ${weatherOutput.winddisplay}`)
+          .addBlankField(true)
           .setFooter('Want a forecast instead? Use the !forecast command!')
-          .setThumbnail(`${weatherOutput.imageUrl}`);
-        
+          .setThumbnail(`${weatherOutput.imageUrl}`)
+          .setTimestamp();
         message.channel.send({embed});
       }
     });
