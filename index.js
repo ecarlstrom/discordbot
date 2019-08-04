@@ -280,11 +280,13 @@ client.on('message', (message) => {
       if(err) {
         message.channel.send(err);
       }
-  
+      
+      // weather-js should return an array of objects
+      // current{} contains current weather data, location{} is location information
       let weatherOutput = JSON.parse(JSON.stringify(result[0].current, null, 2));
-      let weatherArray = [];
-      weatherArray.push({
-        temperature: result.temperature,
+      let location = JSON.parse(JSON.stringify(result[0].location, null, 2));
+      // weatherArray.push({
+      //   temperature: result.temperature,
       //   skycode: .skycode,
       //   skytext: result.skytext,
       //   date: result.date,
@@ -297,12 +299,12 @@ client.on('message', (message) => {
       //   shortday: result.shortday,
       //   windspeed: result.windspeed,
       //   imageUrl: result.imageUrl
-      });
+      // });
       // console.log(typeof(weatherOutput));
       message.channel.send(weatherOutput.temperature);
       if(weatherOutput) {
         const embed = new Discord.RichEmbed()
-          .setTitle(`Current weather conditions in ${args}: `)
+          .setTitle(`Current weather conditions for ${location.name}: `)
           // .setTitle(`Temperature: ${weatherOutput.temperature}`)
         
         message.channel.send({embed});
