@@ -343,14 +343,14 @@ client.on('message', (message) => {
 
           if(temp >= 80) {
             embed.setColor(0xFF6700)
-          } else if(temp >= 60 || temp <= 79) {
+          } else if(temp >= 60 && temp <= 79) {
             embed.setColor(0xADFF2F)
           } else {
             embed.setColor(0x00FFFF)
           }
 
           // displays severe weather alerts if any, otherwise gives an all-clear
-          
+
           if(!location.alert) {
             embed.addField(`No weather alerts!`, `👍`)
             embed.addBlankField(true)
