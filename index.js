@@ -323,18 +323,29 @@ client.on('message', (message) => {
         shortday:
         precip:
       } */
-
+      
       if(weatherOutput) {
+        let temp = weatherOutput.temperature;
+        // console.log(temp);
+
         const embed = new Discord.RichEmbed()
           .setTitle(`Current weather conditions for ${location.name}: `)
-          .setDescription(`Temperature of ${weatherOutput.temperature} degrees ${location.degreetype}.`)
+          .setDescription(`Temperature of ${weatherOutput.temperature} degrees ${location.degreetype}, feels like ${weatherOutput.feelslike}.`)
           .addBlankField(true)
           .addField(`Sky conditions: ${weatherOutput.skytext}`,
             `Wind at ${weatherOutput.winddisplay}`)
           .addBlankField(true)
           .setFooter('Want a forecast instead? Use the !forecast command!')
           .setThumbnail(`${weatherOutput.imageUrl}`)
-          .setTimestamp();
+          .setTimestamp()
+          
+          if(!location.alert) {
+            embed.addField(`No weather alerts!`, `👍`)
+            embed.addBlankField(true)
+          } else {
+            embed.addField(`🚨 Local weather alert:`, `${location.alert} 🚨`)
+            embed.addBlankField(true)
+          }
         message.channel.send({embed});
       }
     });
