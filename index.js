@@ -285,27 +285,52 @@ client.on('message', (message) => {
       // current{} contains current weather data, location{} is location information
       let weatherOutput = JSON.parse(JSON.stringify(result[0].current, null, 2));
       let location = JSON.parse(JSON.stringify(result[0].location, null, 2));
-      // weatherArray.push({
-      //   temperature: result.temperature,
-      //   skycode: .skycode,
-      //   skytext: result.skytext,
-      //   date: result.date,
-      //   observationtime: result.observationtime,
-      //   observationpoint: result.observationpoint,
-      //   feelslike: result.feelslike,
-      //   humidity: result.humidity,
-      //   winddisplay: result.winddisplay,
-      //   day: result.day,
-      //   shortday: result.shortday,
-      //   windspeed: result.windspeed,
-      //   imageUrl: result.imageUrl
-      // });
-      // console.log(typeof(weatherOutput));
+      
+      /* location data {
+        name:
+        lat:
+        long:
+        timezone:
+        alert: (maybe add an alert conditional?)
+        degreetype:
+        imagerelativeurl:
+      }
+      console.log(typeof(weatherOutput));
+
+      current (weather) data {
+        temperature:
+        skycode:
+        skytext:
+        date:
+        observationtime:
+        observationpoint:
+        feelslike:
+        humidity:
+        winddisplay:
+        day:
+        shortday:
+        windspeed:
+        imageUrl (weather-related image such as sun, clouds, rain, etc.)
+      }
+
+      forecast (also an array of objects, one object per day) {
+        low:
+        high:
+        skycodeday:
+        skytextday:
+        date:
+        day:
+        shortday:
+        precip:
+      } */
+
+      
       message.channel.send(weatherOutput.temperature);
       if(weatherOutput) {
         const embed = new Discord.RichEmbed()
           .setTitle(`Current weather conditions for ${location.name}: `)
-          // .setTitle(`Temperature: ${weatherOutput.temperature}`)
+          .setFooter('Want a forecast instead? Use the !forecast command!')
+          .setThumbnail(`${weatherOutput.imageUrl}`);
         
         message.channel.send({embed});
       }
