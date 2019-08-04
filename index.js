@@ -41,6 +41,7 @@ client.on('ready', () => {
 
 const prefix = process.env.prefix;
 const weatherPrefix = config.weatherPrefix;
+const forecastPrefix = config.forecastPrefix;
 
 client.on('message', (message) => {
 
@@ -264,8 +265,6 @@ client.elevation = message => {
 
 /////////////////////////////// ***** WEATHER ***** ///////////////////////////////
 
-client.weatherData = new Discord.Collection();
-
 client.on('message', (message) => {
 
   let weatherMessageCaps = message.content.toUpperCase();
@@ -370,8 +369,38 @@ client.on('message', (message) => {
 
 });
 
-// forecasting
+// five-day forecast
 
+client.on('message', (message) => {
+
+  let forecastMessageCaps = message.content.toUpperCase();
+  let sender = message.author;
+  let contents = message.content.slice(prefix.length).split(' ');
+  let args = contents.slice(1);
+
+  if(message.content.startsWith(forecastPrefix)) {
+
+    weather.find({search: args.join(' '), degreeType: 'F'}, function(err, result) {
+      if(err) {
+        message.channel.send(err);
+      }
+
+      if(result === undefined || result.length === 0) {
+        message.channel.send(`🤠 Sorry, there are no results for your search term! 🤠`)
+        return;
+      } 
+     
+      let forecast = result[0].forecast;
+      let location = result[0].location;
+
+      if(forecast) {
+        message.channel.send(forecast);
+      }
+      
+  });
+}
+
+});
 
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
