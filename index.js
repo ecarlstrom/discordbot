@@ -370,7 +370,7 @@ client.on('message', (message) => {
 
 });
 
-// testing some formatting
+// forecasting
 
 
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
