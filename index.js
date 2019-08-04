@@ -280,14 +280,20 @@ client.on('message', (message) => {
       if(err) {
         message.channel.send(err);
       }
-      
+
       // weather-js should return an array of objects
       // current{} contains current weather data, location{} is location information
-      let weatherOutput = JSON.parse(JSON.stringify(result[0].current, null, 2));
-      let location = JSON.parse(JSON.stringify(result[0].location, null, 2));
+      // console.log(JSON.parse(JSON.stringify(result[0].current, null, 2)));
+      if(result === undefined || result.length === 0) {
+        message.channel.send(`🤠 Sorry, there are no results for your search term! 🤠`)
+        return;
+      } 
+     
+      let weatherOutput = result[0].current;
+      let location = result[0].location;
       
       /* location data {
-        name:
+        name: 
         lat:
         long:
         timezone:
@@ -327,7 +333,6 @@ client.on('message', (message) => {
       if(weatherOutput) {
         let temp = weatherOutput.temperature;
         // console.log(temp);
-
         const embed = new Discord.RichEmbed()
           .setTitle(`Current weather conditions for ${location.name}: `)
           .setDescription(`Temperature of ${weatherOutput.temperature} degrees ${location.degreetype}, feels like ${weatherOutput.feelslike}.`)
