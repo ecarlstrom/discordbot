@@ -290,7 +290,7 @@ client.on('message', (message) => {
      
       let weatherOutput = result[0].current;
       let location = result[0].location;
-      
+
       /* location data {
         name: 
         lat:
@@ -333,7 +333,7 @@ client.on('message', (message) => {
         let temp = weatherOutput.temperature;
         // console.log(temp);
         const embed = new Discord.RichEmbed()
-          .setTitle(`Current weather conditions for ${location.name}: `)
+          .setTitle(`Current weather conditions for ${location.name}: *__${weatherOutput.skytext}__* `)
           .setDescription(`Temperature of ${weatherOutput.temperature} degrees ${location.degreetype}, feels like ${weatherOutput.feelslike}.`)
           .addBlankField(true)
           .addField(`Sky conditions: ${weatherOutput.skytext}`,
@@ -390,13 +390,20 @@ client.on('message', (message) => {
         return;
       } 
      
-      let forecast = result[0].forecast;
+      let forecastOutput = result[0].forecast;
       let location = result[0].location;
 
-      if(forecast) {
-        message.channel.send(forecast);
+      if(forecastOutput) {
+        const embed = new Discord.RichEmbed()
+          .setTitle(`Five-day forecast for ${location.name}: `)
+          .addField('Monday', `High ${forecastOutput[0].high}, low ${forecastOutput[0].low}`, true)
+          .addField('Tuesday', `High ${forecastOutput[1].high}, low ${forecastOutput[1].low}`, true)
+          .addField('Wednesday', `High ${forecastOutput[2].high}, low ${forecastOutput[2].low}`, true)
+          .addField('Thursday', `High ${forecastOutput[3].high}, low ${forecastOutput[3].low}`, true)
+          .addField('Friday', `High ${forecastOutput[4].high}, low ${forecastOutput[4].low}`, true)
+          .addBlankField(true)
+      message.channel.send({embed});
       }
-      
   });
 }
 
