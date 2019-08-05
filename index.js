@@ -334,7 +334,7 @@ client.on('message', (message) => {
         // console.log(temp);
         const embed = new Discord.RichEmbed()
           .setTitle(`Current weather conditions for ${location.name}: *__${weatherOutput.skytext}__* `)
-          .setDescription(`Temperature of ${weatherOutput.temperature} degrees ${location.degreetype}, feels like ${weatherOutput.feelslike}.`)
+          .setDescription(`Temperature of ${weatherOutput.temperature} degrees ${location.degreetype}, feels like ${weatherOutput.feelslike}. Humidity ${weatherOutput.humidity}%. `)
           .addBlankField(true)
           .addField(`Sky conditions: ${weatherOutput.skytext}`,
             `Wind at ${weatherOutput.winddisplay}`)
@@ -389,19 +389,23 @@ client.on('message', (message) => {
         message.channel.send(`🤠 Sorry, there are no results for your search term! 🤠`)
         return;
       } 
-     
+    
       let forecastOutput = result[0].forecast;
       let location = result[0].location;
 
       if(forecastOutput) {
         const embed = new Discord.RichEmbed()
-          .setTitle(`Five-day forecast for ${location.name}: `)
-          .addField('Monday', `High ${forecastOutput[0].high}, low ${forecastOutput[0].low}`, true)
-          .addField('Tuesday', `High ${forecastOutput[1].high}, low ${forecastOutput[1].low}`, true)
-          .addField('Wednesday', `High ${forecastOutput[2].high}, low ${forecastOutput[2].low}`, true)
-          .addField('Thursday', `High ${forecastOutput[3].high}, low ${forecastOutput[3].low}`, true)
-          .addField('Friday', `High ${forecastOutput[4].high}, low ${forecastOutput[4].low}`, true)
+          .setTitle(`Weekly forecast beginning ${forecastOutput[0].date} for ${location.name}: `)
+          .setColor(0xd3d3d3)
+          .addField(`Monday: *__${forecastOutput[0].skytextday}__*`, `High ${forecastOutput[0].high}, low ${forecastOutput[0].low}`, true)
+          .addField(`Tuesday: *__${forecastOutput[1].skytextday}__*`, `High ${forecastOutput[1].high}, low ${forecastOutput[1].low}`, true)
+          .addField(`Wednesday: *__${forecastOutput[2].skytextday}__*`, `High ${forecastOutput[2].high}, low ${forecastOutput[2].low}`, true)
+          .addField(`Thursday: *__${forecastOutput[3].skytextday}__*`, `High ${forecastOutput[3].high}, low ${forecastOutput[3].low}`, true)
+          .addField(`Friday: *__${forecastOutput[4].skytextday}__*`, `High ${forecastOutput[4].high}, low ${forecastOutput[4].low}`, true)
           .addBlankField(true)
+          .setFooter(`Weekend data will be available when the API allows retrieval, sorry!`)
+          .setTimestamp()
+          
       message.channel.send({embed});
       }
   });
