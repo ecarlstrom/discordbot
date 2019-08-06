@@ -190,78 +190,6 @@ client.on('message', (message) => {
 
 /////////////////////////////// ***** MUSIC BOT ***** ///////////////////////////////
 
-// basic collections for commands and other bot features
-
-const log = message => {
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
-};
-
-client.commands = new Discord.Collection();
-client.aliases = new Discord.Collection();
-client.queues = new Discord.Collection();
-
-fs.readdir('./commands/', (err, files) => {
-  if(err) {
-    console.error(err);
-  }
-  log(`Loading current queue of ${files.length} commands.`);
-  files.forEach(file => {
-    let props = require(`./commands/${file}`);
-    log(`Loading requested command: ${props.help.name}. `);
-    client.commands.set(props.help.name, props);
-    props.conf.aliases.forEach(alias => {
-      client.aliases.set(alias, props.help.name);
-    });
-  });
-}); // will be updated accordingly when comamnds directory is implemented, but this is the basic working version
-
-client.reload = command => {
-  return new Promise((res, rej) => {
-    try {
-      delete require.cache[require.res(`./commands/${command}`)];
-      let cmd = require(`./commands/${command}`);
-      client.commands.delete(command);
-      client.aliases.forEach((cmd, alias) => {
-        if(cmd === command) client.aliases.delete(alias);
-      });
-
-      client.commands.set(command, cmd);
-      cmd.conf.aliases.forEach(alias => {
-        client.aliases.set(alias, cmd.help.name);
-      });
-      res();
-    } catch(e) {
-      rej(e);
-    }
-  });
-};
-
-// elevation command to control elevated bot permissions for users 
-
-client.elevation = message => {
-  let permLevel = 0;
-  if(message.author.id === config.owner) return permLevel = 10; // for bot owner (hi)/global admin
-  if(!message.guild) return permLevel;
-
-  if(message.guild) {
-    // standard mod permissions
-    let moderator = message.guild.roles.find(role => role.name === config.modRole); // modRole to be defined in corresponding file
-    if(moderator && message.member.roles.has(moderator.id)) permLevel = 2;
-    // supermod permissions
-    let superModerator = message.guild.roles.find(role => role.name === config.superModRole);
-    if(superModerator && message.member.roles.has(superModerator.id)) permLevel = 3;
-    // general (non-global for now?) admin permissions
-    let adminGeneral = message.guild.roles.find(role => role === config.adminRole);
-    if(adminGeneral && message.member.roles.has(adminGeneral.id)) permLevel = 4;
-    // permissions for guild owners (might undo this, adding for right now)
-    if(message.author.id === message.guild.owner.id) permLevel = 5;
-  }
-  return permLevel;
-};
-
-// process.on('unhandledRejection', err => {
-//   console.error('Uncaught Promise: \n' + err);
-// });
 
 /////////////////////////////// ***** WEATHER ***** ///////////////////////////////
 
@@ -405,7 +333,7 @@ client.on('message', (message) => {
           .addBlankField(true)
           .setFooter(`Weekend data will be available when the API allows retrieval, sorry!`)
           .setTimestamp()
-          
+
       message.channel.send({embed});
       }
   });
