@@ -4,7 +4,7 @@ const embedCheck = require('../functions/embedPerms.js');
 const config = require('../config.json');
 const playNext = require('../functions/playNext.js');
 const ytapi = require('simple-youtube-api');
-const {parse} = require('url');
+const { parse } = require('url');
 const youtube = new ytapi(config.youtubeAPIKey);
 
 exports.run = async (client, message, args) => {
@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
     }
 
     if(!client.queues.has(message.guild.id)) {
-        let firstSong = true;
+        var firstSong = true;
         client.queues.set(message.guild.id, {
             dispatcher: null,
             queue: [],
@@ -48,10 +48,12 @@ exports.run = async (client, message, args) => {
 
     let info;
     try {
-        info = await youtube.getVideo(id);
+        console.log(id);
+        info = await youtube.getVideoByID(id);
+        console.log('again: ' + id);
     } catch(e) {
         console.log(e);
-        return message.channel.sendMessage(`Error: ${e}\``)
+        return message.channel.sendMessage(`${e}`)
     }
 
     if(message.author.permLevel < 2 && parseInt(info.durationSeconds) > 900) {
