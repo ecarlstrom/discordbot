@@ -250,13 +250,13 @@ client.elevation = message => {
   }
 
   if(message.guild) {
-    let mod_role = message.guild.roles.find('name', config.modRole);
+    let mod_role = message.guild.roles.find(mod_role => mod_role.name === config.modRole);
     if(mod_role && message.member.roles.has(mod_role.id)) permlvl = 2;
 
-    let super_mod_role = message.guild.roles.find('name', config.superModRole);
+    let super_mod_role = message.guild.roles.find(super_mod_role => super_mod_role.name === config.superModRole);
     if(super_mod_role && message.member.roles.has(super_mod_role.id)) permlvl = 3;
 
-    let admin_role = message.guild.roles.find('name', config.adminRole); 
+    let admin_role = message.guild.roles.find(admin_role => admin_role.name === config.adminRole); 
     if(admin_role && message.member.roles.has(admin_role.id)) permlvl = 4;
 
     if(message.author.id === message.guild.owner.id) {
