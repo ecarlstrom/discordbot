@@ -10,7 +10,7 @@ const config = require('./config.json');
 const moment = require('moment');
 // will add another dependency for music bot event handling when the folder is up
 
-require('.util/eventLoader')(client);
+require('./util/eventLoader')(client);
 
 ////////// LEAGUE DEPENDENCIES //////////
 
