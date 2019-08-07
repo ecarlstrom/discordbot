@@ -203,7 +203,7 @@ fs.readdir('./commands/', (err, files) => {
 
   log(`Loading a total of ${files.length} commands.`);
   files.forEach(file => {
-    let props = require('./commands/${file}');
+    let props = require(`./commands/${file}`);
 
     log(`Loading ${props.help.name} command. `);
     client.commands.set(props.help.name, props);
