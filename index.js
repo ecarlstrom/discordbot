@@ -344,7 +344,7 @@ client.on('message', (message) => {
           .setDescription(`Temperature of ${weatherOutput.temperature} degrees ${location.degreetype}, feels like ${weatherOutput.feelslike}. Humidity ${weatherOutput.humidity}%. `)
           .addBlankField(true)
           .addField(`Sky conditions: ${weatherOutput.skytext}`,
-            `Wind at ${weatherOutput.winddisplay}`)
+            `Wind at ${weatherOutput.winddisplay}.`)
           .addBlankField(true)
           .setFooter('Want a forecast instead? Use the !forecast command!')
           .setThumbnail(`${weatherOutput.imageUrl}`)
