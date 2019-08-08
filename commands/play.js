@@ -83,7 +83,7 @@ exports.run = async (client, message, args) => {
     } else {
         embed
             .setTitle(`**${info.title}** (${minutes}:${seconds}) added to queue!`)
-            .setColor(0xDD2825)
+            .setColor(0xc10404)
             .setFooter(`Requested by ${message.guild.member(message.author).displayName}`, message.author.avatarURL)
             .setImage(`https://i.ytimg.com/vi/${info.id}/mqdefault.jpg`)
             .setTimestamp()
