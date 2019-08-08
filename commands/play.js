@@ -48,9 +48,9 @@ exports.run = async (client, message, args) => {
 
     let info;
     try {
-        console.log(id);
+        // console.log(id);
         info = await youtube.getVideoByID(id);
-        console.log('again: ' + id);
+        // console.log('again: ' + id);
     } catch(e) {
         console.log(e);
         return message.channel.sendMessage(`${e}`)
