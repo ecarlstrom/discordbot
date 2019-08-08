@@ -8,10 +8,10 @@ exports.run = async(client, msg, params) => {
     }
 
     if(!command) {
-        return msg.channel.sendMessage(`🤠 Sorry, cannot find ${params[0]} command! 🤠`);
+        return msg.channel.sendMessage(`🤠 Sorry, cannot find '${params[0]}' command! 🤠`);
     }
 
-    const m = await msg.channel.sendMessage(`🤠 Reloading ${command} command! 🤠`);
+    const m = await msg.channel.sendMessage(`🤠 Reloading '${command}' command! 🤠`);
 
     try {
         await client.reload(command);
@@ -19,7 +19,7 @@ exports.run = async(client, msg, params) => {
         return m.edit(`Failed command reload: ${command}\n\`\`\`${e.stack}\`\`\``);
     }
 
-    return m.edit(`🤠 Command ${command} successfully reloaded! 🤠`);
+    return m.edit(`🤠 Command '${command}' successfully reloaded! 🤠`);
 };
 
 exports.conf = {
