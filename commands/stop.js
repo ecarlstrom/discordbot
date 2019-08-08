@@ -6,7 +6,7 @@ exports.run = (client, message) => {
     }
 
     if(client.queues.has(message.guild.id)) {
-        let queue = client.queues.gert(message.guild.id);
+        let queue = client.queues.get(message.guild.id);
         queue.queue = [];
         queue.dispatcher.end();
     }
