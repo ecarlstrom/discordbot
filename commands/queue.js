@@ -38,7 +38,7 @@ exports.run = (client, message) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['playlist'],
+    aliases: ['playlist', 'q'],
     permLevel: 0
 };
 
