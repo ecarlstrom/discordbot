@@ -1,0 +1,13 @@
+{
+    "adminRole": "",
+    "forecastPrefix": "!forecast",
+    "gitURL": "https://github.com/ecarlstrom/discordbot.git",
+    "gitUsername": "ecarlstrom",
+    "gitPassword": "int*argc34()",
+    "modRole": "",
+    "musicPrefix": "!m",
+    "owner": "",
+    "superModRole": "",
+    "weatherPrefix": "!w",
+    "youtubeAPIKey": "AIzaSyAod-f4LRhucDhK6CLdel2VHyg9zxuWBms"
+}

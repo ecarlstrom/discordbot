@@ -23,5 +23,5 @@ exports.conf = {
 exports.help = {
     name: 'pause',
     description: 'Pauses the stream.',
-    usage: 'Pause'
+    usage: 'pause/p'
 };
