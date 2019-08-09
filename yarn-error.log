@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add yt-dl
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js start
 
 PATH: 
-  C:\Users\Evan\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Evan\bin;C:\Python37\Scripts;C:\Python37;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\ProgramData\chocolatey\bin;C:\Users\Evan\AppData\Local\Microsoft\WindowsApps;C:\Users\Evan\AppData\Local\atom\bin;C:\Users\Evan\AppData\Roaming\npm;C:\Users\Evan\AppData\Local\Yarn\bin;C:\Users\Evan\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\Evan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Python37;.;C:\WINDOWS\System32";C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Users\Evan\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Evan\bin;C:\Python37\Scripts;C:\Python37;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\ProgramData\chocolatey\bin;C:\Users\Evan\AppData\Local\Microsoft\WindowsApps;C:\Users\Evan\AppData\Local\atom\bin;C:\Users\Evan\AppData\Roaming\npm;C:\Users\Evan\AppData\Local\Yarn\bin;C:\Users\Evan\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\Evan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Python37;.;C:\WINDOWS\System32";C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.9.2
@@ -14,17 +14,13 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/yt-dl: Not found
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:64150:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:137416:22)
-      at emitTwo (events.js:126:13)
-      at Request.emit (events.js:214:7)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:138388:10)
-      at emitOne (events.js:116:13)
-      at Request.emit (events.js:211:7)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:138310:12)
-      at Object.onceWrapper (events.js:313:30)
-      at emitNone (events.js:111:20)
+  SyntaxError: C:\code\discordbot\package.json: Unexpected token } in JSON at position 655
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:92:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:103:13
+      at <anonymous>
 
 npm manifest: 
   {
@@ -41,6 +37,7 @@ npm manifest:
       "http": "^0.0.0",
       "moment": "^2.24.0",
       "nodemon": "^1.18.5",
+      "opusscript": "^0.0.6",
       "parse": "^2.5.1",
       "path": "^0.12.7",
       "request": "^2.88.0",
@@ -48,11 +45,11 @@ npm manifest:
       "simple-youtube-api": "^5.2.1",
       "url": "^0.11.0",
       "urlencode": "^1.1.0",
-      "ytdl-core": "^0.29.3"
+      "weather-js": "^2.0.0",
+      "ytdl-core": "^0.29.5"
     },
     "scripts": {
-      "start": "nodemon server.js",
-      "client": "nodemon index.js"
+      "start": "node index.js",
     }
   }
 
@@ -1599,11 +1596,7 @@ Lockfile:
     version "1.4.1"
     resolved "https://registry.yarnpkg.com/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
   
-  miniget@^1.4.0:
-    version "1.5.1"
-    resolved "https://registry.yarnpkg.com/miniget/-/miniget-1.5.1.tgz#4f93840d5aaed21634cd12fd07d22f7d64e9d570"
-  
-  miniget@^1.5.3:
+  miniget@^1.4.0, miniget@^1.5.3:
     version "1.5.3"
     resolved "https://registry.yarnpkg.com/miniget/-/miniget-1.5.3.tgz#d796c7291970d1dfa28b646d9aba3fa6b377c5e8"
   
@@ -1841,6 +1834,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
     dependencies:
       wrappy "1"
+  
+  opusscript@^0.0.6:
+    version "0.0.6"
+    resolved "https://registry.yarnpkg.com/opusscript/-/opusscript-0.0.6.tgz#cf492fc5fb2c819af296ae02eaa3cf210433c9ba"
   
   os-homedir@^1.0.0:
     version "1.0.2"
@@ -2126,7 +2123,7 @@ Lockfile:
       tunnel-agent "^0.6.0"
       uuid "^3.0.0"
   
-  request@^2.88.0:
+  request@2.x.x, request@^2.88.0:
     version "2.88.0"
     resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
     dependencies:
@@ -2193,7 +2190,7 @@ Lockfile:
     version "2.1.2"
     resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   
-  sax@^1.1.3, sax@^1.2.4:
+  sax@>=0.6.0, sax@^1.1.3, sax@^1.2.4:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   
@@ -2705,6 +2702,13 @@ Lockfile:
       core-util-is "1.0.2"
       extsprintf "^1.2.0"
   
+  weather-js@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/weather-js/-/weather-js-2.0.0.tgz#0d9bcdb05a4f84d06b9b9f3990028a601ea4a1fc"
+    dependencies:
+      request "2.x.x"
+      xml2js "0.4.x"
+  
   "when@>= 0.0.1":
     version "3.7.8"
     resolved "https://registry.yarnpkg.com/when/-/when-3.7.8.tgz#c7130b6a7ea04693e842cdc9e7a1f2aa39a39f82"
@@ -2755,6 +2759,17 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
   
+  xml2js@0.4.x:
+    version "0.4.19"
+    resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.19.tgz#686c20f213209e94abf0d1bcf1efaa291c7827a7"
+    dependencies:
+      sax ">=0.6.0"
+      xmlbuilder "~9.0.1"
+  
+  xmlbuilder@~9.0.1:
+    version "9.0.7"
+    resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-9.0.7.tgz#132ee63d2ec5565c557e20f4c22df9aca686b10d"
+  
   xmlhttprequest@1.8.0:
     version "1.8.0"
     resolved "https://registry.yarnpkg.com/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz#67fe075c5c24fef39f9d65f5f7b7fe75171968fc"
@@ -2778,9 +2793,9 @@ Lockfile:
       buffer-crc32 "~0.2.3"
       fd-slicer "~1.1.0"
   
-  ytdl-core@^0.29.3:
-    version "0.29.3"
-    resolved "https://registry.yarnpkg.com/ytdl-core/-/ytdl-core-0.29.3.tgz#c7397c6ab8adf2326a00248d536dc76f7111dec5"
+  ytdl-core@^0.29.5:
+    version "0.29.5"
+    resolved "https://registry.yarnpkg.com/ytdl-core/-/ytdl-core-0.29.5.tgz#278052a1a5a1a75c5931c229b804c0798f18858c"
     dependencies:
       html-entities "^1.1.3"
       m3u8stream "^0.6.2"

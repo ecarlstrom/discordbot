@@ -24,6 +24,6 @@
     "ytdl-core": "^0.29.5"
   },
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon index.js"
   }
 }
