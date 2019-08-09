@@ -23,5 +23,5 @@ exports.conf = {
 exports.help = {
     name: 'resume',
     description: 'Resumes playlist after playback has been paused.',
-    usage: 'resume'
+    usage: 'resume/r'
 };
