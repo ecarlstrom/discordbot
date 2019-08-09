@@ -384,7 +384,7 @@ client.on('message', (message) => {
 
   let forecastMessageCaps = message.content.toUpperCase();
   let sender = message.author;
-  let contents = message.content.slice(prefix.length).split(' ');
+  let contents = message.content.slice(forecastPrefix.length).split(' ');
   let args = contents.slice(1);
 
   if(message.content.startsWith(forecastPrefix)) {
