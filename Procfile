@@ -1,2 +1,2 @@
-worker: node index.js
+worker: node server.js
 web: npm client
