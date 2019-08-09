@@ -11,7 +11,8 @@ const moment = require('moment');
 // will add another dependency for music bot event handling when the folder is up
 
 require('./util/eventLoader')(client);
-
+// zeit may need this here instead of server.js
+require('http').createServer().listen(3000);
 ////////// LEAGUE DEPENDENCIES //////////
 
 const fs = require('fs');
