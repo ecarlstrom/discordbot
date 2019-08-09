@@ -1,6 +1,6 @@
-const config = require('../config.json');
+const config = require('dotenv').config();
 const ytapi = require('simple-youtube-api');
-const youtube = new ytapi(config.youtubeAPIKey);
+const youtube = new ytapi(process.env.youtubeAPIKey);
 
 exports.run = async (client, message, args) => {
     let search = args.join(' ');

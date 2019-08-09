@@ -1,4 +1,4 @@
-const config = require('../config.json');
+const config = require('dotenv').config();
 
 exports.run = (client, message, args) => {
     if(!args[0]) {

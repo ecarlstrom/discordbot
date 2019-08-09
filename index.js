@@ -1,12 +1,11 @@
 ////////// GENERAL DEPENDENCIES //////////
 
 const Discord = require('discord.js');
-require('dotenv').config();
+const config = require('dotenv').config();
 const client = new Discord.Client();
 const token = process.env.DISCORD_BOT_SECRET;
 const lol_api = process.env.LOL_API_KEY;
 const server = require('./server.js');
-const config = require('./config.json');
 const moment = require('moment');
 // will add another dependency for music bot event handling when the folder is up
 
@@ -37,9 +36,9 @@ client.on('ready', () => {
 // some general message rules
 
 const prefix = process.env.prefix;
-const musicPrefix = config.musicPrefix;
-const weatherPrefix = config.weatherPrefix;
-const forecastPrefix = config.forecastPrefix;
+const musicPrefix = process.env.musicPrefix;
+const weatherPrefix = process.env.weatherPrefix;
+const forecastPrefix = process.env.forecastPrefix;
 
 client.on('message', (message) => {
 
@@ -385,7 +384,7 @@ client.on('message', (message) => {
 
   let forecastMessageCaps = message.content.toUpperCase();
   let sender = message.author;
-  let contents = message.content.slice(weatherPrefix.length).split(' ');
+  let contents = message.content.slice(prefix.length).split(' ');
   let args = contents.slice(1);
 
   if(message.content.startsWith(forecastPrefix)) {

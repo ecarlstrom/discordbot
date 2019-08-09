@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const embed = new Discord.RichEmbed();
 const embedCheck = require('../functions/embedPerms.js');
-const config = require('../config.json');
+const config = require('dotenv').config();
 const playNext = require('../functions/playNext.js');
 const ytapi = require('simple-youtube-api');
 const { parse } = require('url');
-const youtube = new ytapi(config.youtubeAPIKey);
+const youtube = new ytapi(process.env.youtubeAPIKey);
 
 exports.run = async (client, message, args) => {
     let song = args.join(' ');

@@ -1,4 +1,4 @@
-const config = require('../config.json');
+const config = require('dotenv').config();
 
 module.exports = async message => {
     let client = message.client;
@@ -11,11 +11,11 @@ module.exports = async message => {
         return;
     }
 
-    if(!message.content.startsWith(config.musicPrefix)) {
+    if(!message.content.startsWith(process.env.musicPrefix)) {
         return;
     }
 
-    let command = message.content.split(' ')[0].slice(config.musicPrefix.length);
+    let command = message.content.split(' ')[0].slice(process.env.musicPrefix.length);
     let params = message.content.split(' ').slice(1);
     let perms = client.elevation(message);
 
