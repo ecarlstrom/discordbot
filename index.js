@@ -107,6 +107,9 @@ client.on('message', (message) => {
 
 });
 
+// general help
+
+
 /////////////////////////////// ***** USER HANDLING ***** ///////////////////////////////
 
 // includes features like greeting new users, kicking, banning, permission handling, etc.
