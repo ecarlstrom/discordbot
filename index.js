@@ -46,15 +46,21 @@ client.on('message', (message) => {
     console.log('Owner!');
   }
 
-  if(message.content.includes('tama') && !message.content.startsWith(prefix)) {
+  if(message.content.includes('tama') || message.author.id === process.env.tamaID) {
     // const cop = client.emojis.find(emoji => emoji.name === 'cop');
     // message.channel.send(`👮`);
     // message.reply(`👮`);
     message.react('👮');
   }
+  
+  //kippy rule as per his request
+
+  if(message.content.includes('kippy') || message.author.id === process.env.kippyID) {
+    message.react('🐳');
+    message.react('🐋');
+  }
 
   if(!message.content.startsWith(prefix) || message.author.bot) return;
-
 
   if(message.content === (prefix + 'test')) {
     message.channel.send('Hello!');
