@@ -7,12 +7,17 @@ exports.run = async(client, message, args) => {
 
     let vol = args.join(' ');
 
+    // console.log(vol);
+    // console.log(typeof(vol));
+
     if(!vol) {
         return message.channel.sendMessage(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
     }
 
     if(vol < 0 || vol > 100) {
         return message.reply(`🤠 Volume must be a percentage between 0 and 100! 🤠`);
+    } else if(isNaN(vol)) {
+        return message.reply(`🤠 Nice try, please use a numerical value! 🤠`)
     }
 
     await message.channel.sendMessage(`Setting volume to ${vol}%.`).catch(console.error);

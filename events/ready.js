@@ -1,8 +1,8 @@
 const config = require('dotenv').config();
 
-module.exports = async client => {
-    // let single = client.guilds.size === 1;
+module.exports = async (client) => {
+   
     console.log('Ready!');
 
-    client.user.setActivity(`!help | !mhelp`);
+    client.user.setActivity(`!help | ${process.env.musicPrefix}help`);
 };
