@@ -48,7 +48,7 @@ Information on current commands and plans for improvement can be found further d
 
 Will be added as they become available.
 
-## Future plans
+## Future Plans
 
 To be updated soon.
 
