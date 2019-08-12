@@ -48,10 +48,10 @@ Information on current commands and plans for improvement can be found further d
 
 Will be added as they become available.
 
-* Future plans
+## Future plans
 
 To be updated soon.
 
-* Feedback
+## Feedback
 
 Please feel free to contact me at evan.carlstrom@gmail.com with any issues or feedback!
