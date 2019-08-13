@@ -112,7 +112,38 @@ client.on('message', (message) => {
 
 });
 
-// general help
+// adding a new message event here since variables are used, the below handles game/status activity
+
+client.on('message', message => {
+  let input = message.content.split(' ').slice(1);
+  let args = input.join(' ');
+
+  if(!message.content.startsWith(prefix) || message.author.bot) {
+    return;
+  }
+
+  // these change the bot's game and status
+
+  if(message.content.startsWith(prefix + 'setgame')) {
+    client.user.setActivity(args);
+  }
+
+  if(message.content.startsWith(prefix + 'setstatus')) {
+    // accepts the 4 Discord statuses: online, idle, dnd, invisible
+    client.user.setStatus(args);
+  }
+
+  // will see if changing guild member game/status is also possible
+
+  // nickname changing
+
+  // if(message.content.startsWith(prefix + 'name')) {
+  //   if(!message.guild.me.hasPermission('MANAGE_NICKNAMES') || !message.guild.me.hasPermission('CHANGE_NICKNAME')) {
+  //     return message.channel.send(`🤠 Sorry, I do not have name changing permissions on this server! `);
+  //   }
+  //   message.member.setNickname(message.content.replace('name', ''))
+  // }
+})
 
 
 /////////////////////////////// ***** USER HANDLING ***** ///////////////////////////////
