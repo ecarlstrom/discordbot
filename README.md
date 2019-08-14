@@ -10,6 +10,8 @@ Information on current commands and plans for improvement can be found further d
 
 - First mention goes to `!help`, which provides all the information in this section in an easy-to-read embed format. In the future this will also provide aliases and abbreviations for commands, e.g. `!vol` working in the same way that the full `!volume` command does.
 
+- The `!ping` command pings the Discord server and relays the time elapsed with a standard "ping/pong" feedback format.
+
 - The `ascii <text>` command returns the input text in ASCII format. Capabilities are currently being expanded and will hopefully handle a wider variety of inputs in the future.
 
 ### Weather
@@ -23,8 +25,6 @@ Information on current commands and plans for improvement can be found further d
 ### Please note that users must be in a voice channel to use music commands.
 
 - The `!pause/!p` command pauses the current song playback. This is not a skip command so the queue is unaffected, just a simple pause button.
-
-- The `!ping` command pings the Discord server and relays the time elapsed with a standard "ping/pong" feedback format. This command will be taken out of the music command section in the future and placed with general commands.
 
 - The `!play <item to play>` is the command to initiate playback. This command accepts YouTube links (in either youtube.com or youtu.be formats) and can also play a search term. Note that the search term is the first result so specificity is helpful; `!play Debussy Arabesque No. 1` is considerably more likely to return the desired result than `!play arabeseque`.
 
