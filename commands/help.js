@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
 
         //test this as well in case it is a complete mess
         message.channel.sendCode('asciidoc', `🤠 Command List 🤠\n----------\n\n[🤠 Use ${process.env.musicPrefix}help <commandname> for details! 🤠]\n\n${client.commands.map(c =>
-            `${process.env.musicPrefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
+            `${process.env.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
     } else {
         let command = args[0];
 

@@ -11,11 +11,11 @@ module.exports = async message => {
         return;
     }
 
-    if(!message.content.startsWith(process.env.musicPrefix)) {
+    if(!message.content.startsWith(process.env.prefix)) {
         return;
     }
 
-    let command = message.content.split(' ')[0].slice(process.env.musicPrefix.length);
+    let command = message.content.split(' ')[0].slice(process.env.prefix.length);
     let params = message.content.split(' ').slice(1);
     let perms = client.elevation(message);
 
