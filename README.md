@@ -12,7 +12,7 @@ Information on current commands and plans for improvement can be found further d
 
 - The `!ping` command pings the Discord server and relays the time elapsed with a standard "ping/pong" feedback format.
 
-- The `ascii <text>` command returns the input text in ASCII format. Capabilities are currently being expanded and will hopefully handle a wider variety of inputs in the future.
+- The `!ascii <text>` command returns the input text in ASCII format. Capabilities are currently being expanded and will hopefully handle a wider variety of inputs in the future.
 
 ### Weather
 
