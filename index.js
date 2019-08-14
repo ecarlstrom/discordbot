@@ -143,8 +143,7 @@ client.on('message', message => {
   //   }
   //   message.member.setNickname(message.content.replace('name', ''))
   // }
-})
-
+});
 
 /////////////////////////////// ***** USER HANDLING ***** ///////////////////////////////
 
