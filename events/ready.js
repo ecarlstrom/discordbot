@@ -4,5 +4,5 @@ module.exports = async (client) => {
    
     console.log('Ready!');
 
-    client.user.setActivity(`!help | ${process.env.musicPrefix}help`);
+    client.user.setActivity(`${process.env.prefix}help`);
 };
