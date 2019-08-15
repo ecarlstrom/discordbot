@@ -9,6 +9,7 @@ const server = require('./server.js');
 const moment = require('moment');
 // will add another dependency for music bot event handling when the folder is up
 
+client.login(token);
 require('./util/eventLoader')(client);
 
 ////////// LEAGUE DEPENDENCIES //////////
@@ -22,9 +23,6 @@ const roundTo = require('round-to');
 ////////// WEATHER DEPENDENCIES //////////
 
 const weather = require('weather-js');
-
-client.login(token);
-client.login(config.token).catch(console.error);
 
 //////////////////////////////////////////
 
