@@ -1,35 +1,37 @@
-exports.run = async (client, message, args, ops) => {
-    let server = ops.active.get(message.guild.id);
+exports.run = async (client, message) => {
+    const voiceChannel = message.member.voiceChannel ? message.member.voiceChannel : (message.guild.voiceConnection ? message.guild.voiceConnection.channel : null); 
 
-    if(!server) {
-        return message.channel.send(`🤠 No song currently playing! 🤠`);
+    if(!voiceChannel || (!message.member.voiceChannel)) {
+        return message.reply(`🤠 Please join a voice channel! 🤠`);
     }
 
-    if(message.member.voiceChannel !== message.guild.me.voiceChannel) {
-        return message.channel.send(`🤠 Please join the bot's voice channel! 🤠`);
+    let voiceUsers = Math.floor(message.member.voiceChannel.members.filter(m =>
+        m.user.id !== client.user.id).size * 2 / 3);
+    
+    if(voiceUsers < 2) {
+        return message.channel.sendMessage(`🤠 Skipping song! 🤠`).then(() => {
+            client.queues.get(message.guild.id).dispatcher.end('skip');
+        });
     }
 
-    let voiceUsers = message.member.voiceChannel.members.size;
-    let votesNeeded = Math.ceil(voiceUsers / 2);
+    message.channel.sendMessage(`🤠 Beginning the ten-second skip vote, needing at least ${voiceUsers} votes to pass. Use "skip" (not !skip) to vote. 🤠`);
 
-    if(!server.queue[0].voteSkips) {
-        server.queue[0].voteSkips = [];
-    }
+    const filter = m => m.content.startsWith('skip');
 
-    // user attempts to cast more than one vote
-    if(server.queue[0].voteSkips.includes(message.member.id)) {
-        return message.channel.send(`🤠 Nice try, only one vote per person! ${server.queue[0].voteSkips.length}/${votesNeeded} votes are required. 🤠`);
-    }
-
-    server.queue[0].voteSkips.push(message.member.id);
-    ops.active.set(message.guild.id, server);
-
-    if(server.queue[0].voteSkips.length >= votesNeeded) {
-        message.channel.send(`🤠 Skipping current song! 🤠`);
-        return server.dispatcher.end();
-    }
-
-    message.channel.send(`🤠Skip vote successful! ${server.queue[0].voteSkips.length}/${votesNeeded} votes required. 🤠`);
+    message.channel.awaitMessages(filter, {
+        'errors': ['time'],
+        'max': voiceUsers,
+        time: 10000
+    }).then(collected => {
+        if(collected.size >= voiceUsers) return message.channel.send(`🤠 Skipping song! 🤠`).then(() => {
+            client.queues.get(message.guild.id).dispatcher.end('skip');
+        });
+    }).catch(collected => {
+        if(collected.size === 0) {
+            return message.channel.send(`🤠 Sorry, no one voted! 🤠`)
+        }
+        message.channel.send(`🤠 Only ${collected.size} of ${voiceUsers} voted, no skip! 🤠`);
+    });
 };
 
 exports.conf = {
