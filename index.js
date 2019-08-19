@@ -151,24 +151,24 @@ client.on('message', message => {
 // is not addressed to an invalid user. This won't be necessary for small servers while the message triggers on
 // each join, but for larger batches (i.e. newUsers[guild.id].size > 10) it will be useful.
 
-const newUsers = [];
+// const newUsers = [];
 // maybe test some sort of message trigger here?
-client.on('guildMemberAdd', (member) => {
-  const guild = member.guild;
-  if(!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
-  newUsers[guild.id].set(member.id, member.user);
+// client.on('guildMemberAdd', (member) => {
+//   const guild = member.guild;
+//   if(!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
+//   newUsers[guild.id].set(member.id, member.user);
 
-  if(newUsers[guild.id].size = 1) {
-    const userlist = newUsers[guild.id].map(u => u.toString()).join(' '); // not necessary for 1, useful for larger servers
-    guild.channels.find(channel => channel.name === 'general').send(`Welcome, ${userlist}!`);
-    newUsers[guild.id].clear();
-  }
-});
+//   if(newUsers[guild.id].size = 1) {
+//     const userlist = newUsers[guild.id].map(u => u.toString()).join(' '); // not necessary for 1, useful for larger servers
+//     guild.channels.find(channel => channel.name === 'general').send(`Welcome, ${userlist}!`);
+//     newUsers[guild.id].clear();
+//   }
+// });
 
-client.on('guildMemberRemove', (member) => {
-  const guild = member.guild;
-  if(newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
-}); // prevents greeting of invalid users if they leave while in the newUsers greeting queue
+// client.on('guildMemberRemove', (member) => {
+//   const guild = member.guild;
+//   if(newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
+// }); // prevents greeting of invalid users if they leave while in the newUsers greeting queue
 
 // kicks user from a voice channel (in kind of an inefficient way for now, will edit later)
 
