@@ -64,23 +64,14 @@ client.on('message', (message) => {
     message.channel.send('Hello!');
   }
 
-  if(message.content === (prefix + 'azur')) {
+  if(message.content === (prefix + 'seeusmile')) {
     const embed = new Discord.RichEmbed()
-      .setTitle('Azur Lane')
-      .setAuthor('**final bot name here**', 'https://imgur.com/se0joaV.png')
-      .setColor('00AE86')
-      .setDescription('Azur Lane - Official Website')
-      .setImage('https://imgur.com/se0joaV.png')
-      .setFooter('Here is some footer text', 'https://imgur.com/se0joaV.png' )
-      .setThumbnail('https://imgur.com/se0joaV.png')
+      .setTitle('When I see U Smile and know that is not for me, that is when i\'ll miss U the most..')
+      .setColor('0xDCDCDC')
+      .setImage('https://i.imgur.com/hUTCznj.png')
+      .setThumbnail('https://cdn.discordapp.com/emojis/519203018302947335.png')
+      .setFooter(`User with a broken heart: ${message.member.displayName}`)
       .setTimestamp()
-       .setURL("https://azurlane.yo-star.com/")
-      .addField('Twitter', 'https://twitter.com/AzurLane_EN', true)
-      .addBlankField(true) // for space
-      .addField('Reddit', 'https://www.reddit.com/r/AzureLane/', true)
-      .addBlankField(true)
-      .addField('A final field', 'more text', true);
-
     message.channel.send({embed});
   }
 
