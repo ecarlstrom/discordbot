@@ -75,6 +75,16 @@ client.on('message', (message) => {
     message.channel.send({embed});
   }
 
+  if(message.content === (prefix + 'seeusmall')) {
+    const embed = new Discord.RichEmbed()
+      .setTitle('When I see U Smile and know that is not for me, that is when i\'ll miss U the most..')
+      .setColor('0xDCDCDC')
+      .setThumbnail('https://cdn.discordapp.com/emojis/519203018302947335.png')
+      .setFooter(`User with a broken heart: ${message.member.displayName}`)
+      .setTimestamp()
+    message.channel.send({embed});
+  }
+
   // testing emoji replies and reactions
 
   if(message.content === (prefix + 'DrSEG')) {
