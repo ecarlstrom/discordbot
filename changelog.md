@@ -1,5 +1,9 @@
 # Changelog
 
+**August 22, 2019**
+
+- Added simple fix to address the `!<space>anyword` format returning a delete message error. Testing further but the error no longer appears for now.
+
 **August 13, 2019**
 
 - Added basic `!ascii` command.
