@@ -4,7 +4,6 @@ exports.run = (client, message, args, ops) => {
 
     ascii.font(args.join(' '), 'Doom', function(rendered) {
         // test for any necessary whitespace removal additions
-        console.log(args[0]);
         if(!args[0]) {
             return message.reply(`🤠 Please enter some text to format! 🤠`)
         }

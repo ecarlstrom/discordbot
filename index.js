@@ -40,10 +40,6 @@ const forecastPrefix = process.env.forecastPrefix;
 
 client.on('message', (message) => {
 
-  if(message.author.id === process.env.ownerID) {
-    console.log('Owner!');
-  }
-
   if(message.content.includes('tama') || message.author.id === process.env.tamaID) {
     // const cop = client.emojis.find(emoji => emoji.name === 'cop');
     // message.channel.send(`👮`);
@@ -59,10 +55,6 @@ client.on('message', (message) => {
   }
 
   if(!message.content.startsWith(prefix) || message.author.bot) return;
-
-  if(message.content === (prefix + 'test')) {
-    message.channel.send('Hello!');
-  }
 
   if(message.content === (prefix + 'seeusmile')) {
     const embed = new Discord.RichEmbed()
