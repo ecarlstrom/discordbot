@@ -19,6 +19,7 @@
     "request": "^2.88.0",
     "round-to": "^3.0.0",
     "simple-youtube-api": "^5.2.1",
+    "strict-uri-encode": "^2.0.0",
     "url": "^0.11.0",
     "urlencode": "^1.1.0",
     "weather-js": "^2.0.0",

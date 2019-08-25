@@ -2743,6 +2743,10 @@ stream-combiner@^0.2.2:
     duplexer "~0.1.1"
     through "~2.3.4"
 
+strict-uri-encode@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
+
 "string-color@>= 0.8.0", string-color@>=0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/string-color/-/string-color-0.8.0.tgz#1e674c8295ce29ddd9778b6e4cb3aa5e75448403"
