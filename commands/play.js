@@ -90,7 +90,7 @@ exports.run = async (client, message, args) => {
             .setTimestamp()
             .setURL(`https://www.youtube.com/watch?v=${info.id}`);
         if(embedCheck(message)) {
-            message.channel.sendEmbed(embed, '', {
+            message.channel.send(embed, '', {
                 disableEveryone: true
             }).catch(console.error);
         } else {

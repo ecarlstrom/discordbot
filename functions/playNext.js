@@ -24,7 +24,7 @@ const playNext = (message) => {
             .setImage(`https://i.ytimg.com/vi/${nextSong.id}/mqdefault.jpg`)
             .setTimestamp()
             .setURL(nextSong.url);
-        message.channel.sendEmbed(embed, '', {
+        message.channel.send(embed, '', {
             disableEveryone: true
         });
     } else {
