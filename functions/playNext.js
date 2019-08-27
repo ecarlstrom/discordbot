@@ -28,14 +28,14 @@ const playNext = (message) => {
             disableEveryone: true
         });
     } else {
-        message.channel.sendMessage(`Now playing **${nextSong.songTitle}** (${nextSong.playTime})`);
+        message.channel.send(`Now playing **${nextSong.songTitle}** (${nextSong.playTime})`);
     }
 
     dispatcher.on('end', () => {
         if(thisQueue.position + 1 < thisQueue.queue.length) {
             playNext(message);
         } else {
-            message.channel.sendMessage('🤠 Reached the end of the queue, please add some songs! 🤠');
+            message.channel.send('🤠 Reached the end of the queue, please add some songs! 🤠');
             message.guild.voiceConnection.disconnect();
             message.client.queues.delete(message.guild.id);
         }

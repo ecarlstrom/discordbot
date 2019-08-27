@@ -9,12 +9,12 @@ exports.run = async (client, message) => {
         m.user.id !== client.user.id).size * 2 / 3);
     
     if(voiceUsers < 2) {
-        return message.channel.sendMessage(`🤠 Skipping song! 🤠`).then(() => {
+        return message.channel.send(`🤠 Skipping song! 🤠`).then(() => {
             client.queues.get(message.guild.id).dispatcher.end('skip');
         });
     }
 
-    message.channel.sendMessage(`🤠 Beginning the ten-second skip vote, needing at least ${voiceUsers} votes to pass. Use "skip" (not !skip) to vote. 🤠`);
+    message.channel.send(`🤠 Beginning the ten-second skip vote, needing at least ${voiceUsers} votes to pass. Use "skip" (not !skip) to vote. 🤠`);
 
     const filter = m => m.content.startsWith('skip');
 

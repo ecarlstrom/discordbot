@@ -29,7 +29,7 @@ exports.run = (client, message) => {
         }).catch(console.error);
     } else {
         // test this formatting, this could be a mess
-        message.channel.sendMessage(`Currently playing ${current.songTitle}* (${current.playTime}) requested by ${current.requester}**\n\nThere 
+        message.channel.send(`Currently playing ${current.songTitle}* (${current.playTime}) requested by ${current.requester}**\n\nThere 
         ${singular ? 'is' : 'are'} currently${queue.length} song${singular ? '' : 's'} in the queue\n${queue.map.size === 0 ? '' : '🤠' + queue.map(i =>
             '_' + i.songTitle+'_ (' + i.playTime + ') requested by **' + i.requester + '**\n <https://www.youtube.com/watch?v='+i.id+'\n').join('\n🤠 ')}`);
     }

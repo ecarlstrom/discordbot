@@ -8,10 +8,10 @@ exports.run = async(client, msg, params) => {
     }
 
     if(!command) {
-        return msg.channel.sendMessage(`🤠 Sorry, cannot find '${params[0]}' command! 🤠`);
+        return msg.channel.send(`🤠 Sorry, cannot find '${params[0]}' command! 🤠`);
     }
 
-    const m = await msg.channel.sendMessage(`🤠 Reloading '${command}' command! 🤠`);
+    const m = await msg.channel.send(`🤠 Reloading '${command}' command! 🤠`);
 
     try {
         await client.reload(command);

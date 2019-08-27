@@ -4,7 +4,7 @@ exports.run = (client, message) => {
     const guildTotal = client.queues.array().filter(q => 
         !!q.dispatcher).length;
 
-    message.channel.sendMessage(`🤠 Currently queueing a total of ${queueTotal} songs across ${guildTotal} servers. 🤠`);
+    message.channel.send(`🤠 Currently queueing a total of ${queueTotal} songs across ${guildTotal} servers. 🤠`);
 };
 
 exports.conf = {

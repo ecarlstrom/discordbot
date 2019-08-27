@@ -11,7 +11,7 @@ exports.run = async(client, message, args) => {
     // console.log(typeof(vol));
 
     if(!vol) {
-        return message.channel.sendMessage(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
+        return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
     }
 
     if(vol < 0 || vol > 100) {
@@ -20,7 +20,7 @@ exports.run = async(client, message, args) => {
         return message.reply(`🤠 Nice try, please use a numerical value! 🤠`)
     }
 
-    await message.channel.sendMessage(`Setting volume to ${vol}%.`).catch(console.error);
+    await message.channel.send(`Setting volume to ${vol}%.`).catch(console.error);
     message.guild.voiceConnection.volume = (vol / 100);
     client.queues.get(message.guild.id).dispatcher.setVolume(vol / 100);
 };

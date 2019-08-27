@@ -1,5 +1,5 @@
 exports.run = async(client, message) => {
-    message.channel.sendMessage(`Are you sure you want to reboot? Reply with 'cancel' to abort, or allow 30 seconds for self-abort.`);
+    message.channel.send(`Are you sure you want to reboot? Reply with 'cancel' to abort, or allow 30 seconds for self-abort.`);
 
     const valid = ['yes', 'y', 'no', 'n', 'cancel'];
     const collector = message.channel.createCollector(m =>
@@ -14,7 +14,7 @@ exports.run = async(client, message) => {
             return collector.stop('kill');
         }
 
-        return message.channel.sendMessage(`Please supply a valid answer: \`${valid.join('`, `')}!`).catch(console.error);
+        return message.channel.send(`Please supply a valid answer: \`${valid.join('`, `')}!`).catch(console.error);
     });
 
     collector.on('end', async(collected, reason) => {
@@ -22,9 +22,9 @@ exports.run = async(client, message) => {
             await client.destroy();
             process.exit();
         } else if(reason === 'time') {
-            return message.channel.sendMessage('Reboot timed out!');
+            return message.channel.send('Reboot timed out!');
         } else if(reason === 'abort') {
-            return message.channel.sendMEssage('Aborting reboot!');
+            return message.channel.send('Aborting reboot!');
         }
 
         console.error('Invalid reason!');

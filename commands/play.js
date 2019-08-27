@@ -54,7 +54,7 @@ exports.run = async (client, message, args) => {
         // console.log('again: ' + id);
     } catch(e) {
         console.log(e);
-        return message.channel.sendMessage(`${e}`)
+        return message.channel.send(`${e}`)
     }
 
     if(message.author.permLevel < 2 && parseInt(info.durationSeconds) > 900) {
@@ -94,7 +94,7 @@ exports.run = async (client, message, args) => {
                 disableEveryone: true
             }).catch(console.error);
         } else {
-            message.channel.sendMessage(`**${info.title}** (${minutes}:${seconds}) added to queue!`);
+            message.channel.send(`**${info.title}** (${minutes}:${seconds}) added to queue!`);
         }
     }
 };

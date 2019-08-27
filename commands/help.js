@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
 
         if(client.commands.has(command)) {
             command = client.commands.get(command);
-            message.channel.sendCode('asciidoc', `= ${command.help.name} = \n${command.help.description}\nUsage :: ${command.help.usage}`);
+            message.channel.send('asciidoc', `= ${command.help.name} = \n${command.help.description}\nUsage :: ${command.help.usage}`);
         }
     }
 };

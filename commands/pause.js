@@ -9,7 +9,7 @@ exports.run = async (client, message) => {
         return message.reply('Playback is already paused!');
     }
 
-    await message.channel.sendMessage('Pausing playback!');
+    await message.channel.send('Pausing playback!');
     client.queues.get(message.guild.id).dispatcher.pause();
 };
 
