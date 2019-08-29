@@ -11,7 +11,7 @@ const playNext = (message) => {
         filter: 'audioonly'
     }), {
         passes: 5,
-        volume: message.guild.voiceConnection.voulme || 0.2
+        volume: message.guild.voiceConnection.volume || 0.2
     });
 
     thisQueue.dispatcher = dispatcher;
