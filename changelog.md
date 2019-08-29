@@ -1,5 +1,9 @@
 # Changelog
 
+**August 28, 2019**
+
+- Removed the permission level requirement for the `!reload` command. Users will not have to wait for an admin to run this command anymore.
+
 **August 22, 2019**
 
 - Added simple fix to address the `!<space>anyword` format returning a delete message error. Testing further but the error no longer appears for now.
