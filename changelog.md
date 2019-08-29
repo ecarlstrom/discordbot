@@ -4,6 +4,8 @@
 
 - Removed the permission level requirement for the `!reload` command. Users will not have to wait for an admin to run this command anymore.
 
+- User-selected volumes now persist through the entire queue or until changed. Volume no longer automatically resets to 20% at the beginning of each queue entry.
+
 **August 22, 2019**
 
 - Added simple fix to address the `!<space>anyword` format returning a delete message error. Testing further but the error no longer appears for now.
