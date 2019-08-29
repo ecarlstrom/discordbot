@@ -7,7 +7,7 @@ const playNext = (message) => {
     const nextSong = thisQueue.queue[++thisQueue.position];
     const dispatcher = message.guild.voiceConnection.playStream(yt(nextSong.url, {
         // test varying qualities when working
-        quality: 'lowest',
+        quality: 'highestaudio',
         filter: 'audioonly'
     }), {
         passes: 5,
