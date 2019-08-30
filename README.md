@@ -50,7 +50,13 @@ Information on current commands and plans for improvement can be found further d
 
 Will be added as they become available.
 
-## Future Plans
+## Upcoming Plans and Improvements
+
+1. The number one planned feature for right now is to add the ability to use the `!search` command results to play something directly from the list. Looking at something like returning each search result with a number and then a simple entry of the number should play the given result.
+
+2. Looking to also add custom server prefix capabilities at some point to avoid any issues with other bots.
+
+3. Expanding the capabilities of the `!ascii` command to format text a little better for larger entries and add image support.
 
 To be updated soon.
 
