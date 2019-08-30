@@ -6,4 +6,4 @@
 
 - Using any command with a space between the prefix and command (e.g. `! help`, `! play music`) triggers the delete command with no arguments given.
 
-- The date given by the `!forecast` command is not always the correct one. It should return the date of the Monday in the current forecasted week.
+- The date given by the `!forecast` command is not always the correct one. It should return the date of the Monday in the current forecasted week. (tentative fix created 8/29, will monitor next week to see if it still works)
