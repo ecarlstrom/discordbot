@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const embedCheck = require('./embedPerms.js');
 const yt = require('ytdl-core');
 
-// testing ffmpeg buildpack for host
 const playNext = (message) => {
     const thisQueue = message.client.queues.get(message.guild.id);
     const nextSong = thisQueue.queue[++thisQueue.position];
