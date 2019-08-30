@@ -13,7 +13,7 @@
     "http": "^0.0.0",
     "moment": "^2.24.0",
     "nodemon": "^1.19.1",
-    "opusscript": "^0.0.6",
+    "opusscript": "^0.0.7",
     "parse": "^2.5.1",
     "path": "^0.12.7",
     "request": "^2.88.0",
