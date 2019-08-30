@@ -437,8 +437,8 @@ client.on('message', (message) => {
         if( day !== 1 ) {              
            today.setHours(-24 * (day - 1));   
         }     
-            
-        let formattedDay = moment(today).format('YYYY-MM-DD');    
+
+        let formattedDay = moment(today).format('MM-DD-YYYY');    
         const embed = new Discord.RichEmbed()
           .setTitle(`Forecast for week beginning ${formattedDay} for ${location.name}: `)
           .setColor(0xd3d3d3)
