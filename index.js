@@ -431,8 +431,16 @@ client.on('message', (message) => {
       let location = result[0].location;
 
       if(forecastOutput) {
+        let today = new Date();
+        let day = today.getDay() || 7; 
+
+        if( day !== 1 ) {              
+           today.setHours(-24 * (day - 1));   
+        }     
+            
+        let formattedDay = moment(today).format('YYYY-MM-DD');    
         const embed = new Discord.RichEmbed()
-          .setTitle(`Weekly forecast beginning ${forecastOutput[0].date} for ${location.name}: `)
+          .setTitle(`Forecast for week beginning ${formattedDay} for ${location.name}: `)
           .setColor(0xd3d3d3)
           .addField(`Monday: *__${forecastOutput[0].skytextday}__*`, `High ${forecastOutput[0].high}, low ${forecastOutput[0].low}`, true)
           .addField(`Tuesday: *__${forecastOutput[1].skytextday}__*`, `High ${forecastOutput[1].high}, low ${forecastOutput[1].low}`, true)
