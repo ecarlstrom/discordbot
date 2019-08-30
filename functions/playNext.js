@@ -7,12 +7,13 @@ const playNext = (message) => {
     const nextSong = thisQueue.queue[++thisQueue.position];
     const dispatcher = message.guild.voiceConnection.playStream(yt(nextSong.url, {
         // test varying qualities when working
+        filter: 'audioonly',
         quality: 'highestaudio',
-        filter: 'audioonly'
-    }), {
+        highWaterMark: 1<<25
+    }),{
         passes: 5,
         volume: message.guild.voiceConnection.volume || 0.2
-    });
+    }, {highWaterMark: 1});
 
     thisQueue.dispatcher = dispatcher;
 
