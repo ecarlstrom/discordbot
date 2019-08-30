@@ -418,7 +418,8 @@ client.on('message', (message) => {
 
     weather.find({search: args.join(' '), degreeType: 'F'}, function(err, result) {
       if(err) {
-        message.channel.send(err);
+        message.channel.send('🤠 Please enter a search term! 🤠')
+        return;
       }
 
       if(result === undefined || result.length === 0) {
