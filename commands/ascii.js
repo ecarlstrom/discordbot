@@ -4,6 +4,8 @@ exports.run = (client, message, args, ops) => {
 
     ascii.font(args.join(' '), 'Doom', function(rendered) {
         // test for any necessary whitespace removal additions
+
+        // try if(!rendered.length style fix tomorrow to solve ascii crashes)
         if(!args[0]) {
             return message.reply(`🤠 Please enter some text to format! 🤠`)
         }
