@@ -12,6 +12,10 @@ exports.run = (client, message, args, ops) => {
 
         rendered = rendered.trimRight();
 
+        if(!rendered.length) {
+            return message.channel.send(`🤠 Sorry, cannot convert this into ASCII yet! 🤠`);
+        }
+
         if(rendered.length > 2000) {
             return message.channel.send(`🤠 Sorry, ASCII messages cannot exceed 2,000 characters! 🤠`);
         }
