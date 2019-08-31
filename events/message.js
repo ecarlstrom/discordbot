@@ -2,7 +2,7 @@ const config = require('dotenv').config();
 
 module.exports = async message => {
     let client = message.client;
-
+    try {
     if(message.author.bot) {
         return;
     }
@@ -33,6 +33,9 @@ module.exports = async message => {
             return;
         }
 
-        cmd.run(client, message,params, perms);
+        cmd.run(client, message, params, perms);
     }
+} catch(err) {
+    return;
+}
 };

@@ -1,28 +1,26 @@
 const ascii = require('ascii-art');
 
-exports.run = (client, message, args, ops) => {
+exports.run = (client, message, args) => {
 
     ascii.font(args.join(' '), 'Doom', function(rendered) {
         // test for any necessary whitespace removal additions
-
-        // try if(!rendered.length style fix tomorrow to solve ascii crashes)
-        if(!args[0]) {
+       
+        console.log(typeof(args[0]));
+        if(!args.join(' ')) {
             return message.reply(`🤠 Please enter some text to format! 🤠`)
         }
 
-        if(typeof(args[0] !== "string")) {
-            return message.channel.send(`🤠 Sorry, cannot convert this into ASCII yet! 🤠`);
-        }
-        
         rendered = rendered.trimRight();
 
         if(rendered.length > 2000) {
             return message.channel.send(`🤠 Sorry, ASCII messages cannot exceed 2,000 characters! 🤠`);
+        } else if(rendered == null) {
+            return message.channel.send(`🤠`);
         }
-
+        console.log(rendered);
         message.channel.send(rendered, {
             code: 'md'
-        });
+        })
     });
 };
 
