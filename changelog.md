@@ -1,5 +1,9 @@
 # Changelog
 
+**September 1, 2019**
+
+- The `!ascii` crash bug has been fixed. A proper error message will be added soon but for now the bot simply skips input that it cannot format (e.g. `!ascii <emoji>`)) and awaits the next command.
+
 **August 28, 2019**
 
 - Removed the permission level requirement for the `!reload` command. Users will not have to wait for an admin to run this command anymore.

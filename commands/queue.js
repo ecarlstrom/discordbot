@@ -45,5 +45,5 @@ exports.conf = {
 exports.help = {
     name: 'queue',
     description: 'Displays the current queue of songs.',
-    usage: 'queue'
+    usage: 'queue/q'
 };
