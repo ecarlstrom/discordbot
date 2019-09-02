@@ -14,6 +14,10 @@ Information on current commands and plans for improvement can be found further d
 
 - The `!ascii <text>` command returns the input text in ASCII format. Capabilities are currently being expanded and will hopefully handle a wider variety of inputs in the future.
 
+- The `!list` command lists all the custom emoji for the custom server in a small embed that is easy to read.
+
+- The `!listnames` command returns a similar result to `!list` but also includes the name of each emoji. Each row is returned in `<emoji> | <emojiname>` format. This command can return a rather large result for servers with 50+ emoji, so it is recommended to use this sparingly and/or create a separate "Bot Commands" type channel to avoid cluttering chat servers.
+
 ### Weather
 
 - The `!w <location>` command is used for current weather conditions at a given location. The bot accepts full city names, abbreviations, and ZIP codes to find location, e.g. `!w New York` and `!w ny` both return the weather for New York City and one of its many ZIP codes can be used for a slightly more specific scope.
