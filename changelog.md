@@ -1,5 +1,13 @@
 # Changelog
 
+**September 2, 2019**
+
+- Playback issues seem to have finally been fixed! I'm keeping a close eye on this in particular, but for now I've had enough hours of testing with an without other people queueing songs to declare this fix a success.
+
+- Rather than cause an error, the `!list` and `!listnames` will now split responses into multiple embeds in the event the result exceeds 2,000 characters.
+
+- The date displayed at the top of the `!forecast` command now correctly indicates the date for the Monday of the current week.
+
 **September 1, 2019**
 
 - The `!ascii` crash bug has been fixed. A proper error message will be added soon but for now the bot simply skips input that it cannot format (e.g. `!ascii <emoji>`)) and awaits the next command.
