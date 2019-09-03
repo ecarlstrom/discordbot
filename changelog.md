@@ -2,9 +2,9 @@
 
 **September 2, 2019**
 
-- Playback issues seem to have finally been fixed! I'm keeping a close eye on this in particular, but for now I've had enough hours of testing with an without other people queueing songs to declare this fix a success.
+- Playback issues seem to have finally been fixed! I'm keeping a close eye on this in particular, but for now I've had enough hours of testing with and without other people queueing songs to declare this fix a success.
 
-- Rather than cause an error, the `!list` and `!listnames` will now split responses into multiple embeds in the event the result exceeds 2,000 characters.
+- Rather than cause an error, the `!list` and `!listnames` commands will now split responses into multiple embeds in the event the result exceeds 2,000 characters.
 
 - The date displayed at the top of the `!forecast` command now correctly indicates the date for the Monday of the current week.
 
