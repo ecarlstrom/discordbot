@@ -21,7 +21,7 @@ exports.run = (client, message) => {
         .setTimestamp()
         .setURL(current.url);
     if(embedCheck(message)) {
-        for(let i = 0; i < queue.length && i < 5; i++) {
+        for(let i = 0; i < queue.length && i < 10; i++) {
             embed.addField(`🤠 ${queue[i].songTitle.substring(0, 50)} (${queue[i].playTime}) 🤠`, `Requested by **${queue[i].requester}**`);
         }
         message.channel.send(embed, '', {
