@@ -53,8 +53,7 @@ exports.run = async (client, message, args) => {
         info = await youtube.getVideoByID(id);
         // console.log('again: ' + id);
     } catch(e) {
-        console.log(e);
-        return message.channel.send(`${e}`)
+        console.log(e.stack || e);
     }
 
     if(message.author.permLevel < 2 && parseInt(info.durationSeconds) > 900) {
