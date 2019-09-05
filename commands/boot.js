@@ -1,4 +1,4 @@
-exports.run = (client, message, args, ops) => {
+exports.run = (client, message, args) => {
     if(!message.member.voiceChannel) {
         return message.reply(`🤠 Please join a voice channel! 🤠`);
     }

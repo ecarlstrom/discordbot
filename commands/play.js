@@ -58,7 +58,7 @@ exports.run = async (client, message, args) => {
     }
 
     if(message.author.permLevel < 2 && parseInt(info.durationSeconds) > 900) {
-        return message.reply(`🤠 Sorry, song time limit is 15 minutes! 🤠`).catch(console.error);
+        return message.reply(`🤠 Sorry, song time limit is 15 minutes! 🤠`).catch(console.error.message);
     }
 
     let time = parseInt(info.durationSeconds, 10);

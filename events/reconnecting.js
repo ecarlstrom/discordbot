@@ -1,3 +1,7 @@
 module.exports = async client => {
-    console.log('Reconnecting!');
+    try {
+        console.log('Reconnecting!');
+    }catch(err) {
+        return;
+    }
 };

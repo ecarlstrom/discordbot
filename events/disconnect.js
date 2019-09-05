@@ -1,4 +1,8 @@
 module.exports = async client => {
-    console.log('Disconnected!');
-    process.exit();
+    try {
+        console.log('Disconnected!');
+        process.exit();
+    }catch(err) {
+        return;
+    }
 };
