@@ -29,18 +29,18 @@ exports.run = async (client, message, args) => {
             position: -1
         });
         await voiceChannel.join();
-        console.log("Queue from play.js: " + client.queues);
+        console.log("Queue from play.js: %o", client.queues);
     }
 
     let id = (() => {
         const parsed = parse(song, true);
 
         if(/^(www\.)?youtube\.com/.test(parsed.hostname)) {
-            console.log("Parsed: " + parsed);
-            console.log("Parsed query: " + parsed.query.v);
+            console.log("Parsed: %o", parsed);
+            console.log("Parsed query: %o", parsed.query.v);
             return parsed.query.v;
         } else if(/^(www\.)?youtu\.be/.test(parsed.hostname)) {
-            console.log("Pathname: " + parsed.pathname.slice);
+            console.log("Pathname: %o", parsed.pathname.slice);
             return parsed.pathname.slice(1);
         }
     })();
@@ -48,14 +48,15 @@ exports.run = async (client, message, args) => {
     if(!id) {
         let results = await youtube.searchVideos(song, 4);
         id = results[0].id;
-        console.log("Results: " + results, id);
+        console.log("Results: %o",  results);
+        console.log("Video ID: %o", id);
     }
 
     let info;
     try {
         // console.log(id);
         info = await youtube.getVideoByID(id);
-        console.log("Info: + " + info);
+        console.log("Info: %o", info);
         // console.log('again: ' + id);
     } catch(e) {
         console.log(e.stack || e);
