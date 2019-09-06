@@ -36,6 +36,6 @@ module.exports = async message => {
             cmd.run(client, message, params, perms);
         }
         } catch(err) {
-    return;
-    }
+            return;
+        }
 };
