@@ -5,7 +5,7 @@ const config = require('dotenv').config();
 const playNext = require('../functions/playNext.js');
 const ytapi = require('simple-youtube-api');
 const { parse } = require('url');
-const youtube = new ytapi("AIzaSyAod-f4LRhucDhK6CLdel2VHyg9zxuWBms");
+const youtube = new ytapi(process.env.youtubeAPIKey);
 
 exports.run = async (client, message, args) => {
     let song = args.join(' ');
