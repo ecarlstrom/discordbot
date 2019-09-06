@@ -5,8 +5,7 @@ const config = require('dotenv').config();
 const playNext = require('../functions/playNext.js');
 const ytapi = require('simple-youtube-api');
 const { parse } = require('url');
-const youtube = new ytapi(process.env.youtubeAPIKey);
-const ytdl = require('ytdl-core');
+const youtube = new ytapi("AIzaSyAod-f4LRhucDhK6CLdel2VHyg9zxuWBms");
 
 exports.run = async (client, message, args) => {
     let song = args.join(' ');
@@ -30,14 +29,18 @@ exports.run = async (client, message, args) => {
             position: -1
         });
         await voiceChannel.join();
+        console.log("Queue from play.js: " + client.queues);
     }
 
     let id = (() => {
         const parsed = parse(song, true);
 
         if(/^(www\.)?youtube\.com/.test(parsed.hostname)) {
+            console.log("Parsed: " + parsed);
+            console.log("Parsed query: " + parsed.query.v);
             return parsed.query.v;
         } else if(/^(www\.)?youtu\.be/.test(parsed.hostname)) {
+            console.log("Pathname: " + parsed.pathname.slice);
             return parsed.pathname.slice(1);
         }
     })();
@@ -45,12 +48,14 @@ exports.run = async (client, message, args) => {
     if(!id) {
         let results = await youtube.searchVideos(song, 4);
         id = results[0].id;
+        console.log("Results: " + results, id);
     }
 
     let info;
     try {
         // console.log(id);
         info = await youtube.getVideoByID(id);
+        console.log("Info: + " + info);
         // console.log('again: ' + id);
     } catch(e) {
         console.log(e.stack || e);

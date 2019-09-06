@@ -17,6 +17,9 @@ const playNext = (message) => {
     }, {highWaterMark: 1});
 
     thisQueue.dispatcher = dispatcher;
+    console.log("Queue: " + thisQueue);
+    console.log("Next: " + nextSong);
+    console.log("Dispatcher: " + dispatcher);
 
     if(embedCheck(message)) {
         const embed = new Discord.RichEmbed()
