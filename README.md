@@ -22,6 +22,8 @@ Information on current commands and plans for improvement can be found further d
 
 - The `!boot/!kick` command will make the bot leave the current voice channel. As with `!join`, this can only be used by someone in the voice channel.
 
+- The `!delete <# of messages>` command deletes the specified number of previous messages from the current channel.
+
 ### Weather
 
 - The `!w <location>` command is used for current weather conditions at a given location. The bot accepts full city names, abbreviations, and ZIP codes to find location, e.g. `!w New York` and `!w ny` both return the weather for New York City and one of its many ZIP codes can be used for a slightly more specific scope.
