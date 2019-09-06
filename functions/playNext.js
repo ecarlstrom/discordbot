@@ -42,7 +42,7 @@ const playNext = (message) => {
                 message.guild.voiceConnection.disconnect();
                 message.client.queues.delete(message.guild.id);
             }
-        }, 200)
+        }, 100);
     });
 };
 
