@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
 const embedCheck = require('./embedPerms.js');
-const yt = require('ytdl-core');
+const ytdl = require('ytdl-core');
 
-const playNext = (message) => {
+const playNext = async (message) => {
     // test buildpacks 2
     const thisQueue = message.client.queues.get(message.guild.id);
     const nextSong = thisQueue.queue[++thisQueue.position];
-    const dispatcher = message.guild.voiceConnection.playStream(yt(nextSong.url, {
+    const dispatcher = message.guild.voiceConnection.playStream(ytdl(nextSong.url, {
         // test varying qualities when working
         filter: 'audioonly',
         quality: 'highestaudio',
@@ -34,7 +34,6 @@ const playNext = (message) => {
     }
 
     dispatcher.on('end', () => {
-        setTimeout(() => {
             if(thisQueue.position + 1 < thisQueue.queue.length) {
                 playNext(message);
             } else {
@@ -42,7 +41,6 @@ const playNext = (message) => {
                 message.guild.voiceConnection.disconnect();
                 message.client.queues.delete(message.guild.id);
             }
-        }, 100);
     });
 };
 
