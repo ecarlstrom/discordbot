@@ -17,8 +17,7 @@ const playNext = (message) => {
     }, {highWaterMark: 1});
 
     thisQueue.dispatcher = dispatcher;
-    console.log("QUEUE POSITION: %o", thisQueue.position);
-    console.log("QUEUE LENGTH: %o", thisQueue.queue.length);
+
     if(embedCheck(message)) {
         const embed = new Discord.RichEmbed()
             .setTitle(`Now playing **${nextSong.songTitle}** (${nextSong.playTime})`)
@@ -35,13 +34,15 @@ const playNext = (message) => {
     }
 
     dispatcher.on('end', () => {
-        if(thisQueue.position + 1 < thisQueue.queue.length) {
-            playNext(message);
-        } else {
-            message.channel.send('🤠 Reached the end of the queue, please add some songs! 🤠');
-            message.guild.voiceConnection.disconnect();
-            message.client.queues.delete(message.guild.id);
-        }
+        setTimeout(() => {
+            if(thisQueue.position + 1 < thisQueue.queue.length) {
+                playNext(message);
+            } else {
+                message.channel.send('🤠 Reached the end of the queue, please add some songs! 🤠');
+                message.guild.voiceConnection.disconnect();
+                message.client.queues.delete(message.guild.id);
+            }
+        }, 200)
     });
 };
 
