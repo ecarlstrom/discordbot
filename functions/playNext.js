@@ -17,10 +17,8 @@ const playNext = (message) => {
     }, {highWaterMark: 1});
 
     thisQueue.dispatcher = dispatcher;
-    console.log("Queue: %o", thisQueue);
-    console.log("Next: %o", nextSong);
-    console.log("Dispatcher: %o", dispatcher);
-
+    console.log("QUEUE POSITION: %o", thisQueue.position);
+    console.log("QUEUE LENGTH: %o", thisQueue.queue.length);
     if(embedCheck(message)) {
         const embed = new Discord.RichEmbed()
             .setTitle(`Now playing **${nextSong.songTitle}** (${nextSong.playTime})`)
