@@ -36,6 +36,11 @@ module.exports = async message => {
             cmd.run(client, message, params, perms);
         }
         } catch(err) {
+            console.log(err.stack || err)
             return;
         }
+
+        process.on('unhandledRejection', (reason, promise) => {
+            console.log('Unhandled Rejection: ', reason.stack || reason);
+        })
 };
