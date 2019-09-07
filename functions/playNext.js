@@ -18,30 +18,35 @@ const playNext = async (message) => {
 
     thisQueue.dispatcher = dispatcher;
 
-    if(embedCheck(message)) {
-        const embed = new Discord.RichEmbed()
-            .setTitle(`Now playing **${nextSong.songTitle}** (${nextSong.playTime})`)
-            .setColor(0xc10404)
-            .setFooter(`Requested by ${nextSong.requester}`, nextSong.requesterIcon)
-            .setImage(`https://i.ytimg.com/vi/${nextSong.id}/mqdefault.jpg`)
-            .setTimestamp()
-            .setURL(nextSong.url);
-        message.channel.send(embed, '', {
-            disableEveryone: true
-        });
-    } else {
-        message.channel.send(`Now playing **${nextSong.songTitle}** (${nextSong.playTime})`);
-    }
+    try {
+        if(embedCheck(message)) {
+            const embed = new Discord.RichEmbed()
+                .setTitle(`Now playing **${nextSong.songTitle}** (${nextSong.playTime})`)
+                .setColor(0xc10404)
+                .setFooter(`Requested by ${nextSong.requester}`, nextSong.requesterIcon)
+                .setImage(`https://i.ytimg.com/vi/${nextSong.id}/mqdefault.jpg`)
+                .setTimestamp()
+                .setURL(nextSong.url);
+            message.channel.send(embed, '', {
+                disableEveryone: true
+            });
+        } else {
+            message.channel.send(`Now playing **${nextSong.songTitle}** (${nextSong.playTime})`);
+        }
 
-    dispatcher.on('end', () => {
-            if(thisQueue.position + 1 < thisQueue.queue.length) {
-                playNext(message);
-            } else {
-                message.channel.send('🤠 Reached the end of the queue, please add some songs! 🤠');
-                message.guild.voiceConnection.disconnect();
-                message.client.queues.delete(message.guild.id);
-            }
-    });
+        dispatcher.on('end', () => {
+                if(thisQueue.position + 1 < thisQueue.queue.length) {
+                    playNext(message);
+                } else {
+                    message.channel.send('🤠 Reached the end of the queue, please add some songs! 🤠');
+                    message.guild.voiceConnection.disconnect();
+                    message.client.queues.delete(message.guild.id);
+                }
+        });
+    } catch(err) {
+        console.log(err.stack || err);
+    }
+    
 };
 
 module.exports = playNext;
