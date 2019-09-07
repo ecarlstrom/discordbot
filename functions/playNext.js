@@ -45,8 +45,9 @@ const playNext = async (message) => {
         });
     } catch(err) {
         console.log(err.stack || err);
+        return;
     }
-    
+
 };
 
 module.exports = playNext;
