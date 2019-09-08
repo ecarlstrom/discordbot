@@ -18,7 +18,7 @@ module.exports = async message => {
         let command = message.content.split(' ')[0].slice(process.env.prefix.length);
         let params = message.content.split(' ').slice(1);
         let perms = client.elevation(message);
-
+        
         message.author.permLevel = perms;
 
         let cmd;
