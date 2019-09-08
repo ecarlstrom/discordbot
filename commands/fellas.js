@@ -5,20 +5,20 @@ exports.run = async (client, message) => {
         return message.reply(`🤠 Please join a voice channel! 🤠`);
     }
 
-            if(client.queues.dispatcher) {
-                client.queues.dispatcher.pause();
+            if(client.queues.has(message.guild.id)) {
+                client.queues.get(message.guild.id).dispatcher.pause();
             }
             voiceChannel.join()
                 .then(connection => {
                 console.log(client.queues);
                 const hankDispatch = connection.playFile('C:/Users/Evan/Downloads/fellas.mp3');
             
-                if(client.queues.dispatcher) {
+                if((client.queues.has(message.guild.id))) {
                     hankDispatch.on('end'), () => {
-                    client.queues.dispatcher.resume();
+                        client.queues.get(message.guild.id).dispatcher.resume();
                 }}
 
-                if(!client.queues.dispatcher) {
+                if((!client.queues.has(message.guild.id))) {
                     hankDispatch.on('end', () => {
                     voiceChannel.leave();
                 })
