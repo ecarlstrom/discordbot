@@ -24,6 +24,8 @@ Information on current commands and plans for improvement can be found further d
 
 - The `!delete <# of messages>` command deletes the specified number of previous messages from the current channel.
 
+- The `!fellas` command has the bot join voice and play a short Hank Hill audio clip before leaving.
+
 ### Weather
 
 - The `!w <location>` command is used for current weather conditions at a given location. The bot accepts full city names, abbreviations, and ZIP codes to find location, e.g. `!w New York` and `!w ny` both return the weather for New York City and one of its many ZIP codes can be used for a slightly more specific scope.
