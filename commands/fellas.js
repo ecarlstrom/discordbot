@@ -23,6 +23,7 @@ exports.run = async (client, message) => {
                     voiceChannel.leave();
                 })
             }}).catch(console.error.stack || console.error)
+            // test other approaches
 
 }
 
