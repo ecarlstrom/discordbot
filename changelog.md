@@ -1,5 +1,11 @@
 # Changelog
 
+**September 9, 2019**
+
+- I've temporarily made the `!skip` command into a simplified version that doesn't require a vote system while I figure out why the voting was causing the command to act strangely. That's still an immediate plan and this is a temporary workaround so people can skip one song without having to redo the queue.
+
+- Added the `!fellas` command per server request that will play a short (two-second) audio clip in the voice channel. Do not use this while music is playing at the moment until I can get the music queue to play nicely with a separate audio dispatcher. If the command is used with a music queue of any size playing, it will currently end the queue.
+
 **September 2, 2019**
 
 - Playback issues seem to have finally been fixed! I'm keeping a close eye on this in particular, but for now I've had enough hours of testing with and without other people queueing songs to declare this fix a success.
