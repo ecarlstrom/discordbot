@@ -12,6 +12,10 @@ exports.run = async (client, message, args) => {
         } catch(e) {
             message.reply(e.message);
         }
+
+        process.on('unhandledRejection', (reason, promise) => {
+            console.log('Unhandled Rejection: ', reason.stack || reason);
+        })
 };
 
 exports.conf = {

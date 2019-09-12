@@ -39,9 +39,4 @@ module.exports = async message => {
             console.log(err.stack || err)
             return;
         }
-
-        // check this number
-        process.on('unhandledRejection', (reason, promise) => {
-            console.log('Unhandled Rejection: ', reason.stack || reason);
-        })
 };

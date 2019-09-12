@@ -22,6 +22,10 @@ exports.run = (client, message, args) => {
             code: 'md'
         })
     });
+
+    process.on('unhandledRejection', (reason, promise) => {
+        console.log('Unhandled Rejection: ', reason.stack || reason);
+    })
 };
 
 exports.conf = {

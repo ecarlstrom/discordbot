@@ -64,6 +64,10 @@ exports.run = (client, message) => {
       }
     });
   }
+
+  process.on('unhandledRejection', (reason, promise) => {
+    console.log('Unhandled Rejection: ', reason.stack || reason);
+  })
 }
 
 exports.conf = {

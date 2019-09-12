@@ -48,9 +48,7 @@ exports.run = async (client, message, args) => {
 
     let info;
     try {
-        // console.log(id);
         info = await youtube.getVideoByID(id);
-        // console.log('again: ' + id);
     } catch(e) {
         console.log(e.stack || e);
     }
@@ -95,6 +93,10 @@ exports.run = async (client, message, args) => {
             message.channel.send(`**${info.title}** (${minutes}:${seconds}) added to queue!`);
         }
     }
+
+    process.on('unhandledRejection', (reason, promise) => {
+        console.log('Unhandled Rejection: ', reason.stack || reason);
+    })
 };
 
 exports.conf = {
