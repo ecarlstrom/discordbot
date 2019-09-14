@@ -116,6 +116,9 @@ client.on('message', (message) => {
   }
 });
 
+// abstract list/listnames into individual commands eventually
+// placeholder for "dadbot"-style commands as per server request
+
 // adding a new message event here since variables are used, the below handles game/status activity
 
 client.on('message', message => {
