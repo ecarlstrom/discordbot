@@ -1,5 +1,9 @@
 # Changelog
 
+**September 15, 2019**
+
+- The `!list` and `!listnames` commands have been moved to their own command files and will now show up properly when using `!help`.
+
 **September 9, 2019**
 
 - I've temporarily made the `!skip` command into a simplified version that doesn't require a vote system while I figure out why the voting was causing the command to act strangely. That's still an immediate plan and this is a temporary workaround so people can skip one song without having to redo the queue.
