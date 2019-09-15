@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 exports.run = (client, message) => {
     // return a list of the server's custom emojis
 

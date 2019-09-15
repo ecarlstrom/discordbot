@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 exports.run = (client, message) => {
     if(message.content === (process.env.prefix + 'listnames')) {
         // this version includes the numerical ID of each custom emoji:
