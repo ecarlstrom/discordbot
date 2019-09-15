@@ -84,7 +84,7 @@ client.on('message', (message) => {
     message.reply(`${DrSEG}`);
     message.react(DrSEG);
   }
-
+});
 // placeholder for "dadbot"-style commands as per server request
 // looking at more "dadbot" rules/options
 
