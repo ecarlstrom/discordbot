@@ -6,11 +6,11 @@ exports.run = async (client, message) => {
     }
             // simpler troubleshooting method: if queue exists, return a message saying the command can't be used
             if(client.queues.has(message.guild.id)) {
-                client.queues.get(message.guild.id).dispatcher.pause();
+                return message.reply(`🤠 Cannot do this while music is playing! 🤠`);
             }
+
             voiceChannel.join()
                 .then(connection => {
-                console.log(client.queues);
                 const hankDispatch = connection.playFile('C:/Users/Evan/Downloads/fellas.mp3');
             
                 if((client.queues.has(message.guild.id))) {
