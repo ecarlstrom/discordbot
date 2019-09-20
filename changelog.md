@@ -1,5 +1,9 @@
 # Changelog
 
+**September 19, 2019**
+
+- Added a fix for the `!fellas` command stopping the music queue and/or crashing the bot if it's used while a music queue is playing. This will work for now until I figure out whether or not there's a way to pause the queue, play the clip, then resume the queue.
+
 **September 15, 2019**
 
 - The `!list` and `!listnames` commands have been moved to their own command files and will now show up properly when using `!help`.
