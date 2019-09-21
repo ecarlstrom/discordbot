@@ -3,12 +3,12 @@ exports.run = async (client, message) => {
 
     if(!voiceChannel || (!message.member.voiceChannel && message.author.permLevel < 2)) {
         return message.reply(`🤠 Please join a voice channel! 🤠`);
-    }
+    }   
             // simpler troubleshooting method: if queue exists, return a message saying the command can't be used
             if(client.queues.has(message.guild.id)) {
                 return message.reply(`🤠 Cannot do this while music is playing! 🤠`);
             }
-
+            // continuing to test the above solution
             voiceChannel.join()
                 .then(connection => {
                 const hankDispatch = connection.playFile('C:/Users/Evan/Downloads/fellas.mp3');
