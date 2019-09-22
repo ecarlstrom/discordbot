@@ -1,5 +1,9 @@
 # Changelog
 
+**September 21, 2019**
+
+- Added a simple fix for cases where `!volume` is used with no value and no song currently playing that occasionally crashed the bot. Users will now receive a message saying that there's no music playing whether they use the command with or without a value.
+
 **September 19, 2019**
 
 - Added a fix for the `!fellas` command stopping the music queue and/or crashing the bot if it's used while a music queue is playing. This will work for now until I figure out whether or not there's a way to pause the queue, play the clip, then resume the queue.
