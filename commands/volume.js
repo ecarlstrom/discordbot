@@ -5,6 +5,10 @@ exports.run = async(client, message, args) => {
         return message.reply(`🤠 Please join a voice channel! 🤠`);
     }
 
+    if(!client.queues.has(message.guild.id)) {
+        return message.reply(`🤠 No music is currently playing! 🤠`);
+    }
+
     let vol = args.join(' ');
 
     // console.log(vol);
