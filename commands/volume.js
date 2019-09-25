@@ -10,7 +10,7 @@ exports.run = async(client, message, args) => {
     }
 
     let vol = args.join(' ');
-
+    // test for args
     // console.log(vol);
     // console.log(typeof(vol));
 
