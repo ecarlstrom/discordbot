@@ -60,7 +60,7 @@ exports.run = (client, message) => {
             embed.addField(`🚨 Local weather alert:`, `${location.alert} 🚨`)
             embed.addBlankField(true)
           }
-        message.channel.send({embed});
+        message.channel.send({embed} || err.message);
       }
     });
   }
