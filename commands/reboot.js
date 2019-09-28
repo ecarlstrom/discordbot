@@ -29,6 +29,11 @@ exports.run = async(client, message) => {
 
         console.error('Invalid reason!');
     });
+
+    process.on('unhandledRejection', (reason, promise) => {
+        console.log('Unhandled Rejection: ', reason.stack || reason);
+    })
+    
 };
 
 exports.conf = {
