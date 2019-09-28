@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "ascii-art": "^1.5.1",
-    "child_process": "^1.0.2",
     "discord": "^0.8.2",
     "discord.js": "^11.5.1",
     "dotenv": "^6.1.0",
