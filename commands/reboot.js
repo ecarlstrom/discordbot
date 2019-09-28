@@ -1,3 +1,5 @@
+const process = require('process');
+
 exports.run = async(client, message) => {
     message.channel.send(`Are you sure you want to reboot? Reply with 'cancel' to abort, or allow 30 seconds for self-abort.`);
 
@@ -14,7 +16,7 @@ exports.run = async(client, message) => {
             return collector.stop('kill');
         }
 
-        return message.channel.send(`Please supply a valid answer: \`${valid.join('`, `')}!`).catch(console.error);
+        return message.channel.send(`Please supply a valid answer: \`${valid.join(' `, ` ')}\!`).catch(console.error);
     });
 
     collector.on('end', async(collected, reason) => {
@@ -33,7 +35,7 @@ exports.run = async(client, message) => {
     process.on('unhandledRejection', (reason, promise) => {
         console.log('Unhandled Rejection: ', reason.stack || reason);
     })
-    
+
 };
 
 exports.conf = {
