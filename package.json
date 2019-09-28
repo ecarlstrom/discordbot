@@ -29,6 +29,7 @@
     "ytdl-core-discord": "^1.0.3"
   },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node ./bin/www",
+    "build": "nodemon ./bin/www"
   }
 }

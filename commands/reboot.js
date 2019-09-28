@@ -1,4 +1,5 @@
 const process = require('process');
+const { spawn } = require('child_process');
 
 exports.run = async(client, message) => {
     message.channel.send(`Are you sure you want to reboot? Reply with 'cancel' to abort, or allow 30 seconds for self-abort.`);
@@ -21,8 +22,20 @@ exports.run = async(client, message) => {
 
     collector.on('end', async(collected, reason) => {
         if(reason === 'kill') {
-            await client.destroy();
-            process.exit();
+            // if(reason === 'kill') () => {
+            //     spawn(process.argv[1], process.argv.slice(2), {
+            //          detached: true, 
+            //          stdio: ['ignore', out, err]
+            //        }).unref()
+            //        process.exit()
+            // await client.destroy();
+            // process.exit();
+
+            spawn(process.argv[0], process.argv.slice(1), {
+                env: { process_restart: 1 },
+                stdio: 'ignore',
+                detached: true
+            }).unref();
         } else if(reason === 'time') {
             return message.channel.send('Reboot timed out!');
         } else if(reason === 'abort') {
