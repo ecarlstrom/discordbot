@@ -1,5 +1,9 @@
 # Changelog
 
+**September 28, 2019**
+
+- Lowered permission requirements for the `!reboot` command so that super mods and admins will be able to use it when necessary.
+
 **September 21, 2019**
 
 - Added a simple fix for cases where `!volume` is used with no value and no song currently playing that occasionally crashed the bot. Users will now receive a message saying that there's no music playing whether they use the command with or without a value.
