@@ -1,5 +1,6 @@
 exports.run = (client, message, args, tools) => {
     // looking into why the `! <command>` syntax triggers this
+    // continuing work on the above issue, 10/1
     if(isNaN(args[0])) {
         return message.channel.send(`🤠 Please specify the number of messages to delete! 🤠`);
     }
