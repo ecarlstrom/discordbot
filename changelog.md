@@ -1,5 +1,9 @@
 # Changelog
 
+**October 2, 2019**
+
+- The number of results from the `!search` command has been increased from 5 to 10.
+
 **September 28, 2019**
 
 - Lowered permission requirements for the `!reboot` command so that super mods and admins will be able to use it when necessary.
