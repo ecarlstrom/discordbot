@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
     let search = args.join(' ');
 
     try {
-        const results = await youtube.searchVideos(search, 5);
+        const results = await youtube.searchVideos(search, 10);
         return message.channel.sendCode('', `Top 5 search results:\n\n 🤠 ${results.map(i =>
             `${i.title}\n https://www.youtube.com/watch?v=${i.id}\n`).join('\n 🤠 ')}`);
         } catch(e) {
