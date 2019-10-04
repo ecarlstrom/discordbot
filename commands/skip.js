@@ -16,6 +16,7 @@ exports.run = async (client, message) => {
 
     // message.channel.send(`🤠 Beginning the ten-second skip vote, needing at least ${voiceUsers} votes to pass. Use "skip" (not !skip) to vote. 🤠`);
 
+    // test filter independently, maybe this is the issue?
     // const filter = m => m.content.startsWith('skip');
 
     // message.channel.awaitMessages(filter, {
