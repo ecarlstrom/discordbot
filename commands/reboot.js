@@ -29,6 +29,7 @@ exports.run = async(client, message) => {
             // await client.destroy();
             // process.exit();
 
+            // method two
             // spawn(process.argv[0], process.argv.slice(1), {
             //     env: { process_restart: 1 },
             //     stdio: 'ignore',
