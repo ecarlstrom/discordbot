@@ -11,6 +11,8 @@ const moment = require('moment');
 
 client.login(token);
 require('./util/eventLoader')(client);
+// managing event emitters for the various commands, avoids resource leakage
+require('events').EventEmitter.defaultMaxListeners = 50;
 
 ////////// LEAGUE DEPENDENCIES //////////
 
