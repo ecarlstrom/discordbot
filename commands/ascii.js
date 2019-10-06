@@ -3,7 +3,7 @@ const ascii = require('ascii-art');
 exports.run = (client, message, args) => {
 
     ascii.font(args.join(' '), 'Doom', function(rendered) {
-        // test for any necessary whitespace removal additions
+        // add further handling for images, sizes, etc.
        
         console.log(typeof(args[0]));
         if(!args.join(' ')) {
