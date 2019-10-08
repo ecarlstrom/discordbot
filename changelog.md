@@ -1,5 +1,9 @@
 # Changelog
 
+**October 7, 2019**
+
+- Updated some command handler resource usage that should hopefully help to prevert resource allocation issues that lead to errors.
+
 **October 2, 2019**
 
 - The number of results from the `!search` command has been increased from 5 to 10.
