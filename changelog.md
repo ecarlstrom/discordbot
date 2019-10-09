@@ -1,5 +1,9 @@
 # Changelog
 
+**October 8, 2019**
+
+- The `!weather` command has been updated so that it returns a properly-formatted error notification in the event that a location has not been input.
+
 **October 7, 2019**
 
 - Updated some command handler resource usage that should hopefully help to prevert resource allocation issues that lead to errors.
