@@ -12,8 +12,7 @@ exports.run = (client, message) => {
   
       weather.find({search: args.join(' '), degreeType: 'F'}, function(err, result) {
         if(err) {
-          message.channel.send('🤠 Please enter a search term! 🤠')
-          return;
+          return message.reply(`🤠 Please input a location! 🤠`);
         }
   
         if(result === undefined || result.length === 0) {
