@@ -12,8 +12,7 @@ exports.run = (client, message) => {
 
     weather.find({search: args.join(' '), degreeType: 'F'}, function(err, result) {
       if(err) {
-        message.channel.send(err);
-        return;
+        return message.reply(`🤠 Please input a location! 🤠`);
       }
 
       // weather-js should return an array of objects
