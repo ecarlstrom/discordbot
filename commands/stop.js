@@ -5,6 +5,11 @@ exports.run = (client, message) => {
         return message.reply('🤠 Please join a voice channel! 🤠');
     }
 
+    if(!client.queues.has(message.guild.id)) {
+        voiceChannel.leave();
+        return message.reply(`🤠 Error encountered or no queue found, resetting music queue. 🤠`);
+    }
+
     if(client.queues.has(message.guild.id)) {
         let queue = client.queues.get(message.guild.id);
         queue.queue = [];
