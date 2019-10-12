@@ -1,5 +1,9 @@
 # Changelog
 
+**October 11, 2019**
+
+- New version released with recent updates including search term list increase, resource allocation and stability improvements, and better error messages.
+
 **October 8, 2019**
 
 - The `!weather` command has been updated so that it returns a properly-formatted error notification in the event that a location has not been input.
