@@ -6,4 +6,4 @@
 
 - The `!list/!listnames` commands are split into multiple embeds, so sometimes there is one emoji that begins in one and ends in another if the first embed reaches its character limit. I'll try and adjust this so if an emoji will hit the character limit it will roll over to the next embed so it can be displayed properly.
 
-- Certain playback issues such as a song not playing correctly or inputs being entered in rapid succession can cause the bot to freeze and require a reboot before music playback is restored, looking into this. 
+- Certain playback issues such as a song not playing correctly or inputs being entered in rapid succession can cause the bot to freeze and require a reboot before music playback is restored, looking into this. (testing the fix on 10/13 release currently)
