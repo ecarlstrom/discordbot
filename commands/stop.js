@@ -10,7 +10,7 @@ exports.run = (client, message) => {
     };
     
     if(!client.queues.has(message.guild.id)) {
-        voiceChannel.leave();
+        // voiceChannel.leave();
         return message.reply(`🤠 Error encountered or no queue found, resetting music queue. 🤠`);
     }
 
