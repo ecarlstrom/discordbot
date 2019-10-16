@@ -1,5 +1,9 @@
 # Changelog
 
+**October 14, 2019**
+
+- Still testing the recent fixes to stability. Too early for anything conclusive but general performance since those changes were pushed has been promising.
+
 **October 13, 2019**
 
 - Small oversight fixed: the `!stop` command now requires the command user to be in the same voice channel as the bot.
