@@ -1,4 +1,4 @@
-exports.run = async(client, message, args) => {
+exports.run = async (client, message, args) => {
     const voiceChannel = message.member.voiceChannel ? message.member.voiceChannel : (message.guild.voiceConnection ? message.guild.voiceConnection : null);
 
     if(!voiceChannel || (!message.member.voiceChannel && message.author.permLevel < 2)) {
