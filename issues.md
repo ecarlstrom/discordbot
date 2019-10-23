@@ -8,4 +8,4 @@
 
 - Certain playback issues such as a song not playing correctly or inputs being entered in rapid succession can cause the bot to freeze and require a reboot before music playback is restored, looking into this. (testing the fix on 10/13 release currently)
 
-- Most of the current (10/19) crashes seem to be related to a particular package rather than any of the code, so I'm investigating ways to fix this.
+- Most of the current (10/19) crashes seem to be related to a particular package rather than any of the code, so I'm investigating ways to fix this. (10/22 update: looking at some potential fixes as this issue has been reported by a number of other people)
