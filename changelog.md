@@ -1,5 +1,9 @@
 # Changelog
 
+**October 24, 2019**
+
+- Continuing to test some stability and reboot command fixes. General stability seems to have improved over the last two weeks, still ironing out some of the crash causes.
+
 **October 14, 2019**
 
 - Still testing the recent fixes to stability. Too early for anything conclusive but general performance since those changes were pushed has been promising.
