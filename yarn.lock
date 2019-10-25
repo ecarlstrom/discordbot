@@ -425,10 +425,6 @@ cheerio@~0.22.0:
     lodash.reject "^4.4.0"
     lodash.some "^4.4.0"
 
-child_process@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/child_process/-/child_process-1.0.2.tgz#b1f7e7fc73d25e7fd1d455adc94e143830182b5a"
-
 chokidar@^2.1.5:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.6.tgz#b6cad653a929e244ce8a834244164d241fa954c5"
