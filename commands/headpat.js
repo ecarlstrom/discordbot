@@ -1,8 +1,12 @@
 exports.run = (client, message) => {
     if(message.content.startsWith(process.env.prefix)) {
-        message.reply("<:headpat:637295953925111818>")
-    }
-};
+        message.reply("<:headpat:637295953925111818>");
+
+        // for reaction
+        // const headpatEmoji = message.guild.emojis.find(emoji => emoji.name === "headpat")
+        // return message.react(headpatEmoji);
+    };
+}
 
 exports.conf = {
     enabled: true,
