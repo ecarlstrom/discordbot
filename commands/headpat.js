@@ -1,7 +1,6 @@
 exports.run = (client, message) => {
     if(message.content.startsWith(process.env.prefix)) {
-        const headpatEmoji = message.guild.emojis.find(emoji => emoji.name === "headpat")
-        return message.reply(headpatEmoji);
+        message.reply("<:headpat:637295953925111818>")
     }
 };
 
