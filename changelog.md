@@ -1,5 +1,11 @@
 # Changelog
 
+**October 26, 2019**
+
+- Added the `!headpat` command as per server request.
+
+- Updated some packages that will hopefully improve stability.
+
 **October 24, 2019**
 
 - Continuing to test some stability and reboot command fixes. General stability seems to have improved over the last two weeks, still ironing out some of the crash causes.
