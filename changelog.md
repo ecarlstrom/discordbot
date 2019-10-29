@@ -1,5 +1,9 @@
 # Changelog
 
+**October 28, 2019**
+
+- Ability to add channel/server announcements will hopefully be coming within the week.
+
 **October 26, 2019**
 
 - Added the `!headpat` command as per server request.
