@@ -1,5 +1,9 @@
 # Changelog
 
+**October 30, 2019**
+
+- A few more minor package updates and cleanups to improve stability.
+
 **October 28, 2019**
 
 - Ability to add channel/server announcements will hopefully be coming within the week.
