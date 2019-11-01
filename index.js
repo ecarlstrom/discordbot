@@ -635,14 +635,3 @@ client.elevation = message => {
 //     })
 //   }
 // } // end championBuild()
-
-// can start doing some actual work on this Saturday night, project week almost over
-// Riot API has now been changed
-// 6/19/2019 -- finally back in the 20th century with Internet and house both fixed, we can finally start working on this (and anything else) again!
-// 6/22/2019 -- re-familiarizing myself with codebase and Riot API changes which have seemingly continued for a little while
-// 6/23/2019 -- music bot work starting
-
-// 7/22/2019 -- power has been out for the last 10 hours, not much done today
-// 7/22/2019 -- merge complete
-// 7/23/2019 -- still no power
-// 7/24/2019 -- merging repo again, testing for issues
