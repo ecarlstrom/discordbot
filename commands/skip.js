@@ -13,26 +13,6 @@ exports.run = async (client, message) => {
             client.queues.get(message.guild.id).dispatcher.end('skip');
         });
     }
-
-    // message.channel.send(`🤠 Beginning the ten-second skip vote, needing at least ${voiceUsers} votes to pass. Use "skip" (not !skip) to vote. 🤠`);
-
-    // test filter independently, maybe this is the issue?
-    // const filter = m => m.content.startsWith('skip');
-
-    // message.channel.awaitMessages(filter, {
-    //     'errors': ['time'],
-    //     'max': voiceUsers,
-    //     time: 10000
-    // }).then(collected => {
-    //     if(collected.size >= voiceUsers) return message.channel.send(`🤠 Skipping song! 🤠`).then(() => {
-    //         client.queues.get(message.guild.id).dispatcher.end('skip');
-    //     });
-    // }).catch(collected => {
-    //     if(collected.size === 0) {
-    //         return message.channel.send(`🤠 Sorry, no one voted! 🤠`)
-    //     }
-    //     message.channel.send(`🤠 Only ${collected.size} of ${voiceUsers} voted, no skip! 🤠`);
-    // });
 };
 
 exports.conf = {
