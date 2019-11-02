@@ -347,3 +347,5 @@
 //     })
 //   }
 // } // end championBuild()
+
+// investigating API soon to see about implementing features on the new version
