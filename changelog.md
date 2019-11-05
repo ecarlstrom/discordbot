@@ -1,9 +1,5 @@
 # Changelog
 
-**November 2, 2019**
-
-- (internal) Cleaned up file structure and abstracted League of Legends code to its own separate directory.
-
 **October 30, 2019**
 
 - A few more minor package updates and cleanups to improve stability.
