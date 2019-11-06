@@ -1,3 +1,21 @@
+////////// GENERAL DEPENDENCIES //////////
+
+const Discord = require('discord.js');
+const config = require('dotenv').config();
+const client = new Discord.Client();
+const token = process.env.DISCORD_BOT_SECRET;
+const lol_api = process.env.LOL_API_KEY;
+const server = require('./server.js');
+const moment = require('moment');
+
+////////// LEAGUE DEPENDENCIES //////////
+
+const fs = require('fs');
+const gm = require('gm');
+const request = require('request');
+const urlencode = ('urlencode');
+const roundTo = require('round-to');
+
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
 // League commands here, using the functions in the section below
