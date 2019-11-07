@@ -25,6 +25,14 @@ exports.run = (client, message) => {
     //         return client.users.get(mention);
     //     }
     // }
+
+    // the user can be grabbed like so
+    // if(message.content.startsWith(process.env.prefix)) {
+    //     if(args[0]) {
+    //         const user = retrieveUser(args[0]);
+    //         // not adding an if(!user) idea here so the base command stays functional
+    //     }
+    // }
 }
 
 exports.conf = {
