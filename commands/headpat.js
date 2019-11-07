@@ -6,6 +6,9 @@ exports.run = (client, message) => {
         // const headpatEmoji = message.guild.emojis.find(emoji => emoji.name === "headpat")
         // return message.react(headpatEmoji);
     };
+
+    // can add something for mentioning other users, maybe in a new command?
+    
 }
 
 exports.conf = {
