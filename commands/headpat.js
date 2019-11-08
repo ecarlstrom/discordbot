@@ -31,6 +31,7 @@ exports.run = (client, message) => {
     //     if(args[0]) {
     //         const user = retrieveUser(args[0]);
     //         // not adding an if(!user) idea here so the base command stays functional
+            // mention user here with headpat emoji
     //     }
     // }
 }
