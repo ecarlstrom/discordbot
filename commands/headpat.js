@@ -33,6 +33,10 @@ exports.run = (client, message) => {
     //         // not adding an if(!user) idea here so the base command stays functional
             // mention user here with headpat emoji
     //     }
+
+        // reactions again
+        // const headpatEmoji = message.guild.emojis.find(emoji => emoji.name === "headpat")
+        // return message.react(headpatEmoji);
     // }
 }
 
