@@ -17,7 +17,7 @@
     "parse": "^2.5.1",
     "path": "^0.12.7",
     "request": "^2.88.0",
-    "round-to": "^3.0.0",
+    "round-to": "^4.0.0",
     "simple-youtube-api": "^5.2.1",
     "strict-uri-encode": "^2.0.0",
     "url": "^0.11.0",
