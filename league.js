@@ -145,7 +145,7 @@ const roundTo = require('round-to');
 //       // can do an includes() for nicknames as well: Cass, Kass, Malph, etc.
         
          // 11/11/2019 note: update with newest releases
-         
+
 //       // for the purpose of the following statements, the number "data" is assigned to references the individual champion keys on Riot's end
 //       if(championname.includes("Miss") || championname.includes("Fortune")) {
 //         data = 21;
@@ -367,5 +367,3 @@ const roundTo = require('round-to');
 //     })
 //   }
 // } // end championBuild()
-
-// investigating API soon to see about implementing features on the new version
