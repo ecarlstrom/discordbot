@@ -81,11 +81,11 @@ client.on('message', (message) => {
 
   // testing emoji replies and reactions
 
-  if(message.content === (prefix + 'DrSEG')) {
-    const DrSEG = client.emojis.find(emoji => emoji.name === 'DrSEG');
-    message.reply(`${DrSEG}`);
-    message.react(DrSEG);
-  }
+  // if(message.content === (prefix + 'DrSEG')) {
+  //   const DrSEG = client.emojis.find(emoji => emoji.name === 'DrSEG');
+  //   message.reply(`${DrSEG}`);
+  //   message.react(DrSEG);
+  // }
 });
 // placeholder for "dadbot"-style commands as per server request
 // looking at more "dadbot" rules/options
