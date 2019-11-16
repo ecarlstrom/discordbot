@@ -64,7 +64,7 @@
   //   }
   //   message.member.setNickname(message.content.replace('name', ''))
   // }
-});
+// });
 
 // create a guild (limited to bots with < 10 guilds for now)
 
