@@ -110,6 +110,7 @@ client.on('message', message => {
     // accepts the 4 Discord statuses: online, idle, dnd, invisible
     client.user.setStatus(args);
   }
+});
 
 /////////////////////////////// ***** MUSIC BOT ***** ///////////////////////////////
 
