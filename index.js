@@ -44,13 +44,11 @@ client.on('message', (message) => {
 
   if(message.content.includes('tama') || message.author.id === process.env.tamaID) {
     // const cop = client.emojis.find(emoji => emoji.name === 'cop');
-    // message.channel.send(`👮`);
-    // message.reply(`👮`);
     message.react('👮');
   }
   
   //kippy rule as per his request
-  // promise chain for reactions to always order themselves in the same way
+
   if(message.content.includes('kippy') || message.author.id === process.env.kippyID) {
     message.react('🐳');
     message.react('🐋');
