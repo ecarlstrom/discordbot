@@ -1,5 +1,9 @@
 # Changelog
 
+**November 20, 2019**
+
+- Default playback volume is now 75 percent. The recent bot volume overhaul from Discord caused playback to be rather quiet and this is a change to compensate.
+
 **October 30, 2019**
 
 - A few more minor package updates and cleanups to improve stability.
