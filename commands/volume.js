@@ -10,9 +10,6 @@ exports.run = async (client, message, args) => {
     }
 
     let vol = args.join(' ');
-    // test for args
-    // console.log(vol);
-    // console.log(typeof(vol));
 
     if(!vol) {
         return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
