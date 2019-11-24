@@ -40,7 +40,7 @@ exports.run = (client, message) => {
           .setThumbnail(`${weatherOutput.imageUrl}`)
           .setTimestamp()
           
-          // changes color scheme (siedbar for now, maybe text later) based on temperature
+          // changes color scheme of sidebar based on temperature
 
           if(temp >= 80) {
             embed.setColor(0xFF6700)
