@@ -1,7 +1,5 @@
 /////////////////////////////// ***** USER HANDLING ***** ///////////////////////////////
 
-// includes features like greeting new users, kicking, banning, permission handling, etc.
-
 // handles greeting of new users and removes users from the newUsers list if they leave while on it so the greeting
 // is not addressed to an invalid user. This won't be necessary for small servers while the message triggers on
 // each join, but for larger batches (i.e. newUsers[guild.id].size > 10) it will be useful.
@@ -51,10 +49,6 @@
 
 //   msg.react('👍'); // check with a reaction
 // });
-
-//////// testing out some guild-related features to familiarize myself with the issues the voice channel permissions code might be having //////////
-
-  // will see if changing guild member game/status is also possible
 
   // nickname changing
 
