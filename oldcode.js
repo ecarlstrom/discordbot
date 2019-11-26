@@ -82,3 +82,11 @@
 //     message.member.addRole('<ROLE>');
 //   }
 // });
+
+  // testing emoji replies and reactions
+
+  // if(message.content === (prefix + 'DrSEG')) {
+  //   const DrSEG = client.emojis.find(emoji => emoji.name === 'DrSEG');
+  //   message.reply(`${DrSEG}`);
+  //   message.react(DrSEG);
+  // }
