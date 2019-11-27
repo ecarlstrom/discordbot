@@ -24,7 +24,7 @@ const roundTo = require('round-to');
 !build
 !game
 !player
-!runes?
+!runes? // will be different now with new system
 !masteries?
 !championinfo (tips, matchups, etc.)?
 */
