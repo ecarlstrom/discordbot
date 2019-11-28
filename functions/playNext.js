@@ -13,7 +13,7 @@ const playNext = async (message) => {
         highWaterMark: 1<<25
     }),{
         passes: 5,
-        volume: message.guild.voiceConnection.volume || 0.75
+        volume: message.guild.voiceConnection.volume || 0.90
     }, {highWaterMark: 1});
 
     thisQueue.dispatcher = dispatcher;
