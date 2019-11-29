@@ -5,7 +5,6 @@ exports.run = (client, message, args) => {
         const commandNames = Array.from(client.commands.keys());
         const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
 
-        //test this as well in case it is a complete mess
         message.channel.sendCode('asciidoc', `🤠 Command List 🤠\n----------\n\n[🤠 Use ${process.env.prefix}help <commandname> for details! 🤠]\n\n${client.commands.map(c =>
             `${process.env.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
     } else {

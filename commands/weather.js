@@ -8,7 +8,6 @@ exports.run = (client, message) => {
   let args = contents.slice(1);
 
   if(message.content.startsWith(process.env.weatherPrefix)) {
-    // can offer different degree types if desired
 
     weather.find({search: args.join(' '), degreeType: 'F'}, function(err, result) {
       if(err) {

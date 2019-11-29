@@ -8,7 +8,7 @@ exports.run = async (client, message) => {
             if(client.queues.has(message.guild.id)) {
                 return message.reply(`🤠 Cannot do this while music is playing! 🤠`);
             }
-            // continuing to test the above solution
+
             voiceChannel.join()
                 .then(connection => {
                 const hankDispatch = connection.playFile('C:/Users/Evan/Downloads/fellas.mp3');
@@ -23,7 +23,6 @@ exports.run = async (client, message) => {
                     voiceChannel.leave();
                 })
             }}).catch(console.error.stack || console.error)
-            // test other approaches
 
 }
 

@@ -3,7 +3,6 @@ const embedCheck = require('./embedPerms.js');
 const ytdl = require('ytdl-core');
 
 const playNext = async (message) => {
-    // test buildpacks 2
     const thisQueue = message.client.queues.get(message.guild.id);
     const nextSong = thisQueue.queue[++thisQueue.position];
     const dispatcher = message.guild.voiceConnection.playStream(ytdl(nextSong.url, {
