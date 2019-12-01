@@ -91,7 +91,7 @@ client.on('message', message => {
   }
 
   // these change the bot's game and status
-
+  // seeing if there is a way to do this for different game/status displays on different servers
   if(message.content.startsWith(prefix + 'setgame')) {
     client.user.setActivity(args);
   }
@@ -116,7 +116,7 @@ fs.readdir('./commands/', (err, files) => {
   if(err) {
     console.error(err);
   }
-
+  // Loads commands when the bot starts
   log(`Loading a total of ${files.length} commands.`);
   files.forEach(file => {
     let props = require(`./commands/${file}`);
@@ -129,6 +129,7 @@ fs.readdir('./commands/', (err, files) => {
   });
 });
 
+// used for the 'reload' command, will delete cached version of the command that was loaded previously and then load
 client.reload = command => {
   return new Promise((resolve, reject) => {
     try {
@@ -164,7 +165,7 @@ client.elevation = message => {
   if(!message.guild) {
     return permlvl;
   }
-
+  // assigns permission levels for particular commands based on server role
   if(message.guild) {
     let mod_role = message.guild.roles.find(mod_role => mod_role.name === config.modRole);
     if(mod_role && message.member.roles.has(mod_role.id)) permlvl = 2;
@@ -180,7 +181,7 @@ client.elevation = message => {
     }
     return permlvl;
   };
-
+  // general error handling, will add more
   process.on('unhandledRejection', (reason, promise) => {
     console.error('Uncaught Promise Error: ', reason.stack || reason)
   });
