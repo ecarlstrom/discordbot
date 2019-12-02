@@ -31,8 +31,8 @@
 
 //   const user = message.mentions.users.first();
 //   const member = message.mentions.members.first();
-// // //   // above line stores the @mentioned user, following lines check to make sure
-// // //   // there is a mention and that the user is in a voice channel.
+ // above line stores the @mentioned user, following lines check to make sure
+// there is a mention and that the user is in a voice channel.
 //   if(!member) return message.reply('Please @mention a specific user.');
 //   if(!member.voiceChannel) return message.reply('Specified user is not in a voice channel.');
 
@@ -45,7 +45,7 @@
 //   await member.setVoiceChannel(temp_voice);
 
 //   await temp_voice.delete(); // creates temporary voice channel that awaits the
-// // //   // mention and then moves the user in before deleting the channel
+// mention and then moves the user in before deleting the channel
 
 //   msg.react('👍'); // check with a reaction
 // });
