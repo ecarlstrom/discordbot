@@ -58,7 +58,7 @@ Information on current commands and plans for improvement can be found further d
 
 - The `!stop` command is used to stop the entire queue. It is important to note that this not only stops the current song but clears all queue entries as well.
 
-- The `!volume/vol <number>` command is used to set the playback volume of the current song to a percentage between 0 and 100. Default playback volume is 75 percent. The command will provide error messages for non-numerical feedback and numbers out of range, but decimal values (e.g. `!vol 55.7`) are allowed. Using `!vol` with no value provided will display the current volume.
+- The `!volume/vol <number>` command is used to set the playback volume of the current song to a percentage between 0 and 100. Default playback volume is 70 percent. The command will provide error messages for non-numerical feedback and numbers out of range, but decimal values (e.g. `!vol 55.7`) are allowed. Using `!vol` with no value provided will display the current volume.
 
 ## Game Commands
 
