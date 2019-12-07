@@ -1,4 +1,6 @@
 exports.run = (client, message) => {
+    // concatenate arguments to avoid the space issue?
+    
     if(message.content.startsWith(process.env.prefix)) {
         message.reply("<:headpat:637295953925111818>");
 
