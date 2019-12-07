@@ -69,6 +69,7 @@
 // ///// League API functions: getPlayerID(), getMatch(), getChampionID(), matchInfo(), championBuild()
 
 // function getPlayerID(player, cb) {
+    
 //   request(playerID + urlencode(summoner) + "?api_key=" + lol_api, function(error, response,body) {
 //     if(err) {
 //       cb(err); // error handling
@@ -91,6 +92,7 @@
 // } // end getPlayerID()
 
 // function getMatch(summonerObject, cb) {
+
 //   request(liveMatch + summonerObject.summonerid + "?api_key=" + lol_api, function(err, response, body) {
 //     if(response.statusCode == 404) {
 //       cb('The player is not currently in a live match.'); // simple error handling for likely the most frequent issue
@@ -127,6 +129,7 @@
 // } // end getMatch()
 
 // function getChampionID(championName, cb) {
+
 //   request(championID, function(error, response, body) {
 //     requesterror(championID, response.statusCode, function(err) {
 //     if(err) {
@@ -194,6 +197,7 @@
 // } // end getChampionID()
 
 // function matchInfo(matchObject, summonerObject, cb) {
+
 //   let placeholder = matchObject.queue;
 //   let gametype = queues[placeholder];
 //   // placeholder then gets the type of map that has been queued for:
@@ -275,6 +279,7 @@
 // } // end matchInfo()
 
 // function liveMatchChampion() {
+
 //   request(getChampion, function(error, response, body) {
 //     requesterror(getChampion, response.statusCode, function(err) {
 //       if(err) {
@@ -325,6 +330,7 @@
 
 // get build information for a specific champion
 // function championBuild(champID, argsTwo, cb) {
+
 //   console.log('Parsing build data.');
 //   // handling Riot naming conventions here, the following line is required because their internal role data is uppercase
 //   let role = argsTwo.slice(1).join('_').toUpperCase
