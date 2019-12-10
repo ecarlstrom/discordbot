@@ -19,8 +19,8 @@ import { pathToFileURL } from "url";
 // } = require('./reboot');
 // possibly separate config for this file
 
-// exports.run = async(client, message, args) => {
-//     // add git config info
+exports.run = async(client, message, args) => {
+    // add git config info
 
         exec(`git pull ${giturlhere}`, {
             cwd: pathToFileURL.join(__dirname, '../')
@@ -36,6 +36,8 @@ import { pathToFileURL } from "url";
             if(stderr) {
                 out.push(stderr);
             }
-        }
-        }
-// }
+
+            await message.channel.sendMessage(`\`\`\`${out.join('```\n```')}\`\`\``);
+            return reboot(client, message, args);
+        });
+};
