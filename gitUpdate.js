@@ -19,25 +19,25 @@ import { pathToFileURL } from "url";
 // } = require('./reboot');
 // possibly separate config for this file
 
-exports.run = async(client, message, args) => {
-    // add git config info
+// exports.run = async(client, message, args) => {
+//     // add git config info
 
-        exec(`git pull ${giturlhere}`, {
-            cwd: pathToFileURL.join(__dirname, '../')
-        }, async(err, stdout, stderr) => {
-            if(err) {
-                return console.error(err);
-            }
+//         exec(`git pull ${giturlhere}`, {
+//             cwd: pathToFileURL.join(__dirname, '../')
+//         }, async(err, stdout, stderr) => {
+//             if(err) {
+//                 return console.error(err);
+//             }
 
-            const out = [];
-            if(stdout) {
-                out.push(stdout);
-            }
-            if(stderr) {
-                out.push(stderr);
-            }
+//             const out = [];
+//             if(stdout) {
+//                 out.push(stdout);
+//             }
+//             if(stderr) {
+//                 out.push(stderr);
+//             }
 
-            await message.channel.sendMessage(`\`\`\`${out.join('```\n```')}\`\`\``);
-            return reboot(client, message, args);
-        });
-};
+//             await message.channel.sendMessage(`\`\`\`${out.join('```\n```')}\`\`\``);
+//             return reboot(client, message, args);
+//         });
+// };
