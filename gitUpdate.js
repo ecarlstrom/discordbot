@@ -54,3 +54,9 @@ exports.conf = {
     aliases: [],
     permLevel: 10
 };
+
+exports.help = {
+    name: 'gitUpdate',
+    description: 'Updates bot from Git repo. Only usable by bot creator.',
+    usage: 'gitUpdate'
+};
