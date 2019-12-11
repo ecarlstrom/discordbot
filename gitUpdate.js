@@ -5,6 +5,7 @@ import { pathToFileURL } from "url";
 // will add into commands folder when work is done so it doesn't cause an issue with current command loading on boot
 
 // need in config: Git username, password, repo URL
+// git info now added to config, testing variables
 
 // const {
 //     exec
