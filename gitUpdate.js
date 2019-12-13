@@ -8,6 +8,7 @@ const config = require('dotenv').config();
 
 // need in config: Git username, password, repo URL
 // git info now added to config, testing variables
+// 12/12: git config credentials updated
 
 const {
     exec
