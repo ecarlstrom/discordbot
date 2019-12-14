@@ -1,5 +1,9 @@
 # Changelog
 
+**December 13, 2019**
+
+- Currently working on implementing a command that will update the bot directly from its Git repo in the event automatic updates and/or reboots fail. This will only be available to the highest level users but should provide another update option should the other methods fail.
+
 **November 30, 2019**
 
 - Default volume now 70 percent.
