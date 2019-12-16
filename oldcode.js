@@ -45,43 +45,43 @@ there is a mention and that the user is in a voice channel.
   await member.setVoiceChannel(temp_voice);
 
   await temp_voice.delete(); // creates temporary voice channel that awaits the
-mention and then moves the user in before deleting the channel
+// mention and then moves the user in before deleting the channel
 
   msg.react('👍'); // check with a reaction
 });
 
   // nickname changing
 
-  // if(message.content.startsWith(prefix + 'name')) {
-  //   if(!message.guild.me.hasPermission('MANAGE_NICKNAMES') || !message.guild.me.hasPermission('CHANGE_NICKNAME')) {
-  //     return message.channel.send(`🤠 Sorry, I do not have name changing permissions on this server! `);
-  //   }
-  //   message.member.setNickname(message.content.replace('name', ''))
-  // }
-// });
-
-// create a guild (limited to bots with < 10 guilds for now)
-
-// client.on('message', (message) => {
-
-//   if(message.content === (prefix + 'guildtest')) {
-//     async function createGuild(client, message) {
-//       try {
-//         const guild = await client.user.createGuild('Test Guild', 'hello');
-//         const defaultChannel = guild.channels.find(channel => channel.permissionsFor(guild.me).has("SEND_MESSAGES"));
-//         const invite = await defaultChannel.createInvite();
-//         await message.author.send(invite.url);
-//         const role = await guild.createRole({ name: 'Test Role', permissions: ['ADMINISTRATOR'] });
-//         await message.author.send(role.id);
-//       } catch(err) {
-//         console.error(err);
-//       }
+//   if(message.content.startsWith(prefix + 'name')) {
+//     if(!message.guild.me.hasPermission('MANAGE_NICKNAMES') || !message.guild.me.hasPermission('CHANGE_NICKNAME')) {
+//       return message.channel.send(`🤠 Sorry, I do not have name changing permissions on this server! `);
 //     }
-
-//     createGuild(client, message);
-//     message.member.addRole('<ROLE>');
+//     message.member.setNickname(message.content.replace('name', ''))
 //   }
 // });
+
+create a guild (limited to bots with < 10 guilds for now)
+
+client.on('message', (message) => {
+
+  if(message.content === (prefix + 'guildtest')) {
+    async function createGuild(client, message) {
+      try {
+        const guild = await client.user.createGuild('Test Guild', 'hello');
+        const defaultChannel = guild.channels.find(channel => channel.permissionsFor(guild.me).has("SEND_MESSAGES"));
+        const invite = await defaultChannel.createInvite();
+        await message.author.send(invite.url);
+        const role = await guild.createRole({ name: 'Test Role', permissions: ['ADMINISTRATOR'] });
+        await message.author.send(role.id);
+      } catch(err) {
+        console.error(err);
+      }
+    }
+
+    createGuild(client, message);
+    message.member.addRole('<ROLE>');
+  }
+});
 
   // testing emoji replies and reactions
 
