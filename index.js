@@ -27,7 +27,7 @@ const roundTo = require('round-to');
 
 const weather = require('weather-js');
 
-//////////////////  BOT CODE  ////////////////////////
+//////////////////  ***** BOT CODE *****  ////////////////////////
 
 client.on('ready', () => {
   console.log('Bot connected!');
@@ -78,8 +78,10 @@ client.on('message', (message) => {
     message.channel.send({embed});
   }
 });
+
 // placeholder for "dadbot"-style commands as per server request
-// looking at more "dadbot" rules/options
+
+
 
 // adding a new message event here since variables are used, the below handles game/status activity
 
@@ -93,6 +95,7 @@ client.on('message', message => {
 
   // these change the bot's game and status
   // seeing if there is a way to do this for different game/status displays on different servers
+  
   if(message.content.startsWith(prefix + 'setgame')) {
     client.user.setActivity(args);
   }
@@ -131,6 +134,7 @@ fs.readdir('./commands/', (err, files) => {
 });
 
 // used for the 'reload' command, will delete cached version of the command that was loaded previously and then load
+
 client.reload = command => {
   return new Promise((resolve, reject) => {
     try {
@@ -182,7 +186,9 @@ client.elevation = message => {
     }
     return permlvl;
   };
+  
   // general error handling, will add more
+  
   process.on('unhandledRejection', (reason, promise) => {
     console.error('Uncaught Promise Error: ', reason.stack || reason)
   });
