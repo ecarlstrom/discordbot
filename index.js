@@ -11,6 +11,7 @@ const moment = require('moment');
 
 client.login(token);
 require('./util/eventLoader')(client);
+
 // managing event emitters for the various commands, avoids resource leakage
 require('events').EventEmitter.defaultMaxListeners = 50;
 
@@ -26,7 +27,7 @@ const roundTo = require('round-to');
 
 const weather = require('weather-js');
 
-//////////////////////////////////////////
+//////////////////  BOT CODE  ////////////////////////
 
 client.on('ready', () => {
   console.log('Bot connected!');
@@ -47,7 +48,7 @@ client.on('message', (message) => {
     message.react('👮');
   }
   
-  //kippy rule as per his request
+  // kippy rule as per his request
 
   if(message.content.includes('kippy') || message.author.id === process.env.kippyID) {
     message.react('🐳');
