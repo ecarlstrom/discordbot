@@ -1,5 +1,9 @@
 # Changelog
 
+**December 20, 2019**
+
+- Updated some packages and dependencies that seem to be causing the intermittent playback issues on certain videos.
+
 **December 13, 2019**
 
 - Currently working on implementing a command that will update the bot directly from its Git repo in the event automatic updates and/or reboots fail. This will only be available to the highest level users but should provide another update option should the other methods fail.
