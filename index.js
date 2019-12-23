@@ -42,6 +42,7 @@ const weatherPrefix = process.env.weatherPrefix;
 const forecastPrefix = process.env.forecastPrefix;
 
 // 12/21/2019 placeholder commit: updated more ytdl-related packages
+// fs, gm, request updated 12/22
 
 client.on('message', (message) => {
 
