@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const embedCheck = require('./embedPerms.js');
 const ytdl = require('ytdl-core');
+const m3u8stream = require('m3u8stream');
+const parseTime = require('m3u8stream/dist/parse-time');
 
 const playNext = async (message) => {
     const thisQueue = message.client.queues.get(message.guild.id);
