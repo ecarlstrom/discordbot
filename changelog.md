@@ -1,5 +1,9 @@
 # Changelog
 
+**December 23, 2019**
+
+- Continuing package updates. There are two newly introduced ones in particular that seem to be causing the issues, but I'm getting closer to a solution.
+
 **December 20, 2019**
 
 - Updated some packages and dependencies that seem to be causing the intermittent playback issues on certain videos.
