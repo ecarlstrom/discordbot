@@ -4,6 +4,8 @@ const ytdl = require('ytdl-core');
 const m3u8stream = require('m3u8stream');
 const parseTime = require('m3u8stream/dist/parse-time');
 
+// investigate parse-time error, should fix playback drops
+
 const playNext = async (message) => {
     const thisQueue = message.client.queues.get(message.guild.id);
     const nextSong = thisQueue.queue[++thisQueue.position];
