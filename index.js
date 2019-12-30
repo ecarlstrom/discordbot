@@ -8,6 +8,8 @@ const lol_api = process.env.LOL_API_KEY;
 const server = require('./server.js');
 const moment = require('moment');
 // will add another dependency for music bot event handling when the folder is up
+const m3u8stream = require('m3u8stream');
+const parseTime = require('m3u8stream/dist/parse-time');
 
 client.login(token);
 require('./util/eventLoader')(client);
