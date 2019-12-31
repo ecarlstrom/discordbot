@@ -1,5 +1,9 @@
 # Changelog
 
+**December 30,2019**
+
+- Some more (hopefully final) package updates. Next released is scheduled for this Friday, 1/3/2020.
+
 **December 24, 2019**
 
 - Getting together some final changes for the next bot version that should hopefully come within the week. This update should fix the recent playback issues and make some other general improvements that will be detailed upon release.
