@@ -1,5 +1,9 @@
 # Changelog
 
+**December 31, 2019**
+
+- Happy new year! Nothing changing today.
+
 **December 30,2019**
 
 - Some more (hopefully final) package updates. Next released is scheduled for this Friday, 1/3/2020.
