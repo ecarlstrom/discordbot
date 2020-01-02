@@ -7,14 +7,11 @@ const token = process.env.DISCORD_BOT_SECRET;
 const lol_api = process.env.LOL_API_KEY;
 const server = require('./server.js');
 const moment = require('moment');
-// will add another dependency for music bot event handling when the folder is up
 const m3u8stream = require('m3u8stream');
 const parseTime = require('m3u8stream/dist/parse-time');
 
 client.login(token);
 require('./util/eventLoader')(client);
-
-// managing event emitters for the various commands, avoids resource leakage
 require('events').EventEmitter.defaultMaxListeners = 50;
 
 ////////// LEAGUE DEPENDENCIES //////////
@@ -42,9 +39,6 @@ const prefix = process.env.prefix;
 const musicPrefix = process.env.musicPrefix;
 const weatherPrefix = process.env.weatherPrefix;
 const forecastPrefix = process.env.forecastPrefix;
-
-// 12/21/2019 placeholder commit: updated more ytdl-related packages
-// fs, gm, request updated 12/22
 
 client.on('message', (message) => {
 
