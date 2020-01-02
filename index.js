@@ -92,7 +92,6 @@ client.on('message', message => {
     return;
   }
 
-  // these change the bot's game and status
   // seeing if there is a way to do this for different game/status displays on different servers
   
   if(message.content.startsWith(prefix + 'setgame')) {
@@ -115,11 +114,11 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.queues = new Discord.Collection();
 
+// Loads commands when the bot starts
 fs.readdir('./commands/', (err, files) => {
   if(err) {
     console.error(err);
   }
-  // Loads commands when the bot starts
   log(`Loading a total of ${files.length} commands.`);
   files.forEach(file => {
     let props = require(`./commands/${file}`);
