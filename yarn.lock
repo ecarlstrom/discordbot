@@ -1838,7 +1838,14 @@ lzma-native@^3.0.1:
     readable-stream "^2.3.5"
     rimraf "^2.6.1"
 
-m3u8stream@^0.6.2, m3u8stream@^0.6.3:
+m3u8stream@^0.6.2:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/m3u8stream/-/m3u8stream-0.6.4.tgz#c2cdeb8401d340cc476029e433177caa089a26e9"
+  dependencies:
+    miniget "^1.6.1"
+    sax "^1.2.4"
+
+m3u8stream@^0.6.3:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/m3u8stream/-/m3u8stream-0.6.3.tgz#f3dc8c25a96a68640903cab47450b6a5ac36e585"
   dependencies:
