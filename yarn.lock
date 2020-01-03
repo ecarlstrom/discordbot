@@ -3275,7 +3275,7 @@ ytdl-core-discord@^1.0.3:
     prism-media "^1.0.1"
     ytdl-core "^0.29.1"
 
-ytdl-core@^0.29.1, ytdl-core@^0.29.6:
+ytdl-core@^1.0.6, ytdl-core@^1.0.6:
   version "0.29.7"
   resolved "https://registry.yarnpkg.com/ytdl-core/-/ytdl-core-0.29.7.tgz#e63ce0b086a4543d827499bed22f53fdf4d16af2"
   dependencies:
