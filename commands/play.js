@@ -7,7 +7,6 @@ const ytapi = require('simple-youtube-api');
 const { parse } = require('url');
 const youtube = new ytapi(process.env.youtubeAPIKey);
 const m3u8stream = require('m3u8stream');
-const parseTime = require('m3u8stream/dist/parse-time');
 
 // 12/25 -- adjusting some m3u8stream/parseTime installation paramters
 
