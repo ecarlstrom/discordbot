@@ -7,8 +7,6 @@ const token = process.env.DISCORD_BOT_SECRET;
 const lol_api = process.env.LOL_API_KEY;
 const server = require('./server.js');
 const moment = require('moment');
-const m3u8stream = require('m3u8stream');
-const parseTime = require('m3u8stream/dist/parse-time');
 
 client.login(token);
 require('./util/eventLoader')(client);
