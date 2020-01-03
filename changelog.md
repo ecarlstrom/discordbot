@@ -1,5 +1,9 @@
 # Changelog
 
+**January 2, 2020**
+
+- All playback issues seem to have been fixed and YouTube audio is working correctly on all tests. The latest stable version of the bot with these changes will be released tomorrow.
+
 **December 31, 2019**
 
 - Happy new year! Nothing changing today.
