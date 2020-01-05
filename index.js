@@ -7,8 +7,11 @@ const token = process.env.DISCORD_BOT_SECRET;
 const lol_api = process.env.LOL_API_KEY;
 const server = require('./server.js');
 const moment = require('moment');
+
+// newer playback dependencies, monitor for issues and updates
 const m3u8stream = require('m3u8stream');
 const parseTime = require('m3u8stream/dist/parse-time');
+/////
 
 client.login(token);
 require('./util/eventLoader')(client);
@@ -184,8 +187,6 @@ client.elevation = message => {
     }
     return permlvl;
   };
-  
-  // general error handling, will add more
   
   process.on('unhandledRejection', (reason, promise) => {
     console.error('Uncaught Promise Error: ', reason.stack || reason)
