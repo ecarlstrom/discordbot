@@ -59,74 +59,74 @@
 //   // there is also another SR map at ID 11 and TT at 10, not sure what any differences are
 // };
 
-// const liveMatch = "https://na1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/"; // constant path to retrieve live match data
-// const playerID = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"; // constant path to retrieve summoner names (player names)
-// const championID = "https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=false&api_key=" + lol_api;
-// const getChampion = "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json";
-// const routeInfo = 'http://api.champion.gg/v2/champions?limit=200&champData=hashes,firstitems,summoners,skills,finalitemshashfixed,masterieshash&api_key=' + champggToken;
+const liveMatch = "https://na1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/"; // constant path to retrieve live match data
+const playerID = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"; // constant path to retrieve summoner names (player names)
+const championID = "https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=false&api_key=" + lol_api;
+const getChampion = "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json";
+const routeInfo = 'http://api.champion.gg/v2/champions?limit=200&champData=hashes,firstitems,summoners,skills,finalitemshashfixed,masterieshash&api_key=' + champggToken;
 
 
-// ///// League API functions: getPlayerID(), getMatch(), getChampionID(), matchInfo(), championBuild()
+///// League API functions: getPlayerID(), getMatch(), getChampionID(), matchInfo(), championBuild()
 
-// function getPlayerID(player, cb) {
+function getPlayerID(player, cb) {
     
-//   request(playerID + urlencode(summoner) + "?api_key=" + lol_api, function(error, response,body) {
-//     if(err) {
-//       cb(err); // error handling
-//     } else {
-//       // parse the returned data and create a summoner object to contain it
-//       let dataJSON = JSON.parse(response.body);
-//       let summonerid = dataJSON.id;
-//       let accountLevel = dataJSON.summonerLevel;
-//       let profileID = dataJSON.profileIconId;
-//       let summonername = dataJSON.name;
-//       let summonerObject = {
-//         "summonerid": summonerid,
-//         "accountlvl": accountlvl,
-//         "profileid": profileID,
-//         "name": summonername
-//       }
-//       cb(false, summonerObject);
-//     }
-//   });
-// } // end getPlayerID()
+  request(playerID + urlencode(summoner) + "?api_key=" + lol_api, function(error, response,body) {
+    if(err) {
+      cb(err); // error handling
+    } else {
+      // parse the returned data and create a summoner object to contain it
+      let dataJSON = JSON.parse(response.body);
+      let summonerid = dataJSON.id;
+      let accountLevel = dataJSON.summonerLevel;
+      let profileID = dataJSON.profileIconId;
+      let summonername = dataJSON.name;
+      let summonerObject = {
+        "summonerid": summonerid,
+        "accountlvl": accountlvl,
+        "profileid": profileID,
+        "name": summonername
+      }
+      cb(false, summonerObject);
+    }
+  });
+} // end getPlayerID()
 
-// function getMatch(summonerObject, cb) {
+function getMatch(summonerObject, cb) {
 
-//   request(liveMatch + summonerObject.summonerid + "?api_key=" + lol_api, function(err, response, body) {
-//     if(response.statusCode == 404) {
-//       cb('The player is not currently in a live match.'); // simple error handling for likely the most frequent issue
-//     } else {
-//       requesterror(liveMatch, response.statusCode, function(err) {
-//         if(err) {
-//           cb(err); // generic error handler
-//         } else {
-//           // block occurs only when the given player is in a match
-//           console.log('Parsing match data.');
+  request(liveMatch + summonerObject.summonerid + "?api_key=" + lol_api, function(err, response, body) {
+    if(response.statusCode == 404) {
+      cb('The player is not currently in a live match.'); // simple error handling for likely the most frequent issue
+    } else {
+      requesterror(liveMatch, response.statusCode, function(err) {
+        if(err) {
+          cb(err); // generic error handler
+        } else {
+          // block occurs only when the given player is in a match
+          console.log('Parsing match data.');
           
-//           // as with getPlayerID(), parse data and create an object. This is an object for a live game rather than a player.
-//           let dataJSON = JSON.parse(response.body);
-//           let gameID = dataJSON.gameId;
-//           let gameMode = dataJSON.gameMode;
-//           let mapID = dataJSON.mapID;
-//           let gameType = dataJSON.gameType;
-//           let gameStart = dataJSON.gameStartTime;
-//           let players = dataJSON.participants;
-//           let gameObject = {
-//             "gameid": gameid,
-//             "gamemode": gamemode,
-//             "mapid": mapid,
-//             "gametype": gameType,
-//             "gametime": gametime,
-//             "participants": participants,
-//             "queue": dataJSON.gameQueueConfigId
-//           }
-//           cb(false, gameObject);
-//         }
-//       });
-//     }
-//   });
-// } // end getMatch()
+          // as with getPlayerID(), parse data and create an object. This is an object for a live game rather than a player.
+          let dataJSON = JSON.parse(response.body);
+          let gameID = dataJSON.gameId;
+          let gameMode = dataJSON.gameMode;
+          let mapID = dataJSON.mapID;
+          let gameType = dataJSON.gameType;
+          let gameStart = dataJSON.gameStartTime;
+          let players = dataJSON.participants;
+          let gameObject = {
+            "gameid": gameid,
+            "gamemode": gamemode,
+            "mapid": mapid,
+            "gametype": gameType,
+            "gametime": gametime,
+            "participants": participants,
+            "queue": dataJSON.gameQueueConfigId
+          }
+          cb(false, gameObject);
+        }
+      });
+    }
+  });
+} // end getMatch()
 
 // function getChampionID(championName, cb) {
 
