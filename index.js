@@ -21,9 +21,9 @@ require('events').EventEmitter.defaultMaxListeners = 50;
 
 const fs = require('fs');
 const gm = require('gm');
-const request = require('request');
-const urlencode = ('urlencode');
-const roundTo = require('round-to');
+// const request = require('request');
+// const urlencode = ('urlencode');
+// const roundTo = require('round-to');
 
 ////////// WEATHER DEPENDENCIES //////////
 
