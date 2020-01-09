@@ -19,8 +19,8 @@ require('events').EventEmitter.defaultMaxListeners = 50;
 
 ////////// LEAGUE DEPENDENCIES //////////
 
-const fs = require('fs');
-const gm = require('gm');
+// const fs = require('fs');
+// const gm = require('gm');
 // const request = require('request');
 // const urlencode = ('urlencode');
 // const roundTo = require('round-to');
