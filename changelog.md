@@ -1,6 +1,6 @@
 # Changelog
 
-**January 10, 2020**
+**January 9, 2020**
 
 - Bot loading and reloading times have been improved.
 
