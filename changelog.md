@@ -1,5 +1,9 @@
 # Changelog
 
+**January 10, 2020**
+
+- Bot loading and reloading times have been improved.
+
 **January 3, 2020**
 
 - New bot version released! Playback issues fixed and general improvements to stability have been made.
