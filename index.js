@@ -21,10 +21,10 @@ require('events').EventEmitter.defaultMaxListeners = 50;
 
 // fs update - 1/9/2020
 const fs = require('fs');
-const gm = require('gm');
-const request = require('request');
-const urlencode = ('urlencode');
-const roundTo = require('round-to');
+// const gm = require('gm');
+// const request = require('request');
+// const urlencode = ('urlencode');
+// const roundTo = require('round-to');
 
 ////////// WEATHER DEPENDENCIES //////////
 
