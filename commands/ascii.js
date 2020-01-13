@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
         } else if(rendered == null) {
             return message.channel.send(`🤠`);
         }
-        console.log(rendered);
+        // console.log(rendered);
         message.channel.send(rendered, {
             code: 'md'
         })
