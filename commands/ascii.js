@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     ascii.font(args.join(' '), 'Doom', function(rendered) {
         // add further handling for images, sizes, etc.
        
-        console.log(typeof(args[0]));
+        // console.log(typeof(args[0]));
         if(!args.join(' ')) {
             return message.reply(`🤠 Please enter some text to format! 🤠`)
         }
