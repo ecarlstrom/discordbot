@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
 
     ascii.font(args.join(' '), 'Doom', function(rendered) {
         // add further handling for images, sizes, etc.
-       
+        // canvas updated 1/13/2020, working on additional functions and formatting next
         // console.log(typeof(args[0]));
         if(!args.join(' ')) {
             return message.reply(`🤠 Please enter some text to format! 🤠`)
