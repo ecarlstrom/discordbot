@@ -13,7 +13,7 @@ exports.run = (client, message) => {
     let singular = queue.length === 1;
 
     const embed = new Discord.RichEmbed()
-        .setTitle(`Currently playing **${current.songTitle.substring(0, 50)}** (${current.playTime})`)
+        .setTitle(`Now playing: **${current.songTitle.substring(0, 50)}** (${current.playTime})`)
         .setColor(0xDD2825)
         .setFooter(`Requested by ${current.requester}`, current.requesterIcon)
         .setDescription(`There ${singular ? 'is' : 'are'} currently ${queue.length} song${singular ? '' : 's'} in the queue.\n`)
