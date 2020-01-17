@@ -6,6 +6,8 @@ exports.run = (client, message) => {
         return message.channel.send(`🤠 Queue is empty! 🤠`);
     }
 
+    // 1/16 note: check on queue behavior in the event that a song exceeding the allowed time limit is requested
+    // check for both cases: either song is the only one in the current queue or not, behavior seems different
     let queue = client.queues.get(message.guild.id);
     queue = queue.queue.slice(queue.position);
 
