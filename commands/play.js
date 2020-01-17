@@ -94,6 +94,7 @@ exports.run = async (client, message, args) => {
         } else {
             message.channel.send(`**${info.title}** (${minutes}:${seconds}) added to queue!`);
             // adjust so that the bot will leave the voice channel in this case
+            // the bot failing to leave seems to cause a queueing issue as well, look into this
         }
     }
 
