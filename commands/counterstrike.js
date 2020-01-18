@@ -19,7 +19,7 @@ exports.run = async (client, message) => {
                 }}
 
                 if((!client.queues.has(message.guild.id))) {
-                    hankDispatch.on('end', () => {
+                    hashDispatch.on('end', () => {
                     voiceChannel.leave();
                 })
             }}).catch(console.error.stack || console.error)
