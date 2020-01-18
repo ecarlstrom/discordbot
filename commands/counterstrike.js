@@ -11,10 +11,10 @@ exports.run = async (client, message) => {
 
             voiceChannel.join()
                 .then(connection => {
-                const hankDispatch = connection.playFile('C:/Users/Evan/Downloads/cstrike.mp3');
+                const hashDispatch = connection.playFile('C:/Users/Evan/Downloads/cstrike.mp3');
             
                 if((client.queues.has(message.guild.id))) {
-                    hankDispatch.on('end'), () => {
+                    hashDispatch.on('end'), () => {
                         client.queues.get(message.guild.id).dispatcher.resume();
                 }}
 
