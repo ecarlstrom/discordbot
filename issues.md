@@ -8,4 +8,4 @@
 
 - There is some occasional playback difficulty with certain VEVO videos that causes these videos to be skipped entirely. This seems to be out of my control but I'm looking into possible fixes.
 
-- The bot can sometimes get stuck in a voice channel if a user tries to queue up a > 15 minute song without sufficient privileges. This doesn't cause any playback or crashing issues, but I'll fix this so that the bot leaves after joining in such a case.
+- The bot can sometimes get stuck in a voice channel if a user tries to queue up a > 15 minute song without sufficient privileges. This can cause queues to become stuck. I'll fix this so that the bot leaves after joining in such a case if there's no queue, or simply skipping the entry otherwise.
