@@ -35,6 +35,7 @@ exports.conf = {
 
 exports.help = {
     name: 'counterstrike',
+    // will see if it's possible to add the requested emote to this description
     description: 'RIGHT THROUGH THE COUNTERSTRIKE',
     usage: 'counterstrike/cs'
 };
