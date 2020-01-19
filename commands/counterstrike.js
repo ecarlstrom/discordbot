@@ -29,12 +29,12 @@ exports.run = async (client, message) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: [],
+    aliases: ['cs'],
     permLevel: 0
 };
 
 exports.help = {
     name: 'counterstrike',
     description: 'RIGHT THROUGH THE COUNTERSTRIKE',
-    usage: 'counterstrike'
+    usage: 'counterstrike/cs'
 };

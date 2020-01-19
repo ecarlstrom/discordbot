@@ -1,5 +1,9 @@
 # Changelog
 
+**January 18, 2020**
+
+- Added the `!counterstrike` command as per server request.
+
 **January 9, 2020**
 
 - Bot loading and reloading times have been improved.
