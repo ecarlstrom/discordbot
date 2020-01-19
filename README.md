@@ -28,6 +28,8 @@ Information on current commands and plans for improvement can be found further d
 
 - The `!headpat` command will headpat the requester. Will add a way to use it on other people in the future.
 
+- The `!counterstrike/!cs` command will play a popular League of Legends sound clip that likely needs no introduction.
+
 ### Weather
 
 - The `!w <location>` command is used for current weather conditions at a given location. The bot accepts full city names, abbreviations, and ZIP codes to find location, e.g. `!w New York` and `!w ny` both return the weather for New York City and one of its many ZIP codes can be used for a slightly more specific scope.
