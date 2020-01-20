@@ -1,5 +1,9 @@
 # Changelog
 
+**January 19, 2019**
+
+- Additional package updates that should help the stability of the `!ascii` command.
+
 **January 18, 2020**
 
 - Added the `!counterstrike` command as per server request.
