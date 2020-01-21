@@ -1,5 +1,9 @@
 # Changelog
 
+**January 21, 2020**
+
+- Latest small update has been pushed to the live version now. This includes improved loading and reloading of commands, `!ascii` stability updates, and the addition of a couple of command aliases for convenience.
+
 **January 19, 2019**
 
 - Additional package updates that should help the stability of the `!ascii` command.
