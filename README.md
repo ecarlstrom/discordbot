@@ -74,7 +74,7 @@ Will be added as they become available.
 
 3. Expanding the capabilities of the `!ascii` command to format text a little better for larger entries and add image support.
 
-To be updated soon.
+4. Addition of a `!repeat` command to allow a song to be re-queued as easily as possible.
 
 ## Feedback
 
