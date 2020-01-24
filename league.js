@@ -91,42 +91,42 @@ const roundTo = require('round-to');
 //   });
 // } // end getPlayerID()
 
-function getMatch(summonerObject, cb) {
+// function getMatch(summonerObject, cb) {
 
-  request(liveMatch + summonerObject.summonerid + "?api_key=" + lol_api, function(err, response, body) {
-    if(response.statusCode == 404) {
-      cb('The player is not currently in a live match.'); // simple error handling for likely the most frequent issue
-    } else {
-      requesterror(liveMatch, response.statusCode, function(err) {
-        if(err) {
-          cb(err); // generic error handler
-        } else {
-          // block occurs only when the given player is in a match
-          console.log('Parsing match data.');
+//   request(liveMatch + summonerObject.summonerid + "?api_key=" + lol_api, function(err, response, body) {
+//     if(response.statusCode == 404) {
+//       cb('The player is not currently in a live match.'); // simple error handling for likely the most frequent issue
+//     } else {
+//       requesterror(liveMatch, response.statusCode, function(err) {
+//         if(err) {
+//           cb(err); // generic error handler
+//         } else {
+//           // block occurs only when the given player is in a match
+//           console.log('Parsing match data.');
           
-          // as with getPlayerID(), parse data and create an object. This is an object for a live game rather than a player.
-          let dataJSON = JSON.parse(response.body);
-          let gameID = dataJSON.gameId;
-          let gameMode = dataJSON.gameMode;
-          let mapID = dataJSON.mapID;
-          let gameType = dataJSON.gameType;
-          let gameStart = dataJSON.gameStartTime;
-          let players = dataJSON.participants;
-          let gameObject = {
-            "gameid": gameid,
-            "gamemode": gamemode,
-            "mapid": mapid,
-            "gametype": gameType,
-            "gametime": gametime,
-            "participants": participants,
-            "queue": dataJSON.gameQueueConfigId
-          }
-          cb(false, gameObject);
-        }
-      });
-    }
-  });
-} // end getMatch()
+//           // as with getPlayerID(), parse data and create an object. This is an object for a live game rather than a player.
+//           let dataJSON = JSON.parse(response.body);
+//           let gameID = dataJSON.gameId;
+//           let gameMode = dataJSON.gameMode;
+//           let mapID = dataJSON.mapID;
+//           let gameType = dataJSON.gameType;
+//           let gameStart = dataJSON.gameStartTime;
+//           let players = dataJSON.participants;
+//           let gameObject = {
+//             "gameid": gameid,
+//             "gamemode": gamemode,
+//             "mapid": mapid,
+//             "gametype": gameType,
+//             "gametime": gametime,
+//             "participants": participants,
+//             "queue": dataJSON.gameQueueConfigId
+//           }
+//           cb(false, gameObject);
+//         }
+//       });
+//     }
+//   });
+// } // end getMatch()
 
 // function getChampionID(championName, cb) {
 
