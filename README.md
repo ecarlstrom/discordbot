@@ -76,6 +76,8 @@ Will be added as they become available.
 
 4. Addition of a `!repeat` command to allow a song to be re-queued as easily as possible.
 
+5. I'm looking at adding a `!loop` command that's similar to `!repeat`. The `!repeat` command will simply add the current song to the end of the queue again, whereas the `!loop` command will continually add the current song to the queue after a certain point. `!loop` will likely require higher privileges to prevent misuse and in most cases the function of `!repeat` will be more desirable anyway.
+
 ## Feedback
 
 Please feel free to contact me at evan.carlstrom@gmail.com with any issues or feedback!
