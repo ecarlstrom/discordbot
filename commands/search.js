@@ -5,6 +5,7 @@ const youtube = new ytapi(process.env.youtubeAPIKey);
 exports.run = async (client, message, args) => {
     let search = args.join(' ');
     // hopefully building out a feature that will allow for results to be playable
+    // work on search feature beginning this week
     try {
         const results = await youtube.searchVideos(search, 10);
         return message.channel.sendCode('', `Top 5 search results:\n\n 🤠 ${results.map(i =>
