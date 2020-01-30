@@ -34,4 +34,4 @@ exports.help = {
 
 /* basic search idea to be added: validate youtube URL (as in play.js), if valid then search.js 
 can be loaded as command file, run command file with same arguments (client, message, args) as
-search feature.
+search feature. */
