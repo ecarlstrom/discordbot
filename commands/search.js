@@ -35,3 +35,5 @@ exports.help = {
 /* basic search idea to be added: validate youtube URL (as in play.js), if valid then search.js 
 can be loaded as command file, run command file with same arguments (client, message, args) as
 search feature. */
+
+// search will also need to return a number for each result, essentially a key-value pair, so that each entry has a reference
