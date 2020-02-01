@@ -1,4 +1,5 @@
 exports.run = (client, message) => {
+    // update this to properly track current queue, not total
     const queueTotal = client.queues.array().reduce((prev, curr) => 
         prev + curr.queue.length, 0);
     const guildTotal = client.queues.array().filter(q => 
