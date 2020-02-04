@@ -78,6 +78,8 @@ Will be added as they become available.
 
 5. I'm looking at adding a `!loop` command that's similar to `!repeat`. The `!repeat` command will simply add the current song to the end of the queue again, whereas the `!loop` command will continually add the current song to the queue after a certain point. `!loop` will likely require higher privileges to prevent misuse and in most cases the function of `!repeat` will be more desirable anyway.
 
+6. Simple `!vol up` and `!vol down` commands that increase and decrease the playback volume by 10 will be added for convenience. These are easier than worrying about individual volume values for quick changes.
+
 ## Feedback
 
 Please feel free to contact me at evan.carlstrom@gmail.com with any issues or feedback!
