@@ -9,6 +9,7 @@ exports.run = async (client, message, args) => {
         return message.reply(`🤠 No music is currently playing! 🤠`);
     }
 
+    // will add "!vol up and !vol down" commands to increase or decrease volume by 10 for ease of use
     let vol = args.join(' ');
 
     if(!vol) {
