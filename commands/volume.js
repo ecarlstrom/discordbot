@@ -10,8 +10,10 @@ exports.run = async (client, message, args) => {
     }
 
     // will add "!vol up and !vol down" commands to increase or decrease volume by 10 for ease of use
+    console.log(args);
     let vol = args.join(' ');
-
+    console.log(vol);
+    
     if(!vol) {
         return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
     }
