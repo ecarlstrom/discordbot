@@ -25,12 +25,14 @@ exports.run = async (client, message, args) => {
     
     if(vol === "up") {
         client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume += 0.10));
-        return message.channel.send(`Volume up!`);
+        message.channel.send(`Volume up!`);
+        return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
     }
     
     if(vol === "down") {
         client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume -= 0.10));
-        return message.channel.send(`Volume down!`);
+        message.channel.send(`Volume down!`);
+        return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
     }
 
     else if(isNaN(vol)) {
