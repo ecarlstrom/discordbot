@@ -21,7 +21,19 @@ exports.run = async (client, message, args) => {
 
     if(vol < 0 || vol > 100) {
         return message.reply(`🤠 Volume must be a percentage between 0 and 100! 🤠`);
-    } else if(isNaN(vol)) {
+    }
+    
+    if(vol === "up") {
+        message.guild.voiceConnection.volume += 10;
+        return message.reply(`Volume up!`);
+    }
+    
+    if(vol === "down") {
+        message.guild.voiceConnection.volume -= 10;
+        return message.reply(`Volume down!`);
+    }
+
+    else if(isNaN(vol)) {
         return message.reply(`🤠 Nice try, please use a numerical value! 🤠`)
     }
 
