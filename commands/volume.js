@@ -29,8 +29,8 @@ exports.run = async (client, message, args) => {
     }
     
     if(vol === "down") {
-        message.guild.voiceConnection.volume -= 10;
-        return message.reply(`Volume down!`);
+        client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume -= 0.10));
+        return message.channel.send(`Volume down!`);
     }
 
     else if(isNaN(vol)) {
