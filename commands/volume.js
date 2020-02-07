@@ -24,7 +24,8 @@ exports.run = async (client, message, args) => {
     }
     
     if(vol === "up") {
-        message.guild.voiceConnection.volume += 10;
+        await message.channel.send(`Increasing volume.`)
+        client.queues.get(message.guild.id).dispatcher.setVolume(message.guild.voiceConnection.volume += 10);
         return message.reply(`Volume up!`);
     }
     
