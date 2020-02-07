@@ -13,7 +13,8 @@ exports.run = async (client, message, args) => {
     console.log(args);
     let vol = args.join(' ');
     console.log(vol);
-    
+
+    // accept up and down as the only non-numerical arguments
     if(!vol) {
         return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
     }
