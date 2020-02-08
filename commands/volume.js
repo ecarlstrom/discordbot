@@ -20,17 +20,17 @@ exports.run = async (client, message, args) => {
         return message.reply(`🤠 Volume must be a percentage between 0 and 100! 🤠`);
     }
     
-    // if(vol === "up" || vol === "u") {
-    //     client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume += 0.10));
-    //     message.channel.send(`Volume up!`);
-    //     return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
-    // }
+    if(vol === "up" || vol === "u") {
+        client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume += 0.10));
+        message.channel.send(`Volume up!`);
+        return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
+    }
     
-    // if(vol === "down" || vol === "d") {
-    //     client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume -= 0.10));
-    //     message.channel.send(`Volume down!`);
-    //     return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
-    // }
+    if(vol === "down" || vol === "d") {
+        client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume -= 0.10));
+        message.channel.send(`Volume down!`);
+        return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
+    }
 
     else if(isNaN(vol)) {
         return message.reply(`🤠 Nice try, please use a numerical value! 🤠`)
