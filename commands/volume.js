@@ -51,5 +51,5 @@ exports.conf = {
 exports.help = {
     name: 'volume',
     description: 'Sets the volume of playback.',
-    usage: 'volume/vol (percentage)'
+    usage: 'volume/vol (percentage/u/up/d/down)'
 };
