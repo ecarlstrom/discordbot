@@ -1,5 +1,9 @@
 # Changelog
 
+**February 11, 2020**
+
+- `!vol up` and `!vol down` have been added. Still working out a minor issue with this but the command are working properly.
+
 **January 24, 2020**
 
 - General package upgrades.
