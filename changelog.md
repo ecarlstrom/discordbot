@@ -1,5 +1,9 @@
 # Changelog
 
+**February 16, 2020**
+
+- All ASCII art dependencies have been updated. This update also addresses some minor security concerns with those dependencies.
+
 **February 11, 2020**
 
 - `!vol up` and `!vol down` have been added. Still working out a minor issue with this but the command are working properly.
