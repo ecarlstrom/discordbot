@@ -54,7 +54,7 @@ exports.run = async (client, message, args) => {
     } catch(e) {
         console.log(e.stack || e);
     }
-
+    // see what may cause this to result in bot getting stuck in voice channels
     if(message.author.permLevel < 2 && parseInt(info.durationSeconds) > 900) {
         return message.reply(`🤠 Sorry, song time limit is 15 minutes! 🤠`).catch(console.error.message);
     }
