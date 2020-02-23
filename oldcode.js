@@ -18,10 +18,10 @@
 //   }
 // });
 
-// client.on('guildMemberRemove', (member) => {
-//   const guild = member.guild;
-//   if(newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
-// }); // prevents greeting of invalid users if they leave while in the newUsers greeting queue
+client.on('guildMemberRemove', (member) => {
+  const guild = member.guild;
+  if(newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
+}); // prevents greeting of invalid users if they leave while in the newUsers greeting queue
 
 // kicks user from a voice channel (in kind of an inefficient way for now, will edit later)
 
