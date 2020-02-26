@@ -1,5 +1,9 @@
 # Changelog
 
+**Feburary 25, 2020**
+
+- General package upgrades and maintenance.
+
 **February 16, 2020**
 
 - All ASCII art dependencies have been updated. This update also addresses some minor security concerns with those dependencies.
