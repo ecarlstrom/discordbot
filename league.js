@@ -10,11 +10,11 @@
 
 ////////// LEAGUE DEPENDENCIES //////////
 
-const fs = require('fs');
-const gm = require('gm');
-const request = require('request');
-const urlencode = ('urlencode');
-const roundTo = require('round-to');
+// const fs = require('fs');
+// const gm = require('gm');
+// const request = require('request');
+// const urlencode = ('urlencode');
+// const roundTo = require('round-to');
 
 /////////////////////////////// ***** LEAGUE API ***** ///////////////////////////////
 
