@@ -29,14 +29,14 @@
 !championinfo (tips, matchups, etc.)?
 */
 
-client.on('message', (message) => {
-  const member = message.member;
-  const msg = message.content.toLowerCase(); // easier to handle text inputs this way
-  const args = message.content.split(' ').slice(1).join(" ");
-  const argsTwo = message.content.split(' ').slice(1);
-  const channel = message.channel;
-});
-// placeholder - getPlayerID(), getMatch(), getChampionID(), etc. - add in builds?
+// client.on('message', (message) => {
+//   const member = message.member;
+//   const msg = message.content.toLowerCase(); // easier to handle text inputs this way
+//   const args = message.content.split(' ').slice(1).join(" ");
+//   const argsTwo = message.content.split(' ').slice(1);
+//   const channel = message.channel;
+// });
+// // placeholder - getPlayerID(), getMatch(), getChampionID(), etc. - add in builds?
 
 // // will see how new runes work as opposed to getrunes/get masteries endpoints for the old setup
 
