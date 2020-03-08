@@ -128,73 +128,73 @@ function getMatch(summonerObject, cb) {
   });
 } // end getMatch()
 
-// function getChampionID(championName, cb) {
+function getChampionID(championName, cb) {
 
-//   request(championID, function(error, response, body) {
-//     requesterror(championID, response.statusCode, function(err) {
-//     if(err) {
-//       cb(err); // basic error handling
-//     } else {
-//       let dataJSON = JSON.parse(response.body);
-//       // normalizing champion name input (capitalization, spacing, etc.) to minimize edge cases
-//       // the next two lanes make every name lowercase and then capitalize the first letter
-//       // this will hopefully cut down the number of elifs required to manage other cases
+  request(championID, function(error, response, body) {
+    requesterror(championID, response.statusCode, function(err) {
+    if(err) {
+      cb(err); // basic error handling
+    } else {
+      let dataJSON = JSON.parse(response.body);
+      // normalizing champion name input (capitalization, spacing, etc.) to minimize edge cases
+      // the next two lanes make every name lowercase and then capitalize the first letter
+      // this will hopefully cut down the number of elifs required to manage other cases
 
-//       championname = championname.toLowerCase();
-//       championname = championname.charAt(0).toUpperCase() + championname.slice(1);
+      championname = championname.toLowerCase();
+      championname = championname.charAt(0).toUpperCase() + championname.slice(1);
 
-//       // add cases for potential exceptions: MF, Kai'sa, Kog, ASol, J4, Lee, Xin, Yi, Mundo, TF, Rek'sai
-//       // more: Wukong? (MonkeyKing in JSON, will investigate), Cho, Vel, Nunu? (will check with new name)
-//       // can do an includes() for nicknames as well: Cass, Kass, Malph, etc.
+      // add cases for potential exceptions: MF, Kai'sa, Kog, ASol, J4, Lee, Xin, Yi, Mundo, TF, Rek'sai
+      // more: Wukong? (MonkeyKing in JSON, will investigate), Cho, Vel, Nunu? (will check with new name)
+      // can do an includes() for nicknames as well: Cass, Kass, Malph, etc.
         
-         // 11/11/2019 note: update with newest releases
+         11/11/2019 note: update with newest releases
 
-//       // for the purpose of the following statements, the number "data" is assigned to references the individual champion keys on Riot's end
-//       if(championname.includes("Miss") || championname.includes("Fortune")) {
-//         data = 21;
-//       } else if(championname.includes("Kai'")) {
-//         // this is not in the Riot data I'm looking at, will add in
-//       } else if(championname.includes("Kog")) {
-//         data = 96;
-//       } else if(championname.includes("Aurelion") || championname === "ASol") {
-//         data = 136;
-//       } else if(championname.includes("Jarvan" || championname === "J4")) {
-//         data = 59;
-//       } else if(championname === "Leesin" || championname === "Lee sin") { // using exact matches here because "Lee" will cause errors with Nidalee
-//         data = 64;
-//       } else if(championname.includes("Xin")) {
-//         data = 5;
-//       } else if(championname.includes("Master") || championname === "Yi") {
-//         data = 11;
-//       } else if(championname.includes("Mundo")) {
-//         data = 36;
-//       } else if(championname.includes("Twisted") || championname.includes("Fate") || championname === "TF") {
-//         data = 4;
-//       } else if(championname.includes("Rek")) {
-//         data = 421;
-//       } else if(championname.includes("Wu")) {
-//         data = 62; // not spaced or a name with an apostrophe, but Wukong is internally known in Riot's database as "MonkeyKing" so this requires more specificity
-//       } else if(championname.includes("Cho")) {
-//         data = 31;
-//       } else if(championname === "Velkoz" || championname === "Vel" || championname === "velkoz") { // using exact matches again because "vel" also appears in Evelynn's name
-//         data = 161;
-//       } else if(championname.includes("Nunu") || championname.includes("Willump")) { // probably not required but covering an extra base here since he's now named "Nunu & Willump"
-//         data = 20;
-//       }
-//       // may add some more catches for nicknames in the future, just getting a standard working version for now
-//         else {
-//           try {
-//             let data = dataJSON.data[championname].id;
-//           } catch(err) {
-//             cb('Not recognized as a valid champion name. Please try again!');
-//             return;
-//           }
-//         }
-//         cb(false, data);
-//     }
-//   });
-//  });
-// } // end getChampionID()
+      // for the purpose of the following statements, the number "data" is assigned to references the individual champion keys on Riot's end
+      if(championname.includes("Miss") || championname.includes("Fortune")) {
+        data = 21;
+      } else if(championname.includes("Kai'")) {
+        // this is not in the Riot data I'm looking at, will add in
+      } else if(championname.includes("Kog")) {
+        data = 96;
+      } else if(championname.includes("Aurelion") || championname === "ASol") {
+        data = 136;
+      } else if(championname.includes("Jarvan" || championname === "J4")) {
+        data = 59;
+      } else if(championname === "Leesin" || championname === "Lee sin") { // using exact matches here because "Lee" will cause errors with Nidalee
+        data = 64;
+      } else if(championname.includes("Xin")) {
+        data = 5;
+      } else if(championname.includes("Master") || championname === "Yi") {
+        data = 11;
+      } else if(championname.includes("Mundo")) {
+        data = 36;
+      } else if(championname.includes("Twisted") || championname.includes("Fate") || championname === "TF") {
+        data = 4;
+      } else if(championname.includes("Rek")) {
+        data = 421;
+      } else if(championname.includes("Wu")) {
+        data = 62; // not spaced or a name with an apostrophe, but Wukong is internally known in Riot's database as "MonkeyKing" so this requires more specificity
+      } else if(championname.includes("Cho")) {
+        data = 31;
+      } else if(championname === "Velkoz" || championname === "Vel" || championname === "velkoz") { // using exact matches again because "vel" also appears in Evelynn's name
+        data = 161;
+      } else if(championname.includes("Nunu") || championname.includes("Willump")) { // probably not required but covering an extra base here since he's now named "Nunu & Willump"
+        data = 20;
+      }
+      // may add some more catches for nicknames in the future, just getting a standard working version for now
+        else {
+          try {
+            let data = dataJSON.data[championname].id;
+          } catch(err) {
+            cb('Not recognized as a valid champion name. Please try again!');
+            return;
+          }
+        }
+        cb(false, data);
+    }
+  });
+ });
+} // end getChampionID()
 
 // function matchInfo(matchObject, summonerObject, cb) {
 
