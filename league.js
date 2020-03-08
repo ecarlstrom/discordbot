@@ -68,28 +68,28 @@
 
 // ///// League API functions: getPlayerID(), getMatch(), getChampionID(), matchInfo(), championBuild()
 
-// function getPlayerID(player, cb) {
+function getPlayerID(player, cb) {
     
-//   request(playerID + urlencode(summoner) + "?api_key=" + lol_api, function(error, response,body) {
-//     if(err) {
-//       cb(err); // error handling
-//     } else {
-//       // parse the returned data and create a summoner object to contain it
-//       let dataJSON = JSON.parse(response.body);
-//       let summonerid = dataJSON.id;
-//       let accountLevel = dataJSON.summonerLevel;
-//       let profileID = dataJSON.profileIconId;
-//       let summonername = dataJSON.name;
-//       let summonerObject = {
-//         "summonerid": summonerid,
-//         "accountlvl": accountlvl,
-//         "profileid": profileID,
-//         "name": summonername
-//       }
-//       cb(false, summonerObject);
-//     }
-//   });
-// } // end getPlayerID()
+  request(playerID + urlencode(summoner) + "?api_key=" + lol_api, function(error, response,body) {
+    if(err) {
+      cb(err); // error handling
+    } else {
+      // parse the returned data and create a summoner object to contain it
+      let dataJSON = JSON.parse(response.body);
+      let summonerid = dataJSON.id;
+      let accountLevel = dataJSON.summonerLevel;
+      let profileID = dataJSON.profileIconId;
+      let summonername = dataJSON.name;
+      let summonerObject = {
+        "summonerid": summonerid,
+        "accountlvl": accountlvl,
+        "profileid": profileID,
+        "name": summonername
+      }
+      cb(false, summonerObject);
+    }
+  });
+} // end getPlayerID()
 
 // function getMatch(summonerObject, cb) {
 
