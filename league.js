@@ -196,87 +196,87 @@ function getChampionID(championName, cb) {
  });
 } // end getChampionID()
 
-// function matchInfo(matchObject, summonerObject, cb) {
+function matchInfo(matchObject, summonerObject, cb) {
 
-//   let placeholder = matchObject.queue;
-//   let gametype = queues[placeholder];
-//   // placeholder then gets the type of map that has been queued for:
-//   placeholder = matchObject.mapid;
-//   let map = mapname[placeholder];
-//   let matchid = matchObject.gameid;
-//   let time = matchObject.gametime;
+  let placeholder = matchObject.queue;
+  let gametype = queues[placeholder];
+  // placeholder then gets the type of map that has been queued for:
+  placeholder = matchObject.mapid;
+  let map = mapname[placeholder];
+  let matchid = matchObject.gameid;
+  let time = matchObject.gametime;
 
-//   // time variables
-//   let ms = (new Date).getTime(); // milliseconds
-//   time = ((time - ms) * -1);
-//   let second = (time / 1000) % 70 - 0.5;
-//   let minute = (time / (1000 * 60)) % 60 - 0.5;
-//   let hour = (time / (1000 * 60 * 60)) - 0.5;
-//   // round all time variable values
-//   second = roundTo(second, 0);
-//   minute = roundTo(minute, 0);
-//   hour = roundTo(hour, 0);
+  // time variables
+  let ms = (new Date).getTime(); // milliseconds
+  time = ((time - ms) * -1);
+  let second = (time / 1000) % 70 - 0.5;
+  let minute = (time / (1000 * 60)) % 60 - 0.5;
+  let hour = (time / (1000 * 60 * 60)) - 0.5;
+  // round all time variable values
+  second = roundTo(second, 0);
+  minute = roundTo(minute, 0);
+  hour = roundTo(hour, 0);
 
-//   // two possible cases: match is live and there's a time or players are still loading in (no game time)
-//   if(hour > 100) {
-//     time = "Players loading!";
-//   } else {
-//     time = `Game live for ${hour} hours, ${minute} minutes, ${second} seconds.`;
-//     // may add another case here for anything below two minutes returning "one minute" instead of `${minute} minutes`, but this is a nitpicky detail.
-//   }
+  // two possible cases: match is live and there's a time or players are still loading in (no game time)
+  if(hour > 100) {
+    time = "Players loading!";
+  } else {
+    time = `Game live for ${hour} hours, ${minute} minutes, ${second} seconds.`;
+    // may add another case here for anything below two minutes returning "one minute" instead of `${minute} minutes`, but this is a nitpicky detail.
+  }
 
-//   // player-related variables and functions
-//   let players = matchObject.participants;
-//   let bluePlayers = [];
-//   let redPlayers = [];
-//   let team; // players will be moved from the empty objects based on their team
+  // player-related variables and functions
+  let players = matchObject.participants;
+  let bluePlayers = [];
+  let redPlayers = [];
+  let team; // players will be moved from the empty objects based on their team
 
-//   // gathers player information and sorts them onto the appropriate teams
-//   for(let i = 0; i < players.length; i++) {
-//     let playerObject = {};
-//     if(players[i].teamId === 100) {
-//       playerObject.summonername = players[i].summonerName;
-//       playerObject.championId = players[i].championId;
-//       playerObject.summonerid = players[i].summonerId;
-//       playerObject.runes = players[i].runes;
-//       playerObject.masteries = players[i].masteries; // not sure how runes/masteries work with the new combined system, will see what's returned
-//       playerObject.team = "BLUE";
-//     }
-//     bluePlayers.push(playerObject);
-//     if(summonerObject.summonerid == players[i].summonerId) {
-//       team = 'BLUE';
-//     } else {
-//         playerObject.summonername = players[i].summonerName;
-//         playerObject.championId = players[i].championId;
-//         playerObject.summonerid = players[i].summonerId;
-//         playerObject.runes = players[i].runes;
-//         playerObject.masteries = players[i].masteries; // not sure how runes/masteries work with the new combined system, will see what's returned
-//         playerObject.team = "RED";
+  // gathers player information and sorts them onto the appropriate teams
+  for(let i = 0; i < players.length; i++) {
+    let playerObject = {};
+    if(players[i].teamId === 100) {
+      playerObject.summonername = players[i].summonerName;
+      playerObject.championId = players[i].championId;
+      playerObject.summonerid = players[i].summonerId;
+      playerObject.runes = players[i].runes;
+      playerObject.masteries = players[i].masteries; // not sure how runes/masteries work with the new combined system, will see what's returned
+      playerObject.team = "BLUE";
+    }
+    bluePlayers.push(playerObject);
+    if(summonerObject.summonerid == players[i].summonerId) {
+      team = 'BLUE';
+    } else {
+        playerObject.summonername = players[i].summonerName;
+        playerObject.championId = players[i].championId;
+        playerObject.summonerid = players[i].summonerId;
+        playerObject.runes = players[i].runes;
+        playerObject.masteries = players[i].masteries; // not sure how runes/masteries work with the new combined system, will see what's returned
+        playerObject.team = "RED";
 
-//         redPlayers.push(playerObject);
-//         if(summonerObject.summonerid == players[i].summonerId) {
-//           team = 'RED';
-//       }
-//     }
-//   }
+        redPlayers.push(playerObject);
+        if(summonerObject.summonerid == players[i].summonerId) {
+          team = 'RED';
+      }
+    }
+  }
 
-//   // general match information
-//   matchObject = {
-//     'gametype': gametype,
-//     'map': map,
-//     'time': time,
-//     'blueplayers': blueplayers,
-//     'redplayers': redplayers,
-//     'team': team
-//   }
-//   liveMatchChampion(matchObject, function(err, newMatch) {
-//     if(err) {
-//       cb(err);
-//     } else {
-//       cb(false, newMatch, summonerObject);
-//     }
-//   });
-// } // end matchInfo()
+  // general match information
+  matchObject = {
+    'gametype': gametype,
+    'map': map,
+    'time': time,
+    'blueplayers': blueplayers,
+    'redplayers': redplayers,
+    'team': team
+  }
+  liveMatchChampion(matchObject, function(err, newMatch) {
+    if(err) {
+      cb(err);
+    } else {
+      cb(false, newMatch, summonerObject);
+    }
+  });
+} // end matchInfo()
 
 // function liveMatchChampion() {
 
