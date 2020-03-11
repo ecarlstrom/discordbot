@@ -1,5 +1,9 @@
 # Changelog
 
+**March 10, 2020**
+
+- General updates, League API access renewed for future work.
+
 **Feburary 25, 2020**
 
 - General package upgrades and maintenance.
