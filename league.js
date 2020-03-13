@@ -40,24 +40,24 @@
 
 // // will see how new runes work as opposed to getrunes/get masteries endpoints for the old setup
 
-// let queues = {
-//   '0': 'Custom',
-//   '2': 'Normal 5v5 Blind Pick',
-//   '14': 'Normal 5v5 Draft Pick',
-//   '4': 'Ranked Solo 5v5',
-//   '6': 'Ranked Premade 5v5', // does this ID still work with flex queues?
-//   '65': 'ARAM'
+let queues = {
+  '0': 'Custom',
+  '2': 'Normal 5v5 Blind Pick',
+  '14': 'Normal 5v5 Draft Pick',
+  '4': 'Ranked Solo 5v5',
+  '6': 'Ranked Premade 5v5', // does this ID still work with flex queues?
+  '65': 'ARAM'
 
-//   // basic setup for now, there may be some overlap with new/old i.e. 'Ranked Solo 5v5' vs. 'Ranked Solo'
-// };
+  // basic setup for now, there may be some overlap with new/old i.e. 'Ranked Solo 5v5' vs. 'Ranked Solo'
+};
 
-// let maps = {
-//   '1': `Summoner's Rift`,
-//   '4': 'Twisted Treeline',
-//   '12': 'Howling Abyss'
+let maps = {
+  '1': `Summoner's Rift`,
+  '4': 'Twisted Treeline',
+  '12': 'Howling Abyss'
 
-//   // there is also another SR map at ID 11 and TT at 10, not sure what any differences are
-// };
+  // there is also another SR map at ID 11 and TT at 10, not sure what any differences are
+};
 
 // const liveMatch = "https://na1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/"; // constant path to retrieve live match data
 // const playerID = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"; // constant path to retrieve summoner names (player names)
