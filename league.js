@@ -91,7 +91,7 @@ function getPlayerID(player, cb) {
   });
 } // end getPlayerID()
 
-// function getMatch(summonerObject, cb) {
+function getMatch(summonerObject, cb) {
 
   request(liveMatch + summonerObject.summonerid + "?api_key=" + lol_api, function(err, response, body) {
     if(response.statusCode == 404) {
@@ -128,7 +128,7 @@ function getPlayerID(player, cb) {
   });
 } // end getMatch()
 
-// function getChampionID(championName, cb) {
+function getChampionID(championName, cb) {
 
   request(championID, function(error, response, body) {
     requesterror(championID, response.statusCode, function(err) {
@@ -147,6 +147,7 @@ function getPlayerID(player, cb) {
       // more: Wukong? (MonkeyKing in JSON, will investigate), Cho, Vel, Nunu? (will check with new name)
       // can do an includes() for nicknames as well: Cass, Kass, Malph, etc.
         
+    // 3/13/20 note: grab names/info of all newer champion releases not on this list along with nicknames
 
       // for the purpose of the following statements, the number "data" is assigned to references the individual champion keys on Riot's end
       if(championname.includes("Miss") || championname.includes("Fortune")) {
