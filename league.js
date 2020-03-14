@@ -278,55 +278,55 @@ function getChampionID(championName, cb) {
 //   });
 // } // end matchInfo()
 
-// function liveMatchChampion() {
+function liveMatchChampion() {
 
-//   request(getChampion, function(error, response, body) {
-//     requesterror(getChampion, response.statusCode, function(err) {
-//       if(err) {
-//         cb(err);
-//       } else {
-//         let dataJSON = JSON.parse(response.body);
-//         let secondJSON = dataJSON.data;
-//         for(let i = 0; i < matchObject.blueplayers.length; i++) {
-//           for(let key in secondJSON) {
-//             if(secondJSON[key].key == (matchObject.blueplayers[i].championid + "")) {
-//               matchObject.blueplayers[i].championname = secondJSON[key].id;
-//             // once again we handle exceptions, these being newer champions. Still have to find Kai'sa in the JSON and add her.
-//             } else if(matchObject.blueplayers[i].championid === 141) {
-//               matchObject.blueplayers[i].championname = "Kayn";
-//             } else if(matchObject.blueplayers[i].championid === 498) {
-//               matchObject.blueplayers[i].championname = "Xayah";
-//             } else if(matchObject.blueplayers[i].championid === 497) {
-//               matchObject.blueplayers[i].championname = "Rakan";
-//             } else {
-//               continue;
-//             }
-//           }
-//         }
-//         // now do the same exact thing, but loop through the red players instead.
-//         for(let i = 0; i < matchObject.blueplayers.length; i++) {
-//           for(let key in secondJSON) {
-//             if(secondJSON[key].key == (matchObject.blueplayers[i].championid + "")) {
-//               matchObject.blueplayers[i].championname = secondJSON[key].id;
-//             // once again we handle exceptions, these being newer champions. Still have to find Kai'sa in the JSON and add her.
-//             } else if(matchObject.blueplayers[i].championid === 141) {
-//               matchObject.blueplayers[i].championname = "Kayn";
-//             } else if(matchObject.blueplayers[i].championid === 498) {
-//               matchObject.blueplayers[i].championname = "Xayah";
-//             } else if(matchObject.blueplayers[i].championid === 497) {
-//               matchObject.blueplayers[i].championname = "Rakan";
-//             } else {
-//               continue;
-//             }
-//           }
-//         }
-//       }
+  request(getChampion, function(error, response, body) {
+    requesterror(getChampion, response.statusCode, function(err) {
+      if(err) {
+        cb(err);
+      } else {
+        let dataJSON = JSON.parse(response.body);
+        let secondJSON = dataJSON.data;
+        for(let i = 0; i < matchObject.blueplayers.length; i++) {
+          for(let key in secondJSON) {
+            if(secondJSON[key].key == (matchObject.blueplayers[i].championid + "")) {
+              matchObject.blueplayers[i].championname = secondJSON[key].id;
+            // once again we handle exceptions, these being newer champions. Still have to find Kai'sa in the JSON and add her.
+            } else if(matchObject.blueplayers[i].championid === 141) {
+              matchObject.blueplayers[i].championname = "Kayn";
+            } else if(matchObject.blueplayers[i].championid === 498) {
+              matchObject.blueplayers[i].championname = "Xayah";
+            } else if(matchObject.blueplayers[i].championid === 497) {
+              matchObject.blueplayers[i].championname = "Rakan";
+            } else {
+              continue;
+            }
+          }
+        }
+        // now do the same exact thing, but loop through the red players instead.
+        for(let i = 0; i < matchObject.blueplayers.length; i++) {
+          for(let key in secondJSON) {
+            if(secondJSON[key].key == (matchObject.blueplayers[i].championid + "")) {
+              matchObject.blueplayers[i].championname = secondJSON[key].id;
+            // once again we handle exceptions, these being newer champions. Still have to find Kai'sa in the JSON and add her.
+            } else if(matchObject.blueplayers[i].championid === 141) {
+              matchObject.blueplayers[i].championname = "Kayn";
+            } else if(matchObject.blueplayers[i].championid === 498) {
+              matchObject.blueplayers[i].championname = "Xayah";
+            } else if(matchObject.blueplayers[i].championid === 497) {
+              matchObject.blueplayers[i].championname = "Rakan";
+            } else {
+              continue;
+            }
+          }
+        }
+      }
 
-//       // leaving a placeholder here for future features.
-//       // can handle runes, masteries, champion mastery, etc. in this function
-//     });
-//   });
-// } // end liveMatchChampion()
+      // leaving a placeholder here for future features.
+      // can handle runes, masteries, champion mastery, etc. in this function
+    });
+  });
+} // end liveMatchChampion()
 
 // // get build information for a specific champion
 // function championBuild(champID, argsTwo, cb) {
