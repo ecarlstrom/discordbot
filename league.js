@@ -147,7 +147,6 @@ function getPlayerID(player, cb) {
       // more: Wukong? (MonkeyKing in JSON, will investigate), Cho, Vel, Nunu? (will check with new name)
       // can do an includes() for nicknames as well: Cass, Kass, Malph, etc.
         
-         11/11/2019 note: update with newest releases
 
       // for the purpose of the following statements, the number "data" is assigned to references the individual champion keys on Riot's end
       if(championname.includes("Miss") || championname.includes("Fortune")) {
