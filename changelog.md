@@ -1,5 +1,9 @@
 # Changelog
 
+**March 17, 2020**
+
+- Only users in the same voice channel as the bot can add songs to the queue.
+
 **March 10, 2020**
 
 - General updates, League API access renewed for future work.
