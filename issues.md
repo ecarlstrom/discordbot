@@ -9,3 +9,5 @@
 - The `!stats` command seems to be displaying results incorrectly. The current command returns the total number of songs that have been queued during a particular session rather than the intended results, which is the current queue size.
 
 - After pausing for long periods of time, the song will play correctly but the subsequent songs in the queue can take 5-10 minutese to being playing. (testing 3/11/20)
+
+- The `!play` command change from the other day caused a couple of playback issues. This change has been undone while I work on a fix.
