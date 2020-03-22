@@ -1,5 +1,9 @@
 # Changelog
 
+**March 21, 2020**
+
+- General package upgrades and maintenance.
+
 **March 17, 2020**
 
 - Only users in the same voice channel as the bot can add songs to the queue.
