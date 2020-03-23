@@ -23,8 +23,8 @@ exports.run = async (client, message, args) => {
     }
 
     // this will need to check if a queue already exists to function properly
-    
-    // if(message.guild.me.voiceChannelID !== message.member.voiceChannelID) {
+
+    // if(!client.queues.has(message.guild.id) && message.guild.me.voiceChannelID !== message.member.voiceChannelID) {
     //     return message.reply(`🤠 You must be in the same voice channel as the bot! 🤠`)
     // }
 
