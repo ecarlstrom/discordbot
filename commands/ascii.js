@@ -3,6 +3,7 @@ const ascii = require('ascii-art');
 exports.run = (client, message, args) => {
 
     ascii.font(args.join(' '), 'Doom', function(rendered) {
+        // improve error handling for this: non-word inputs specifically cause problems
         // console.log(typeof(args[0]));
         if(!args.join(' ')) {
             return message.reply(`🤠 Please enter some text to format! 🤠`)
