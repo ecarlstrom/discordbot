@@ -11,3 +11,5 @@
 - After pausing for long periods of time, the song will play correctly but the subsequent songs in the queue can take 5-10 minutese to being playing. (testing 3/11/20)
 
 - The `!play` command change from the other day caused a couple of playback issues. This change has been undone while I work on a fix.
+
+- Using the `!ascii` command with invalid inputs can cause the bot to crash.
