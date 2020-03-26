@@ -9,6 +9,8 @@ exports.run = (client, message, args) => {
             return message.reply(`🤠 Please enter some text to format! 🤠`)
         }
 
+        // word/number etc. check, no emojis or other unusual inputs
+        
         rendered = rendered.trimRight();
 
         if(rendered.length > 2000) {
