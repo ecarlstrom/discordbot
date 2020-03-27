@@ -10,7 +10,9 @@ exports.run = (client, message, args) => {
         }
 
         // word/number etc. check, no emojis or other unusual inputs
-        
+        // if(typeof(args) !== "string" && typeof(args) !== "number") {
+        //     return message.reply(`🤠 Please use a valid format! 🤠`)
+        // }
         rendered = rendered.trimRight();
 
         if(rendered.length > 2000) {
