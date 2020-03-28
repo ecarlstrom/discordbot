@@ -12,4 +12,4 @@
 
 - The `!play` command change from the other day caused a couple of playback issues. This change has been undone while I work on a fix.
 
-- Using the `!ascii` command with invalid inputs can cause the bot to crash. (working on fix as of 3/26/2020)
+- Using the `!ascii` command with invalid inputs can cause the bot to crash. (working on fix as of 3/28/2020)
