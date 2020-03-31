@@ -1,4 +1,5 @@
 exports.run = (client, message, args) => {
+    // check this and join to make sure they're still working properly, occasional errors recently
     if(!message.member.voiceChannel) {
         return message.reply(`🤠 Please join a voice channel! 🤠`);
     }
