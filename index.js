@@ -87,7 +87,7 @@ client.on('message', (message) => {
       .setColor('0xDCDCDC')
       .setImage('https://i.imgur.com/hUTCznj.png')
       .setThumbnail('https://cdn.discordapp.com/emojis/519203018302947335.png')
-      .setFooter(`User with a broken heart: ${message.member.displayName}`)
+      .setFooter(`失恋した人： ${message.member.displayName}`)
       .setTimestamp()
     message.channel.send({embed});
   }
