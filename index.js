@@ -80,6 +80,17 @@ client.on('message', (message) => {
       .setTimestamp()
     message.channel.send({embed});
   }
+
+  if(message.content === (prefix + 'seeuweeb')) {
+    const embed = new Discord.RichEmbed()
+      .setTitle('私がUスマイルを見て、それが私には向かないことを知っているとき、それは私がUを最も恋しく思うときです。。')
+      .setColor('0xDCDCDC')
+      .setImage('https://i.imgur.com/hUTCznj.png')
+      .setThumbnail('https://cdn.discordapp.com/emojis/519203018302947335.png')
+      .setFooter(`User with a broken heart: ${message.member.displayName}`)
+      .setTimestamp()
+    message.channel.send({embed});
+  }
 });
 
 // placeholder for "dadbot"-style commands as per server request
