@@ -1,5 +1,9 @@
 # Changelog
 
+**April 4, 2020**
+
+- Potentially exploitable vulnerability in a dependency has been patched.
+
 **April 3, 2020**
 
 - General package upgrades and maintenance. Potential security vulnerabilities in a couple of dependencies have been patched.
