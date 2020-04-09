@@ -14,6 +14,6 @@
 
 - Using the `!ascii` command with invalid inputs can cause the bot to crash. (working on fix as of 3/28/2020)
 
-- Occasional new errors with `!pause` and `!skip`, haven't yet found the exact source.
+- Occasional new errors with `!pause` and `!skip`, haven't yet found the exact source. (seems fixed as of 4/8, still checking it out)
 
 - Investigating an issue that causes the bot to reconnect repeatedly. Minor for now since performance is not impacted thus far.
