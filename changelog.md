@@ -1,5 +1,9 @@
 # Changelog
 
+**April 9, 2020**
+
+- A couple more ASCII art package updates for security.
+
 **April 4, 2020**
 
 - Potentially exploitable vulnerability in a dependency has been patched.
