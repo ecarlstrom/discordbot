@@ -6,9 +6,9 @@ exports.run = async (client, message) => {
             return message.reply('🤠 Please join a voice channel! 🤠');
         }
 
-        if(message.guild.me.voiceChannelID !== message.member.voiceChannelID) {
-            return message.reply(`🤠 You must be in the same voice channel as the bot! 🤠`)
-        };
+        // if(message.guild.me.voiceChannelID !== message.member.voiceChannelID) {
+        //     return message.reply(`🤠 You must be in the same voice channel as the bot! 🤠`)
+        // };
         
         if(!client.queues.has(message.guild.id)) {
             // voiceChannel.leave();
