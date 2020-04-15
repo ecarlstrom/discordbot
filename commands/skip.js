@@ -1,5 +1,4 @@
 exports.run = async (client, message) => {
-    // 3/31: possibly more skip errors in certain scenarios
     const voiceChannel = message.member.voiceChannel ? message.member.voiceChannel : (message.guild.voiceConnection ? message.guild.voiceConnection.channel : null); 
 
     if(!voiceChannel || (!message.member.voiceChannel)) {
