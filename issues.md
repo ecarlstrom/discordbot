@@ -8,10 +8,6 @@
 
 - The `!stats` command seems to be displaying results incorrectly. The current command returns the total number of songs that have been queued during a particular session rather than the intended results, which is the current queue size.
 
-- After pausing for long periods of time, the song will play correctly but the subsequent songs in the queue can take 5-10 minutese to being playing. (testing 3/11/20)
-
-- The `!play` command change from the other day caused a couple of playback issues. This change has been undone while I work on a fix.
-
 - Using the `!ascii` command with invalid inputs can cause the bot to crash. (working on fix as of 3/28/2020)
 
 - Investigating an issue that causes the bot to reconnect repeatedly. Minor for now since performance is not impacted thus far.
