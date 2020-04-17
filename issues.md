@@ -11,3 +11,5 @@
 - Using the `!ascii` command with invalid inputs can cause the bot to crash. (working on fix as of 3/28/2020)
 
 - Investigating an issue that causes the bot to reconnect repeatedly. Minor for now since performance is not impacted thus far.
+
+- Looking into an occasional playback issue after the first song after an auto-reconnect.
