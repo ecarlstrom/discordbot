@@ -110,6 +110,7 @@ client.on('message', message => {
   // seeing if there is a way to do this for different game/status displays on different servers
   
   if(message.content.startsWith(prefix + 'setgame')) {
+    // try an automated version of this on reboot as well
     client.user.setActivity(args);
   }
 
