@@ -1,5 +1,9 @@
 # Changelog
 
+**April 17, 2020**
+
+- Updating some playback dependencies for more accurate Youtube data.
+
 **April 10, 2020**
 
 - Occasional playback issues with `!skip` and `!stop` seem to be fixed.
