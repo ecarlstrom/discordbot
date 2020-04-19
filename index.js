@@ -19,7 +19,6 @@ require('events').EventEmitter.defaultMaxListeners = 50;
 
 ////////// LEAGUE DEPENDENCIES //////////
 
-// fs update - 1/9/2020
 const fs = require('fs');
 // const gm = require('gm');
 // const request = require('request');
