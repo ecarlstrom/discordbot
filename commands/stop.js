@@ -12,6 +12,8 @@ exports.run = async (client, message) => {
         
         if(!client.queues.has(message.guild.id)) {
             // voiceChannel.leave();
+            // erase queue first the leave, ideally - order has caused some problems
+            // let queue = [];
             return message.reply(`🤠 Error encountered or no queue found, resetting music queue. 🤠`);
         }
 
