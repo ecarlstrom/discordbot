@@ -50,7 +50,7 @@ exports.run = (client, message) => {
           }
 
           // displays severe weather alerts if any, otherwise gives an all-clear
-
+          // see if this is working correctly, API may not be returning alert data
           if(!location.alert) {
             embed.addField(`No weather alerts!`, `👍`)
             embed.addBlankField(true)
