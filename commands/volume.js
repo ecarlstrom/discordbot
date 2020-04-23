@@ -12,6 +12,7 @@ exports.run = async (client, message, args) => {
     let vol = args.join(' ');
 
     // accept up and down as the only non-numerical arguments
+    // add: vol max and mute 
     if(!vol) {
         return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
     }
