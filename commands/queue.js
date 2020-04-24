@@ -26,6 +26,7 @@ exports.run = (client, message) => {
         for(let i = 0; i < queue.length && i < 10; i++) {
             embed.addField(`🤠 ${queue[i].songTitle.substring(0, 50)} (${queue[i].playTime}) 🤠`, `Requested by **${queue[i].requester}**`);
         }
+        // improve error handling to avoid crashing
         message.channel.send(embed, '', {
             disableEveryone: true
         }).catch(console.error);
