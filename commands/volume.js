@@ -33,6 +33,12 @@ exports.run = async (client, message, args) => {
         return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
     }
 
+    // if(vol === "max") {
+
+    // }
+
+    // either !vol mute or separate !mute command
+
     else if(isNaN(vol)) {
         return message.reply(`🤠 Nice try, please use a numerical value! 🤠`)
     }
