@@ -37,8 +37,6 @@ exports.run = async (client, message, args) => {
 
     // }
 
-    // use separate !mute/!unmute commands
-
     else if(isNaN(vol)) {
         return message.reply(`🤠 Nice try, please use a numerical value! 🤠`)
     }
