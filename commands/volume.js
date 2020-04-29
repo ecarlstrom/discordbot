@@ -34,7 +34,8 @@ exports.run = async (client, message, args) => {
     }
 
     // if(vol === "max") {
-
+        // client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume == 1.00));
+        // message.channel.send(`Volume set to max.`);
     // }
 
     else if(isNaN(vol)) {
