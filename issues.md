@@ -15,3 +15,5 @@
 - Looking into an occasional playback issue after the first song after an auto-reconnect. (5/20)
 
 - Bot can occasionally crash if a song is queued right as the previous queue ends.
+
+- Identified a bug with a playback dependency that causes some occasional instability with Youtube playback. Working on a fix for this at the moment.
