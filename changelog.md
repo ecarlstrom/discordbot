@@ -1,5 +1,9 @@
 # Changelog
 
+**May 23, 2020**
+
+- Properly rounded values are now displayed after `!vol up` and `!vol down` are used. All other values should remain the same and display correctly.
+
 **April 17, 2020**
 
 - Updating some playback dependencies for more accurate Youtube data.
