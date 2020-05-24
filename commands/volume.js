@@ -24,13 +24,15 @@ exports.run = async (client, message, args) => {
     if(vol === "up" || vol === "u") {
         client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume += 0.10));
         message.channel.send(`Volume up!`);
-        return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
+        let rounded = Math.round(client.queues.get(message.guild.id).dispatcher.volume * 100);
+        return message.channel.send(`Current volume is ${rounded}%.`);
     }
     
     if(vol === "down" || vol === "d") {
         client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume -= 0.10));
         message.channel.send(`Volume down!`);
-        return message.channel.send(`Current volume is ${client.queues.get(message.guild.id).dispatcher.volume * 100}%.`);
+        let rounded = Math.round(client.queues.get(message.guild.id).dispatcher.volume * 100);
+        return message.channel.send(`Current volume is ${rounded}%.`);
     }
 
     if(vol === "max") {
