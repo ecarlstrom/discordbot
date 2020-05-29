@@ -26,8 +26,7 @@
     "urlencode": "^1.1.0",
     "weather-js": "^2.0.0",
     "yt-search": "^0.4.1",
-    "ytdl-core": "2.0.1",
-    "ytdl-core-discord": "^1.0.3"
+    "ytdl-core": "2.0.1"
   },
   "scripts": {
     "start": "node index.js"
