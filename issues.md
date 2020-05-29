@@ -16,4 +16,4 @@
 
 - Bot can occasionally crash if a song is queued right as the previous queue ends.
 
-- Identified a bug with a playback dependency that causes some occasional instability with Youtube playback. Working on a fix for this at the moment.
+- Identified a bug with two playback dependencies that causes some occasional instability with Youtube playback. Working on a fix for this at the moment.
