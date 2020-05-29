@@ -19,9 +19,9 @@
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
 
-"@types/node@^13.5.3":
-  version "13.7.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.7.7.tgz#1628e6461ba8cc9b53196dfeaeec7b07fa6eea99"
+"@types/node@^13.11.1":
+  version "13.13.9"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.9.tgz#79df4ae965fb76d31943b54a6419599307a21394"
 
 abbrev@1:
   version "1.1.1"
@@ -1399,9 +1399,9 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-html-entities@^1.1.3:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
+html-entities@^1.1.3, html-entities@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.3.1.tgz#fb9a1a4b5b14c5daba82d3e34c6ae4fe701a0e44"
 
 htmlparser2@^3.9.1:
   version "3.10.1"
@@ -1853,6 +1853,13 @@ m3u8stream@^0.6.3:
     miniget "^1.6.1"
     sax "^1.2.4"
 
+m3u8stream@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/m3u8stream/-/m3u8stream-0.7.1.tgz#74b01a67ca248ac7bbdc263a65d9d8d2c479a65c"
+  dependencies:
+    miniget "^1.6.1"
+    sax "^1.2.4"
+
 make-dir@^1.0.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
@@ -1926,7 +1933,11 @@ mime@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
 
-miniget@^1.6.0, miniget@^1.6.1:
+miniget@^1.6.0, miniget@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/miniget/-/miniget-1.7.2.tgz#f95eff50b78d798dddee2460c4aa3c72db1aa23a"
+
+miniget@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/miniget/-/miniget-1.6.1.tgz#f1ae08a34e06a2b1c3ace568384ea0def2fe5813"
 
@@ -2330,9 +2341,9 @@ prism-media@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/prism-media/-/prism-media-0.0.4.tgz#df5ddc6463670c97ff0e9cbac3c3e0db18df326f"
 
-prism-media@^1.0.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/prism-media/-/prism-media-1.2.1.tgz#168f323712bcaacb1d70ae613bf9d9dc44cf43d4"
+prism-media@^1.2.1:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/prism-media/-/prism-media-1.2.2.tgz#4f1c841f248b67d325a24b4e6b1a491b8f50a24f"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -3277,18 +3288,27 @@ yt-search@^0.4.1:
     node-fzf "~0.3.0"
 
 ytdl-core-discord@^1.0.3:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ytdl-core-discord/-/ytdl-core-discord-1.1.0.tgz#1276ef3895b773a3eafa4fe323495b41b715b9e1"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ytdl-core-discord/-/ytdl-core-discord-1.2.0.tgz#b2cc680c5a08ff585e1ed294e86a6a800bac048d"
   dependencies:
-    "@types/node" "^13.5.3"
-    prism-media "^1.0.1"
-    ytdl-core "^1.0.3"
+    "@types/node" "^13.11.1"
+    prism-media "^1.2.1"
+    ytdl-core "^2.0.1"
 
-ytdl-core@^1.0.3, ytdl-core@^1.0.6:
+ytdl-core@^1.0.6:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/ytdl-core/-/ytdl-core-1.0.9.tgz#938d5bf5f2baf901b04ffe41d4444fba72ba283a"
   dependencies:
     html-entities "^1.1.3"
     m3u8stream "^0.6.3"
     miniget "^1.6.0"
+    sax "^1.1.3"
+
+ytdl-core@^2.0.1:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/ytdl-core/-/ytdl-core-2.1.5.tgz#295a284a381d5dd2fd813f44c3d335aff0d94a7d"
+  dependencies:
+    html-entities "^1.3.1"
+    m3u8stream "^0.7.1"
+    miniget "^1.7.2"
     sax "^1.1.3"
