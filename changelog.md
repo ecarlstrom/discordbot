@@ -1,5 +1,9 @@
 # Changelog
 
+**May 29, 2020**
+
+- Updates to playback dependencies to fix some of the errors in object data retrieval.
+
 **May 23, 2020**
 
 - Properly rounded values are now displayed after `!vol up` and `!vol down` are used. All other values should remain the same and display correctly.
