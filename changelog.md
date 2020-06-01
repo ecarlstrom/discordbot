@@ -1,5 +1,9 @@
 # Changelog
 
+**June 1, 2020**
+
+- Testing a fix for recent playback errors, build seems stable so far and works correctly.
+
 **May 29, 2020**
 
 - Updates to playback dependencies to fix some of the errors in object data retrieval.
