@@ -16,4 +16,4 @@
 
 - Bot can occasionally crash if a song is queued right as the previous queue ends.
 
-- Playback not working as of 5/30/2020 fixes, looking into the issues with dependencies that seem to have caused this.
+- Playback not working as of 5/30/2020 fixes, looking into the issues with dependencies that seem to have caused this. (monitoring 6/1/2020 fix, working correctly so far)
