@@ -1,5 +1,9 @@
 # Changelog
 
+**June 2, 2020**
+
+- Playback issues have been solved!
+
 **June 1, 2020**
 
 - Testing a fix for recent playback errors, build seems stable so far and works correctly.
