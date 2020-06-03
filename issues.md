@@ -12,8 +12,4 @@
 
 - Investigating an issue that causes the bot to reconnect repeatedly. Minor for now since performance is not impacted thus far.
 
-- Looking into an occasional playback issue after the first song after an auto-reconnect. (5/20)
-
 - Bot can occasionally crash if a song is queued right as the previous queue ends.
-
-- Playback not working as of 5/30/2020 fixes, looking into the issues with dependencies that seem to have caused this. (monitoring 6/1/2020 fix, working correctly so far)
