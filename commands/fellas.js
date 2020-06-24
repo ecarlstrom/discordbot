@@ -11,7 +11,7 @@ exports.run = async (client, message) => {
 
             voiceChannel.join()
                 .then(connection => {
-                const hankDispatch = connection.playFile('C:/Users/Evan/Downloads/fellas.mp3');
+                const hankDispatch = connection.playFile('C:/Users/evanc/Downloads/fellas.mp3');
             
                 if((client.queues.has(message.guild.id))) {
                     hankDispatch.on('end'), () => {
