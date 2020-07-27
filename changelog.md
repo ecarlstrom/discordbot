@@ -1,5 +1,9 @@
 # Changelog
 
+**July 27, 2020**
+
+- Patches a couple of DoS exploit vulnerabilities present in various packages.
+
 **June 2, 2020**
 
 - Playback issues have been solved!
