@@ -1,5 +1,9 @@
 # Changelog
 
+**September 3, 2020**
+
+- Minor package updates to address potential security vulnerabilities.
+
 **July 27, 2020**
 
 - Patches a couple of DoS exploit vulnerabilities present in various packages.
