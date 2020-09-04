@@ -80,6 +80,8 @@ Will be added as they become available.
 
 6. Return the `!skip` command to its initial vote-based functionality.
 
+7. Provide a way for users (primarily other devs) to report potential security issues so they can be addressed.
+
 ## Feedback
 
 Please feel free to contact me at evan.carlstrom@gmail.com with any issues or feedback!
