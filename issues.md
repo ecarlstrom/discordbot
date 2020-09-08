@@ -13,5 +13,3 @@
 - Investigating an issue that causes the bot to reconnect repeatedly. Minor for now since performance is not impacted thus far.
 
 - Bot can occasionally crash if a song is queued right as the previous queue ends.
-
-- The audio clip commands `!fellas/!counterstrikes` are clipped a bit short as of 6/22, need to redo the files. 
