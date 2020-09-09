@@ -33,5 +33,6 @@
   },
   "scripts": {
     "start": "node index.js"
-  }
+  },
+  "engines": { "node": "12.18.1" }
 }
