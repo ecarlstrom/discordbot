@@ -1,5 +1,9 @@
 # Changelog
 
+**September 9, 2020**
+
+- Moved to a new hosting service. Will monitor efficiency and persistence over the next week or so.
+
 **September 3, 2020**
 
 - Minor package updates to address potential security vulnerabilities.
