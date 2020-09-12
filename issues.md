@@ -13,3 +13,5 @@
 - Investigating an issue that causes the bot to reconnect repeatedly. Minor for now since performance is not impacted thus far.
 
 - Bot can occasionally crash if a song is queued right as the previous queue ends.
+
+- Need to update `!fellas` / `!cs` commands so they work properly with new host.
