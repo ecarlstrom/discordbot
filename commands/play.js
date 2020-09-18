@@ -9,6 +9,8 @@ const youtube = new ytapi(process.env.youtubeAPIKey);
 const m3u8stream = require('m3u8stream');
 const parseTime = require('m3u8stream/dist/parse-time');
 
+// note: improve unhandled promise error handling, specifically for this command
+
 exports.run = async (client, message, args) => {
     let song = args.join(' ');
 
@@ -104,6 +106,7 @@ exports.run = async (client, message, args) => {
         }
     }
 
+    // needs further handling so the bot won't occasionally get stuck
     process.on('unhandledRejection', (reason, promise) => {
         console.log('Unhandled Rejection: ', reason.stack || reason);
     })
