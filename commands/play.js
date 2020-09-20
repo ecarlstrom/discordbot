@@ -107,6 +107,12 @@ exports.run = async (client, message, args) => {
     }
 
     // needs further handling so the bot won't occasionally get stuck
+    /* test this idea
+        (async function () {
+        await returnsPromise().catch(e => {
+        console.log('err message here')
+        throw e
+        })})().catch( e => { console.error(e) } ) */
     process.on('unhandledRejection', (reason, promise) => {
         console.log('Unhandled Rejection: ', reason.stack || reason);
     })
