@@ -1,5 +1,9 @@
 # Changelog
 
+**September 21, 2020**
+
+- Working on making improvements to various forms of error handling to hopefully prevent issues that can occasionally arise.
+
 **September 9, 2020**
 
 - Moved to a new hosting service. Will monitor efficiency and persistence over the next week or so.
