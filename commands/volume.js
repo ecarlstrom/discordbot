@@ -35,10 +35,10 @@ exports.run = async (client, message, args) => {
         return message.channel.send(`Current volume is ${rounded}%.`);
     }
 
-    if(vol === "max") {
-        client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume == 1.00));
-        message.channel.send(`Volume set to max.`);
-    }
+    // if(vol === "max") {
+    //     client.queues.get(message.guild.id).dispatcher.setVolume((message.guild.voiceConnection.volume == 1.00));
+    //     message.channel.send(`Volume set to max.`);
+    // }
 
     else if(isNaN(vol)) {
         return message.reply(`🤠 Nice try, please use a numerical value! 🤠`)
