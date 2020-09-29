@@ -108,6 +108,14 @@ client.on('message', (message) => {
 
 // placeholder for "dadbot"-style commands as per server request
 
+// the fun of a Trump tweet crawler
+
+const Twitter = require('twit');
+const twitterConf = {
+  // configure this object once parameters are defined
+}
+const twitterClient = new Twitter(twitterConf);
+const destination; // these will be the destination channels for the updates, so as not to populate general chat channels
 
 
 // adding a new message event here since variables are used, the below handles game/status activity
