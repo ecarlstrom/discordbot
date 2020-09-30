@@ -117,6 +117,18 @@ const twitterConf = {
 const twitterClient = new Twitter(twitterConf);
 const destination; // these will be the destination channels for the updates, so as not to populate general chat channels
 
+// see if the following is needed (to avoided pushing everything that is not a direct tweet)
+
+/* function isReply(tweet) {
+  if (tweet.retweeted_status
+    || tweet.in_reply_to_status_id
+    || tweet.in_reply_to_status_id_str
+    || tweet.in_reply_to_user_id
+    || tweet.in_reply_to_user_id_str
+    || tweet.in_reply_to_screen_name) return true;
+  return false;
+}
+*/
 
 // adding a new message event here since variables are used, the below handles game/status activity
 
