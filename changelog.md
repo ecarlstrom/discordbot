@@ -1,5 +1,9 @@
 # Changelog
 
+**October 1, 2020**
+
+- As per requests from a couple people, currently waiting for Twitter API approval so that a simple crawler for tweets and retweets can be implemented.
+
 **September 21, 2020**
 
 - Working on making improvements to various forms of error handling to hopefully prevent issues that can occasionally arise.
