@@ -108,7 +108,7 @@ client.on('message', (message) => {
 
 // placeholder for "dadbot"-style commands as per server request
 
-// the fun of a Trump tweet crawler
+// tweet crawler information; exact accounts TBD
 
 const Twitter = require('twit');
 const twitterConf = {
