@@ -113,6 +113,8 @@ client.on('message', (message) => {
 const Twitter = require('twit');
 const twitterConf = {
   // configure this object once parameters are defined
+  // key, secret, token, token secret
+  
 }
 const twitterClient = new Twitter(twitterConf);
 const destination; // these will be the destination channels for the updates, so as not to populate general chat channels
