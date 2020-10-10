@@ -114,7 +114,7 @@ const Twitter = require('twit');
 const twitterConf = {
   // configure this object once parameters are defined
   // key, secret, token, token secret
-  
+
 }
 const twitterClient = new Twitter(twitterConf);
 const destination; // these will be the destination channels for the updates, so as not to populate general chat channels
@@ -132,6 +132,9 @@ const destination; // these will be the destination channels for the updates, so
   return false;
 }
 */
+
+// const twitterStream = twitterClient.stream(*config here*);
+// stream.on('tweet')
 
 // adding a new message event here since variables are used, the below handles game/status activity
 
