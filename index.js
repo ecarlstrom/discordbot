@@ -136,6 +136,9 @@ const destination; // these will be the destination channels for the updates, so
 // const twitterStream = twitterClient.stream(*config here*);
 // stream.on('tweet')
 
+// client.on('ready', () => {
+  // log message here for Twitter connectivity
+// })
 // adding a new message event here since variables are used, the below handles game/status activity
 
 client.on('message', message => {
