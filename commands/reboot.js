@@ -1,4 +1,5 @@
 exports.run = async(client, message) => {
+    // 10/12: test this, not working correctly
     message.channel.send(`Are you sure you want to reboot? Reply with 'cancel' to abort, or allow 30 seconds for self-abort.`);
 
     const valid = ['yes', 'y', 'no', 'n', 'cancel'];
