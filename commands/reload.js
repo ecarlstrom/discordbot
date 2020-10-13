@@ -1,4 +1,5 @@
 exports.run = async(client, msg, params) => {
+    // 10/12: test this, not working correctly
     let command;
 
     if(client.commands.has(params[0])) {
