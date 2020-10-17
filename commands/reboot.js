@@ -18,43 +18,6 @@ exports.run = async(client, message) => {
         return message.channel.send(`Please supply a valid answer: \`${valid.join(' `, ` ')}\!`).catch(console.error);
     });
 
-    collector.on('end', async(collected, reason) => {
-        // if(reason === 'kill') {
-        //     method one, seems to be the more thorough/standard way to do this
-        //     add rebooting message for confirmation that something happened
-        //     if(reason === 'kill') () => {
-        //         spawn(process.argv[1], process.argv.slice(2), {
-        //              detached: true, 
-        //              stdio: ['ignore', out, err]
-        //            }).unref()
-        //            process.exit()
-        //     await client.destroy();
-        //     process.exit();
-
-        //     method two
-        //     spawn(process.argv[0], process.argv.slice(1), {
-        //         env: { process_restart: 1 },
-        //         stdio: 'ignore',
-        //         detached: true
-        //     }).unref();
-
-            await client.destroy();
-            process.exit();
-        } else if(reason === 'time') {
-            return message.channel.send('Reboot timed out!');
-        } else if(reason === 'abort') {
-            return message.channel.send('Aborting reboot!');
-        }
-
-        console.error('Invalid reason!');
-    });
-
-    process.on('unhandledRejection', (reason, promise) => {
-        console.log('Unhandled Rejection: ', reason.stack || reason);
-    })
-
-};
-
 exports.conf = {
     enabled: true,
     guildOnly: false,
