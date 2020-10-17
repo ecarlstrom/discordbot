@@ -17,7 +17,7 @@ exports.run = async(client, message) => {
 
         return message.channel.send(`Please supply a valid answer: \`${valid.join(' `, ` ')}\!`).catch(console.error);
     });
-
+}
 exports.conf = {
     enabled: true,
     guildOnly: false,
