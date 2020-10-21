@@ -1,5 +1,9 @@
 # Changelog
 
+**October 20, 2020**
+
+- General package updates.
+
 **October 1, 2020**
 
 - As per requests from a couple people, currently waiting for Twitter API approval so that a simple crawler for tweets and retweets can be implemented.
