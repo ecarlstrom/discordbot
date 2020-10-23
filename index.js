@@ -120,7 +120,7 @@ const twitterClient = new Twitter(twitterConf);
 const destination; // these will be the destination channels for the updates, so as not to populate general chat channels
 
 // see if the following is needed (to avoided pushing everything that is not a direct tweet)
-// 10/17: still waiting on Twitter API approval to set up config object
+// 10/22: still waiting on Twitter API approval to set up config object
 
 /* function isReply(tweet) {
   if (tweet.retweeted_status
