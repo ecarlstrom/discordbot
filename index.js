@@ -122,16 +122,16 @@ const destination; // these will be the destination channels for the updates, so
 // see if the following is needed (to avoided pushing everything that is not a direct tweet)
 // 10/17: still waiting on Twitter API approval to set up config object
 
-// /* function isReply(tweet) {
-//   if (tweet.retweeted_status
-//     || tweet.in_reply_to_status_id
-//     || tweet.in_reply_to_status_id_str
-//     || tweet.in_reply_to_user_id
-//     || tweet.in_reply_to_user_id_str
-//     || tweet.in_reply_to_screen_name) return true;
-//   return false;
-// }
-// */
+/* function isReply(tweet) {
+  if (tweet.retweeted_status
+    || tweet.in_reply_to_status_id
+    || tweet.in_reply_to_status_id_str
+    || tweet.in_reply_to_user_id
+    || tweet.in_reply_to_user_id_str
+    || tweet.in_reply_to_screen_name) return true;
+  return false;
+}
+*/
 
 // const twitterStream = twitterClient.stream(*config here*);
 // stream.on('tweet')
