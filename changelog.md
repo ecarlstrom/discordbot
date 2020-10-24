@@ -1,5 +1,9 @@
 # Changelog
 
+**October 23, 2020**
+
+- More minor updates and small security fixes.
+
 **October 20, 2020**
 
 - General package updates.
