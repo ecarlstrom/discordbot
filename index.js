@@ -110,14 +110,14 @@ client.on('message', (message) => {
 
 // tweet crawler information; exact accounts TBD
 
-const Twitter = require('twit');
-const twitterConf = {
-  // configure this object once parameters are defined
-  // key, secret, token, token secret
+// const Twitter = require('twit');
+// const twitterConf = {
+//   // configure this object once parameters are defined
+//   // key, secret, token, token secret
 
-}
-const twitterClient = new Twitter(twitterConf);
-const destination; // these will be the destination channels for the updates, so as not to populate general chat channels
+// }
+// const twitterClient = new Twitter(twitterConf);
+// const destination; // these will be the destination channels for the updates, so as not to populate general chat channels
 
 // see if the following is needed (to avoided pushing everything that is not a direct tweet)
 // 10/22: still waiting on Twitter API approval to set up config object
