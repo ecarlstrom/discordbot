@@ -1,5 +1,9 @@
 # Changelog
 
+**October 29, 2020**
+
+- Bot offline for playback and other command troubleshooting.
+
 **October 23, 2020**
 
 - More minor updates and small security fixes.
