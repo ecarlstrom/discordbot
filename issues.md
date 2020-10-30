@@ -17,3 +17,5 @@
 - Need to update `!fellas` / `!cs` commands so they work properly with new host.
 
 - The `!reboot` and `!reload` commands seem to be doing nothing at the moment, looking into this.
+
+- A few issues with playback and other commands have popped up as of 10/29, taking bot offline temporarily to troubleshoot.
