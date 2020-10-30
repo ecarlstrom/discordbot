@@ -1,5 +1,9 @@
 # Changelog
 
+**October 30**
+
+- Patched some of the playback-related dependencies to hopefully fix those issues. Good results so far, testing locally for a couple days before relaunching live version.
+
 **October 29, 2020**
 
 - Bot offline for playback and other command troubleshooting.
