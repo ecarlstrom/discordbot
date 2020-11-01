@@ -1,5 +1,9 @@
 # Changelog
 
+**October 31, 2020**
+
+- 🎃 A couple general package updates to improve playback stability. 🎃
+
 **October 30**
 
 - Patched some of the playback-related dependencies to hopefully fix those issues. Good results so far, testing locally for a couple days before relaunching live version.
