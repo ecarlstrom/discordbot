@@ -1,5 +1,7 @@
 ////////// GENERAL DEPENDENCIES //////////
 
+// overhauled version soon?
+
 const Discord = require('discord.js');
 const config = require('dotenv').config();
 const client = new Discord.Client();
