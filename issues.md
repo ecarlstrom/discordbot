@@ -1,5 +1,9 @@
 # Known Issues
 
+**November 4, 2020 NOTICE**
+- Planning a large overhaul where I'll rewrite most or all of the current bot code. Since this was initially done as a learning project, there are aspects of the code that are hard to maintain or troubleshoot and I'd like to redo the codebase in the next couple months to improve overall service. Will post updates in a separate file in this repo called overhaul.md.
+**END NOTICE**
+
 - Using any command with a space between the prefix and command (e.g. `! help`, `! play music`) triggers the headpat command.
 
 - The `!list/!listnames` commands are split into multiple embeds, so sometimes there is one emoji that begins in one and ends in another if the first embed reaches its character limit. I'll try and adjust this so if an emoji will hit the character limit it will roll over to the next embed so it can be displayed properly.
