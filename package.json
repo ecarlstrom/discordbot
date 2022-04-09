@@ -13,7 +13,7 @@
     "http": "^0.0.0",
     "lzma-native": "^6.0.1",
     "m3u8stream": "^0.6.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "node-gyp": "^5.0.3",
     "node-pre-gyp": "^0.15.0",
     "nodemon": "^1.19.1",
