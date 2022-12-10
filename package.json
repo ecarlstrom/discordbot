@@ -5,7 +5,7 @@
     "discord": "^0.8.2",
     "discord.js": "^11.6.4",
     "dotenv": "^6.1.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "^4.0.0",
     "fs": "^0.0.1-security",
